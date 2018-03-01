@@ -24,7 +24,7 @@ public class MinigunAimPattern : MonoBehaviour {
     public bool atStartAimedAtPlayer = false;
     public bool continueToTurnDuringDelayBetweenWaves = false;
 
-    public float turningSpeed = 0.2f;
+    public float turningSpeed = 90f;
 
     public float distanceFromCenter = 0;
 
@@ -257,7 +257,7 @@ public class MinigunAimPattern : MonoBehaviour {
             RotateSpawnPoints();
 
             var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition[i].position, bulletSpawnPosition[i].rotation);
-            bullet.transform.position += distanceFromCenter * Vector3.forward;
+            bullet.transform.position += distanceFromCenter * bullet.transform.up;
 
             Destroy(bullet, destroyBulletTime);
         }

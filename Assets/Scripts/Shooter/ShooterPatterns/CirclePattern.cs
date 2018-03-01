@@ -107,11 +107,11 @@ public class CirclePattern : MonoBehaviour {
             if (spawnList[i] != null)
             {
                 Vector3 bulletSpawnPosition = spawnList[i].position;
-                bulletSpawnPosition += spawnList[i].up * bulletOffset;
 
                 Quaternion bulletRotation = spawnList[i].rotation * rotation;
 
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition, bulletRotation);
+                bullet.transform.position += bullet.transform.up * bulletOffset;
 
                 Destroy(bullet, bulletLifeTime);
             }

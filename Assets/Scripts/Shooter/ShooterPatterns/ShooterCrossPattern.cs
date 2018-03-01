@@ -79,7 +79,7 @@ public class ShooterCrossPattern : MonoBehaviour {
 
     void Shoot()
     {
-        for (int i = 0; i < bulletsPerWave + 1; i++)
+        for (int i = 0; i < bulletsPerWave; i++)
         {
             actualRotation += /*Graderna på en cirkel, 360 är ju en hel cirkel*/ (360f / (float)bulletsPerWave);
             Quaternion rotation = Quaternion.Euler(0, 0, actualRotation + rotateTimer);
@@ -92,5 +92,4 @@ public class ShooterCrossPattern : MonoBehaviour {
         shootTimer = 0;
         
     }
-
 }
