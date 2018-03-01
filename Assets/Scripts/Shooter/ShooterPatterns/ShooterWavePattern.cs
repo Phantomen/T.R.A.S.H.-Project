@@ -72,7 +72,7 @@ public class ShooterWavePattern : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 0, (int)((float)timePerWave / Time.deltaTime));
+        //bulletsPerWave = Mathf.Clamp(bulletsPerWave, 0, (int)((float)timePerWave / Time.deltaTime));
         //If it's not the last wave and last bullet was fired
         if ((currentBulletsShotInWave == bulletsPerWave && currentWave < numberOfWaves))
         {
@@ -100,7 +100,8 @@ public class ShooterWavePattern : MonoBehaviour {
             timeUntilNextShot -= Time.deltaTime;
 
             //Shoots if timer expierd
-            if (timeUntilNextShot <= 0 && currentWave <= numberOfWaves)
+            //if (timeUntilNextShot <= 0 && currentWave <= numberOfWaves)
+            while (timeUntilNextShot <= 0 && currentWave <= numberOfWaves && currentBulletsShotInWave < bulletsPerWave)
             {
                 Shoot();
             }
@@ -177,7 +178,22 @@ public class ShooterWavePattern : MonoBehaviour {
     //Smooth wave
     private float WaveMotion()
     {
-        float degrees = 0f;
+        //float degrees = 0f;
+        //if (startFromCenter == true)
+        //{
+        //    degrees = -horizontal * Mathf.Sin((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+        //}
+
+        //else
+        //{
+        //    degrees = horizontal * Mathf.Cos((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+        //}
+
+        //degrees *= degreesFromCenter;
+
+        //return degrees;
+
+                float degrees = 0f;
         if (startFromCenter == true)
         {
             degrees = -horizontal * Mathf.Sin((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
@@ -185,7 +201,8 @@ public class ShooterWavePattern : MonoBehaviour {
 
         else
         {
-            degrees = horizontal * Mathf.Cos((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+            degrees = horizontal * Mathf.Cos(((float)currentBulletsShotInWave / (float)bulletsPerWave)
+                * (2f / timePerWave) * Mathf.PI);
         }
 
         degrees *= degreesFromCenter;

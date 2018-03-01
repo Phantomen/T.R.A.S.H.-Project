@@ -137,17 +137,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1062328481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e47e50bea6d7c65418e3a02fc9b9f564, type: 3}
+  m_Script: {fileID: 11500000, guid: 1830668c4d9c8464795dde0e2f182ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletLifeTime: 5
+  bulletSpawnPosition: {fileID: 0}
   bulletPrefab: {fileID: 1200939465}
-  spawnList: []
-  startDirectionRight: 0
-  changeEveryWave: 1
+  spawnDistanceFromCenter: 0
+  degreesFromCenter: 45
+  startHeadingRight: 1
+  changeWaveDirectionEveryWave: 0
+  startFromCenter: 0
+  smoothWaveTurning: 1
+  numberOfWaves: 2
   timePerWave: 1
-  bulletsPerWave: 25
-  bulletLifeTime: 10
-  bulletOffset: 0
+  bulletsPerWave: 2000
+  delayBetweenWaves: 0
 --- !u!212 &1062328483
 SpriteRenderer:
   m_ObjectHideFlags: 0
