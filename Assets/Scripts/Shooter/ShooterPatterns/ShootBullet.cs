@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShootBullet : MonoBehaviour {
 
-    [Tooltip("All shooting points")]
+    [Tooltip("List of the points the bullet will shoot from")]
     [SerializeField]
     private List<Transform> spawnList = new List<Transform>();
 

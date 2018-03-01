@@ -81,7 +81,7 @@ public class ShooterCrossPattern : MonoBehaviour {
     {
         for (int i = 0; i < bulletsPerWave + 1; i++)
         {
-            actualRotation += /*Graderna på en cirkel, 360 är ju en hel cirkel*/ (360 / bulletsPerWave);
+            actualRotation += /*Graderna på en cirkel, 360 är ju en hel cirkel*/ (360f / (float)bulletsPerWave);
             Quaternion rotation = Quaternion.Euler(0, 0, actualRotation + rotateTimer);
             Vector3 bulletPosition = new Vector3(bossObject.transform.position.x, bossObject.transform.position.y, bossObject.transform.position.z);
             var bullet = (GameObject)Instantiate(bulletPrefab, bulletPosition, rotation);           

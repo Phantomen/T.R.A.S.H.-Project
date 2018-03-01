@@ -72,6 +72,7 @@ public class ShooterWavePattern : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 0, (int)((float)timePerWave / Time.deltaTime));
         //If it's not the last wave and last bullet was fired
         if ((currentBulletsShotInWave == bulletsPerWave && currentWave < numberOfWaves))
         {
@@ -137,7 +138,7 @@ public class ShooterWavePattern : MonoBehaviour {
         Destroy(bullet.gameObject, bulletLifeTime);
 
         currentBulletsShotInWave++;
-        timeUntilNextShot += timePerWave / bulletsPerWave;
+        timeUntilNextShot += timePerWave / (float)bulletsPerWave;
 
         if (currentBulletsShotInWave == bulletsPerWave)
         {
