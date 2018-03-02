@@ -11,8 +11,10 @@ public class ShooterWavePattern : MonoBehaviour {
 
     public float spawnDistanceFromCenter = 0;
 
+    public float degreesFromCenter = 0;
+
     //t.ex. 45 degrees on each side of the center   /\
-    public float degreesFromCenter = 45;
+    public float distanceFromCenter = 45;
 
     public bool startHeadingRight = true;
     private int horizontal = 0;
@@ -72,6 +74,7 @@ public class ShooterWavePattern : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        //bulletsPerWave = Mathf.Clamp(bulletsPerWave, 0, (int)((float)timePerWave / Time.deltaTime));
         //If it's not the last wave and last bullet was fired
         if ((currentBulletsShotInWave == bulletsPerWave && currentWave < numberOfWaves))
         {
@@ -99,7 +102,8 @@ public class ShooterWavePattern : MonoBehaviour {
             timeUntilNextShot -= Time.deltaTime;
 
             //Shoots if timer expierd
-            if (timeUntilNextShot <= 0 && currentWave <= numberOfWaves)
+            //if (timeUntilNextShot <= 0 && currentWave <= numberOfWaves)
+            while (timeUntilNextShot <= 0 && currentWave <= numberOfWaves && currentBulletsShotInWave < bulletsPerWave)
             {
                 Shoot();
             }
@@ -134,10 +138,12 @@ public class ShooterWavePattern : MonoBehaviour {
         //Spawn bullet
         var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition.position, bulletSpawnPosition.rotation * rotation);
 
+
+
         Destroy(bullet.gameObject, bulletLifeTime);
 
         currentBulletsShotInWave++;
-        timeUntilNextShot += timePerWave / bulletsPerWave;
+        timeUntilNextShot += timePerWave / (float)bulletsPerWave;
 
         if (currentBulletsShotInWave == bulletsPerWave)
         {
@@ -163,6 +169,7 @@ public class ShooterWavePattern : MonoBehaviour {
             }
 
             var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition.position, bulletSpawnPosition.rotation * rotation);
+            bullet.transform.position += distanceFromCenter * bullet.transform.up;
 
             Destroy(bullet.gameObject, bulletLifeTime);
             currentBulletsShotInWave++;
@@ -176,15 +183,32 @@ public class ShooterWavePattern : MonoBehaviour {
     //Smooth wave
     private float WaveMotion()
     {
-        float degrees = 0f;
+        //float degrees = 0f;
+        //if (startFromCenter == true)
+        //{
+        //    degrees = -horizontal * Mathf.Sin((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+        //}
+
+        //else
+        //{
+        //    degrees = horizontal * Mathf.Cos((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+        //}
+
+        //degrees *= degreesFromCenter;
+
+        //return degrees;
+
+                float degrees = 0f;
         if (startFromCenter == true)
         {
-            degrees = -horizontal * Mathf.Sin((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+            degrees = -horizontal * Mathf.Sin(((float)currentBulletsShotInWave / (float)bulletsPerWave)
+                * (2f / timePerWave) * Mathf.PI);
         }
 
         else
         {
-            degrees = horizontal * Mathf.Cos((tempCurrentTime - Time.deltaTime) * (2f / timePerWave) * Mathf.PI);
+            degrees = horizontal * Mathf.Cos(((float)currentBulletsShotInWave / (float)bulletsPerWave)
+                * (2f / timePerWave) * Mathf.PI);
         }
 
         degrees *= degreesFromCenter;
@@ -199,23 +223,14 @@ public class ShooterWavePattern : MonoBehaviour {
 
         if (startFromCenter == true)
         {
-            zigZagTimer.Time += Time.deltaTime;
-
-            //change direction
-            if (zigZagTimer.Expired == true)
-            {
-                horizontal = -horizontal;
-                zigZagTimer.Time -= timePerWave / 2;
-            }
-
-            degrees = -horizontal * Mathf.PingPong((tempCurrentTime - Time.deltaTime) * (4f / timePerWave) + 1, 2)
-                + horizontal;
+            degrees = -horizontal * Mathf.PingPong(((float)currentBulletsShotInWave / (float)bulletsPerWave)
+                * (4f / timePerWave) + 1, 2) + horizontal;
         }
 
         else
         {
-            degrees = -horizontal * Mathf.PingPong((tempCurrentTime - Time.deltaTime) * (4f / timePerWave), 2)
-                + horizontal;
+            degrees = -horizontal * Mathf.PingPong(((float)currentBulletsShotInWave / (float)bulletsPerWave)
+                * (4f / timePerWave), 2) + horizontal;
         }
 
         degrees *= degreesFromCenter;

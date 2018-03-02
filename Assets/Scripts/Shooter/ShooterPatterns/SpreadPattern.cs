@@ -141,7 +141,7 @@ public class SpreadShotInfo
 
     public float GetAngle(int bulletIndex)
     {
-        float degrees = (-degreesFromCenter / 2) + (bulletIndex) * (degreesFromCenter / (bulletsPerShot - 1));
+        float degrees = 2 * ((-degreesFromCenter / 2) + (bulletIndex) * (degreesFromCenter / (bulletsPerShot - 1)));
         return degrees;
     }
 }
