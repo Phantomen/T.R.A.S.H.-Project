@@ -36,6 +36,8 @@ public class CrossPattern : MonoBehaviour {
     private float rotateTimer = 0f;
     private float actualRotation = 0f;
 
+    private float time;
+
     // Use this for initialization
     void Start ()
     {
@@ -52,16 +54,29 @@ public class CrossPattern : MonoBehaviour {
         {
             spawnList.Add(gameObject.transform);
         }
-	}
+
+        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
+        actualRotation = -(360f / (float)bulletsPerWave);
+
+        fireRate = Mathf.Clamp(fireRate, float.Epsilon, float.MaxValue);
+        rotateTimer = -rotateSpeed / fireRate;
+
+        shootTimer = 1;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        fireRate = Mathf.Clamp(fireRate, float.Epsilon, float.MaxValue);
+        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
         shootTimer += Time.deltaTime * fireRate;
-        rotateTimer += Time.deltaTime * rotateSpeed;
+        //rotateTimer += rotateSpeed / fireRate;
+
+        //Debug.Log(rotateTimer);
 
         if (shootTimer >= 1)
         {
+            rotateTimer += rotateSpeed / fireRate;
             Shoot();
         }
     }
@@ -76,7 +91,10 @@ public class CrossPattern : MonoBehaviour {
                 Quaternion rotation = Quaternion.Euler(0, 0, actualRotation + rotateTimer);
                 Vector3 bulletPosition = spawnList[si].position;
 
-                Debug.Log(rotation);
+                if (actualRotation > 360)
+                {
+                    actualRotation -= 360;
+                }
 
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletPosition, rotation * spawnList[si].rotation);
                 bullet.transform.position += bullet.transform.up * distanceFromCenter;
@@ -84,6 +102,6 @@ public class CrossPattern : MonoBehaviour {
                 Destroy(bullet, destroyTime);
             }
         }
-        shootTimer = 0;
+        shootTimer -= 1;
     }
 }

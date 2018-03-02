@@ -142,11 +142,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1200939465}
   spawnList: []
-  bulletsPerWave: 1
+  bulletsPerWave: 4
   fireRate: 1
   destroyTime: 5
-  rotateSpeed: 45
-  distanceFromCenter: 0
+  rotateSpeed: 90
+  distanceFromCenter: 1
 --- !u!212 &1062328483
 SpriteRenderer:
   m_ObjectHideFlags: 0
