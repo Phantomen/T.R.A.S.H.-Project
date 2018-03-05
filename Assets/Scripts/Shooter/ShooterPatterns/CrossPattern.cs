@@ -88,9 +88,14 @@ public class CrossPattern : MonoBehaviour {
                 Quaternion rotation = Quaternion.Euler(0, 0, actualRotation + rotateTimer);
                 Vector3 bulletPosition = spawnList[si].position;
 
-                if (actualRotation > 360)
+                while (actualRotation > 360)
                 {
                     actualRotation -= 360;
+                }
+
+                while (actualRotation < 360)
+                {
+                    actualRotation += 360;
                 }
 
                 var bullet = (GameObject)Instantiate(bulletPrefab, bulletPosition, rotation * spawnList[si].rotation);

@@ -66,7 +66,9 @@ public class SpreadPattern : MonoBehaviour {
     {
         if (currentDelay.Duration != spreadShotList[listIndex].delayBetweenShots)
         {
+            currentDelay.Time -= currentDelay.Duration;
             currentDelay.Duration = spreadShotList[listIndex].delayBetweenShots;
+            currentDelay.Time += currentDelay.Duration;
         }
 
 
@@ -87,7 +89,7 @@ public class SpreadPattern : MonoBehaviour {
 
         }
 
-        currentDelay.Time = 0;
+        currentDelay.Time -= currentDelay.Duration;
 
         spreadShotList[listIndex].shotIndex++;
 
@@ -110,6 +112,7 @@ public class SpreadPattern : MonoBehaviour {
         }
 
         currentDelay.Duration = spreadShotList[listIndex].delayForFirstShot;
+        currentDelay.Time = 0;
     }
 }
 
