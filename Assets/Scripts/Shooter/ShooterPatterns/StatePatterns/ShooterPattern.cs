@@ -4,6 +4,9 @@ using UnityEngine;
 
 public abstract class ShooterPattern : MonoBehaviour {
 
+    [SerializeField]
+    protected List<AttackActionBulletSpawnList> bulletSpawnList = new List<AttackActionBulletSpawnList>();
+
     //public abstract void Start();
 
     public abstract void Shoot(GameObject shooterGameObject);
@@ -16,5 +19,5 @@ public abstract class ShooterPattern : MonoBehaviour {
 
     public abstract void Reset(GameObject shooterGameObject);
 
-    public abstract void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList);
+    //public abstract void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList);
 }

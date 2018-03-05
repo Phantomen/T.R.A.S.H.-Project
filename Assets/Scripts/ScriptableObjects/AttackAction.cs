@@ -7,8 +7,8 @@ public class AttackAction : StateAction {
 
     public ShooterPattern shotPattern;
 
-    public List<AttackActionBulletSpawnList> bulletSpawnList = new List<AttackActionBulletSpawnList>();
-    private List<Transform> spawnList = new List<Transform>();
+    //public List<AttackActionBulletSpawnList> bulletSpawnList = new List<AttackActionBulletSpawnList>();
+    //private List<Transform> spawnList = new List<Transform>();
 
     public override void Act(StateController controller)
     {
@@ -27,38 +27,41 @@ public class AttackAction : StateAction {
 
     private void ResetShooting(StateController controller)
     {
-        spawnList.Clear();
+        //spawnList.Clear();
 
-        if (bulletSpawnList.Count > 0
-            && controller.phaseBulletSpawnList.Count > 0)
-        {
-            for (int pi = 0; pi < bulletSpawnList.Count; pi++)
-            {
-                for (int si = 0; si < bulletSpawnList[pi].spawnPointIndex.Length; si++)
-                {
-                    if (controller.phaseBulletSpawnList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]] != null)
-                    {
-                        bool alreadyInList = false;
-                        for (int t = 0; t < spawnList.Count; t++)
-                        {
-                            if (spawnList[t] == controller.phaseBulletSpawnList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]])
-                            {
-                                alreadyInList = true;
-                                break;
-                            }
-                        }
+        //GameObjectsTransformList tl = controller.gameObject.GetComponent<GameObjectsTransformList>();
 
-                        if (alreadyInList == false)
-                        {
-                            spawnList.Add(controller.phaseBulletSpawnList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]]);
-                        }
-                    }
-                }
-            }
-        }
+        //if (bulletSpawnList.Count > 0
+        //    && tl.transformList.Count > 0
+        //    && tl != null)
+        //{
+        //    for (int pi = 0; pi < bulletSpawnList.Count; pi++)
+        //    {
+        //        for (int si = 0; si < bulletSpawnList[pi].spawnPointIndex.Length; si++)
+        //        {
+        //            if (tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]] != null)
+        //            {
+        //                bool alreadyInList = false;
+        //                for (int t = 0; t < spawnList.Count; t++)
+        //                {
+        //                    if (spawnList[t] == tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]])
+        //                    {
+        //                        alreadyInList = true;
+        //                        break;
+        //                    }
+        //                }
+
+        //                if (alreadyInList == false)
+        //                {
+        //                    spawnList.Add(tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]]);
+        //                }
+        //            }
+        //        }
+        //    }
+        //}
 
         shotPattern.Reset(controller.gameObject);
-        shotPattern.Reset(controller.gameObject, spawnList);
+        //shotPattern.Reset(controller.gameObject, spawnList);
     }
 }
 

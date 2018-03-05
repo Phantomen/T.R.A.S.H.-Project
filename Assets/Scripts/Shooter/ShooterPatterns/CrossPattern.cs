@@ -36,7 +36,6 @@ public class CrossPattern : MonoBehaviour {
     private float rotateTimer = 0f;
     private float actualRotation = 0f;
 
-    private float time;
 
     // Use this for initialization
     void Start ()
@@ -71,8 +70,6 @@ public class CrossPattern : MonoBehaviour {
         bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
         shootTimer += Time.deltaTime * fireRate;
         //rotateTimer += rotateSpeed / fireRate;
-
-        //Debug.Log(rotateTimer);
 
         if (shootTimer >= 1)
         {

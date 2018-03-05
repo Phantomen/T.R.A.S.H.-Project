@@ -84,8 +84,6 @@ public class ShooterPatternMinigunAim : ShooterPattern {
     {
         currentDelay.Time += Time.deltaTime;
 
-        
-
         if (currentDelay.Expired == true)
         {
             //If instantTurn is true, that means that this wave is a new one and instantTurnStartOfWaves == true
@@ -318,23 +316,47 @@ public class ShooterPatternMinigunAim : ShooterPattern {
     }
 
 
-    //public override void Reset()
-    //{
-
-    //}
-
     public override void Reset(GameObject shooterGameObject)
-    {
-
-    }
-
-    public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //currentTimeInWave = new Timer(timerPerWave, 0);
         currentDelay = new Timer(startDelay, 0);
 
-        bulletSpawnPosition = bulletSpawnList;
+
+        bulletSpawnPosition.Clear();
+
+        GameObjectsTransformList tl = shooterGameObject.GetComponent<GameObjectsTransformList>();
+
+        if (bulletSpawnList.Count > 0
+            && tl.transformList.Count > 0
+            && tl != null)
+        {
+            for (int pi = 0; pi < bulletSpawnList.Count; pi++)
+            {
+                for (int si = 0; si < bulletSpawnList[pi].spawnPointIndex.Length; si++)
+                {
+                    if (tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]] != null)
+                    {
+                        bool alreadyInList = false;
+                        for (int t = 0; t < bulletSpawnPosition.Count; t++)
+                        {
+                            if (bulletSpawnPosition[t] == tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]])
+                            {
+                                alreadyInList = true;
+                                break;
+                            }
+                        }
+
+                        if (alreadyInList == false)
+                        {
+                            bulletSpawnPosition.Add(tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]]);
+                        }
+                    }
+                }
+            }
+        }
+
+
 
         //If it does not have spawnpoint, set it as the own
         if (bulletSpawnPosition.Count == 0)
@@ -361,4 +383,39 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
         delayBetweenBullets = timePerWave / (float)bulletsPerWave;
     }
+
+
+    //public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
+    //{
+    //    player = GameObject.FindGameObjectWithTag("Player");
+    //    //currentTimeInWave = new Timer(timerPerWave, 0);
+    //    currentDelay = new Timer(startDelay, 0);
+
+    //    bulletSpawnPosition = bulletSpawnList;
+
+    //    //If it does not have spawnpoint, set it as the own
+    //    if (bulletSpawnPosition.Count == 0)
+    //    {
+    //        bulletSpawnPosition.Add(shooterGameObject.transform);
+    //    }
+
+    //    for (int i = 0; i < bulletSpawnPosition.Count; i++)
+    //    {
+    //        if (bulletSpawnPosition[i] == null)
+    //        {
+    //            bulletSpawnPosition[i] = shooterGameObject.transform;
+    //        }
+    //    }
+
+    //    if (aimAtPlayerAtStart == true)
+    //    {
+    //        for (int i = 0; i < bulletSpawnPosition.Count; i++)
+    //        {
+    //            Vector2 targetDir = bulletSpawnPosition[i].position - player.transform.position;
+    //            bulletSpawnPosition[i].rotation = Quaternion.LookRotation(targetDir, Vector3.forward);
+    //        }
+    //    }
+
+    //    delayBetweenBullets = timePerWave / (float)bulletsPerWave;
+    //}
 }

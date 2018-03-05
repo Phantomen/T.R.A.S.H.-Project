@@ -9,8 +9,6 @@ public class StateController : MonoBehaviour {
     //public EnemyStats enemyStats;
     //public State remainState;
 
-    public List<PhaseBulletSpawnPoints> phaseBulletSpawnList = new List<PhaseBulletSpawnPoints>();
-
     [HideInInspector] public List<GameObject> minionList = new List<GameObject>();
     [HideInInspector] public List<GameObject> itemList = new List<GameObject>();
 
