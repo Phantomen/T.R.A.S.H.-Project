@@ -104,22 +104,21 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         {
             if (spawnObjectPrefab[i] != null)
             {
-                float xPositionOffset = Random.Range(-xLocalPositionLimitOffset, 0/*xLocalPositionLimitOffset*/);
+                float xPositionOffset = -0.001f;//Random.Range(-xLocalPositionLimitOffset, xLocalPositionLimitOffset);
                 float yPositionOffset = Random.Range(-yLocalPositionLimitOffset, yLocalPositionLimitOffset);
 
                 float newRot = Random.Range(-maxDegreesFromCenter, maxDegreesFromCenter);
 
-                if (degreeChangeCloserToEndPoints == true)
+                if (degreeChangeCloserToEndPoints == true && xLocalPositionLimitOffset > 0)
                 {
-                    if (xPositionOffset > 0 && xLocalPositionLimitOffset <= 0)
+                    if (xPositionOffset > 0)
                     {
                         float multX = xPositionOffset / xLocalPositionLimitOffset;
-                        float degreeChange = Mathf.Sqrt(Mathf.Pow(maxDegreesFromCenter, 2))
-                            + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
+                        float degreeChange = maxDegreesFromCenter + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
+
                         degreeChange = degreeChange - degreeChange * multX;
 
-                        //degreeChange += minDegreesFromCenter;
-                        degreeChange = minDegreesFromCenter - degreeChange;
+                        degreeChange = minDegreesFromCenter + degreeChange;
 
                         newRot = Random.Range(degreeChange, maxDegreesFromCenter);
                     }
@@ -127,14 +126,14 @@ public class TagTriggerRandomShooter : MonoBehaviour {
                     else if (xPositionOffset < 0)
                     {
                         float multX = xPositionOffset / -xLocalPositionLimitOffset;
-                        float degreeChange = Mathf.Sqrt(Mathf.Pow(maxDegreesFromCenter, 2))
-                            + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
+                        float degreeChange = maxDegreesFromCenter + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
+
                         degreeChange = degreeChange - degreeChange * multX;
 
-                        degreeChange = minDegreesFromCenter - degreeChange;
+                        degreeChange = minDegreesFromCenter + degreeChange;
+                        Debug.Log(degreeChange);
 
                         newRot = -1 * Random.Range(degreeChange, maxDegreesFromCenter);
-                        Debug.Log(newRot);
                     }
                 }
 
