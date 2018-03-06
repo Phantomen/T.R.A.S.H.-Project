@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4015112470022988}
   - component: {fileID: 212536903811235010}
   - component: {fileID: 114201331575798554}
+  - component: {fileID: 95615579179339520}
   m_Layer: 0
   m_Name: Firenode cicle
   m_TagString: Untagged
@@ -41,6 +42,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95615579179339520
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1672485859368290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6f194f1bd1658424d8a1d3ca5fc0297b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114201331575798554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,13 +72,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1313592387706074, guid: 90a053caead03d6429500dcfc3467bf2,
     type: 2}
-  playerObject: {fileID: 0}
-  Right: 0
+  spawnList: []
+  startDirectionRight: 0
   changeEveryWave: 0
-  timePerWave: 1000
-  totalBullets: 250000
-  bulletsPerWave: 20000
+  timePerWave: 5
+  bulletsPerWave: 15
   bulletLifeTime: 15
+  bulletOffset: 0
 --- !u!212 &212536903811235010
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300008, guid: 48a67bf4470bff74d9623d7e6f91240c, type: 3}
+  m_Sprite: {fileID: 21300004, guid: 55facbee9d503174398e57380180d6a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

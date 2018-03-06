@@ -13,3 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPattern: {fileID: 114822272774832264, guid: 4e3ba550f738acc48bfc31ce70c966e1,
     type: 2}
+  bulletSpawnList:
+  - phaseIndex: 0
+    spawnPointIndex: 00000000

@@ -397,6 +397,11 @@ Prefab:
       propertyPath: timePerPause
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: laserStopTimer
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
   m_IsPrefabParent: 0

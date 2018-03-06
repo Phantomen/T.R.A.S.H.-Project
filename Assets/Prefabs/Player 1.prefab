@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 61971458957487468}
   - component: {fileID: 82188276991396024}
   - component: {fileID: 95544925271805108}
+  - component: {fileID: 114887481200020020}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -336,6 +337,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   shiftSpeed: 2
+--- !u!114 &114887481200020020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546747515364120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fb1eaf1f4b244d4ebb6da41c1455c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointSystem: {fileID: 0}
+  damageTakenByHits: 1
+  invincibleTime: 1
+  invincible: 0
 --- !u!212 &212490667074113298
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -368,7 +384,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1853292701
-  m_SortingLayer: 3
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 58e61d0fb6e955b4f965270f2a8e01d6, type: 3}
   m_Color: {r: 1, g: 0.8409736, b: 0.6397059, a: 1}
