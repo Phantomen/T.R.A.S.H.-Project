@@ -32,11 +32,11 @@ public class TagTriggerRandomShooter : MonoBehaviour {
 
     [Tooltip("The random X-position from spawnObject")]
     [SerializeField]
-    private Vector2 xLocalPositionLimitOffset;
+    private float xLocalPositionLimitOffset;
 
     [Tooltip("The random Y-position from spawnObject")]
     [SerializeField]
-    private Vector2 yLocalPositionLimitOffset;
+    private float yLocalPositionLimitOffset;
 
 
     [Tooltip("Max degrees")]
@@ -51,6 +51,10 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     [SerializeField]
     private bool degreeChangeCloserToEndPoints = true;
 
+    [Tooltip("Time until destroyed")]
+    [SerializeField]
+    private float destroyTime = 5;
+
 
     private bool triggered = false;
 
@@ -63,6 +67,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     {
         currentDelay = new Timer(startSpawnDelay, 0);
 
+        xLocalPositionLimitOffset = Mathf.Clamp(xLocalPositionLimitOffset, 0, float.MaxValue);
         maxDegreesFromCenter = Mathf.Clamp(maxDegreesFromCenter, 0, 360);
         minDegreesFromCenter = Mathf.Clamp(minDegreesFromCenter, -360, 360);
     }
@@ -70,6 +75,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        xLocalPositionLimitOffset = Mathf.Clamp(xLocalPositionLimitOffset, 0, float.MaxValue);
         maxDegreesFromCenter = Mathf.Clamp(maxDegreesFromCenter, 0, 360);
         minDegreesFromCenter = Mathf.Clamp(minDegreesFromCenter, -360, 360);
 
@@ -78,7 +84,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         {
             currentDelay.Time += Time.deltaTime;
 
-            if (currentDelay.Expired == true)
+            while (currentDelay.Expired == true)
             {
                 currentDelay.Time -= currentDelay.Duration;
 
@@ -98,43 +104,52 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         {
             if (spawnObjectPrefab[i] != null)
             {
-                float xPositionOffset = Random.Range(xLocalPositionLimitOffset.x, xLocalPositionLimitOffset.y);
-                float yPositionOffset = Random.Range(yLocalPositionLimitOffset.x, yLocalPositionLimitOffset.y);
+                float xPositionOffset = Random.Range(-xLocalPositionLimitOffset, 0/*xLocalPositionLimitOffset*/);
+                float yPositionOffset = Random.Range(-yLocalPositionLimitOffset, yLocalPositionLimitOffset);
 
-                float newRot;
+                float newRot = Random.Range(-maxDegreesFromCenter, maxDegreesFromCenter);
 
                 if (degreeChangeCloserToEndPoints == true)
                 {
-                    if (xPositionOffset > 0)
+                    if (xPositionOffset > 0 && xLocalPositionLimitOffset <= 0)
                     {
-                        float multX = xPositionOffset / xLocalPositionLimitOffset.y;
+                        float multX = xPositionOffset / xLocalPositionLimitOffset;
                         float degreeChange = Mathf.Sqrt(Mathf.Pow(maxDegreesFromCenter, 2))
                             + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
                         degreeChange = degreeChange - degreeChange * multX;
 
-                        //degreeChange -= (Mathf.Sqrt(Mathf.Pow(maxDegreesFromCenter, 2))
-                        //    + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2)));
-                        degreeChange += minDegreesFromCenter;
+                        //degreeChange += minDegreesFromCenter;
+                        degreeChange = minDegreesFromCenter - degreeChange;
 
                         newRot = Random.Range(degreeChange, maxDegreesFromCenter);
                     }
 
                     else if (xPositionOffset < 0)
                     {
+                        float multX = xPositionOffset / -xLocalPositionLimitOffset;
+                        float degreeChange = Mathf.Sqrt(Mathf.Pow(maxDegreesFromCenter, 2))
+                            + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
+                        degreeChange = degreeChange - degreeChange * multX;
 
-                    }
+                        degreeChange = minDegreesFromCenter - degreeChange;
 
-                    else
-                    {
-
+                        newRot = -1 * Random.Range(degreeChange, maxDegreesFromCenter);
+                        Debug.Log(newRot);
                     }
                 }
 
-                else
-                {
-                    newRot = Random.Range(-maxDegreesFromCenter, maxDegreesFromCenter);
-                }
+                ShootBullet(new Vector2(xPositionOffset, yPositionOffset),
+                    Quaternion.Euler(0, 0, newRot),
+                    spawnObjectPrefab[i]);
             }
         }
+    }
+
+    private void ShootBullet(Vector2 offset, Quaternion newRotation, GameObject bulletPrefab)
+    {
+        Vector3 newPos = transform.position + new Vector3(offset.x, offset.y, 0);
+        var bullet = (GameObject)Instantiate(bulletPrefab, newPos, newRotation * transform.rotation);
+
+        Destroy(bullet, destroyTime);
     }
 }
