@@ -242,6 +242,52 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14824a6bc8166144d98c875fcdf862c0, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &649942055 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1440960305615940, guid: 7425a15235f83fe4891de7cc4f77a75a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1205598137}
+--- !u!4 &649942060 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4212409808912668, guid: 7425a15235f83fe4891de7cc4f77a75a,
+    type: 2}
+  m_PrefabInternal: {fileID: 1205598137}
+--- !u!114 &649942061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 649942055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c6438467a5ff994ba80bdcd631942e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationList:
+  - pointList:
+    - {fileID: 949722619}
+    turnType: 0
+    turnSpeed: 1000
+--- !u!114 &649942062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 649942055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c85fba9fa6835fc4aa13cf9aecd92124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 1009705134643790, guid: 1484b302e2944054a97fc68f5168692b,
+    type: 2}
+  spawnList:
+  - {fileID: 649942060}
+  bulletsPerWave: 12
+  fireRate: 2
+  destroyTime: 20
+  rotateSpeed: 33
+  distanceFromCenter: 1.5
 --- !u!1001 &734131073
 Prefab:
   m_ObjectHideFlags: 0
@@ -251,7 +297,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4951168869840360, guid: 14824a6bc8166144d98c875fcdf862c0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.406374
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4951168869840360, guid: 14824a6bc8166144d98c875fcdf862c0, type: 2}
       propertyPath: m_LocalPosition.y
@@ -341,7 +387,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 77edf803d25b99244a05d4d807834823, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
@@ -354,12 +400,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 949722617}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.13349816, y: 4.1114826, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 649942060}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1046194268
 Prefab:
@@ -399,6 +445,11 @@ Prefab:
     - target: {fileID: 4985116785638430, guid: f0e8e926a021cb74192186c4a5084e27, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 82188276991396024, guid: f0e8e926a021cb74192186c4a5084e27,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f0e8e926a021cb74192186c4a5084e27, type: 2}
@@ -468,12 +519,6 @@ Prefab:
       value: 
       objectReference: {fileID: 1779298211705000, guid: fd748a8466f353348bf0f632901fef26,
         type: 2}
-    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
-        type: 2}
-      propertyPath: bulletPrefab
-      value: 
-      objectReference: {fileID: 1095849363163726, guid: 3fc0f56b2c47e014092cdadaabb9f141,
-        type: 2}
     - target: {fileID: 114274862272103706, guid: 7425a15235f83fe4891de7cc4f77a75a,
         type: 2}
       propertyPath: rotateSpeed
@@ -484,6 +529,52 @@ Prefab:
       propertyPath: fireRate
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: atStartAimedAtPlayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: distanceFromCenter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114274862272103706, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: lerpType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: delayBetweenWaves
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: timerPerWave
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: bulletsPerWave
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: startDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332463491769082, guid: 7425a15235f83fe4891de7cc4f77a75a,
+        type: 2}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 1941563673063816, guid: 2856e7aaf54ddb347a96b1c53511adeb,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7425a15235f83fe4891de7cc4f77a75a, type: 2}
   m_IsPrefabParent: 0
