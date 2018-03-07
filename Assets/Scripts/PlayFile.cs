@@ -20,12 +20,18 @@ public class PlayFile : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        //timer += Time.deltaTime;
 
-        if (timer >= 6)
-        {
-            timer = 0;
-            movie.Stop();
-        }
+        //if (timer >= 6)
+        //{
+        //    timer = 0;
+        //    movie.Stop();
+        //}
+    }
+
+    public void OnRestart()
+    {
+        movie.Stop();
+
     }
 }

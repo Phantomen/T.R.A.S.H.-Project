@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PointSystem : MonoBehaviour {
 
     //public GameObject player;
-    public GameObject gameOver, youWin, soap, meterUI, audioSource;
+    public GameObject gameOver, youWin, meterUI, audioSource;
 
     private GameObject player;
 
@@ -15,10 +15,10 @@ public class PointSystem : MonoBehaviour {
     public BackgroundMusic backgroundMusic;
     //True fills the meter, false depletes meter
     //public bool depleteOrFill = false;
-    public List<Sprite> lifeSoap = new List<Sprite>();
+    //public List<Sprite> lifeSoap = new List<Sprite>();
     public List<Sprite> meterBar = new List<Sprite>();
 
-    Image soapImage, meterImage;
+    Image meterImage;
 
     //For when depleteOrFill is true, starts off the value at 0 instead of the meterFilled value
     private int meterStartValue = 0, meterGoalvalue, maxHealth;
@@ -28,7 +28,7 @@ public class PointSystem : MonoBehaviour {
     void Start () {
 
         //audio = audioSource.GetComponent<AudioSource>();
-        soapImage = soap.GetComponent<Image>();
+        
         meterImage = meterUI.GetComponent<Image>();
         life.text = "Life: " + lifeAmount.ToString();
         maxHealth = lifeAmount;
@@ -45,16 +45,14 @@ public class PointSystem : MonoBehaviour {
             life.text = "Life: " + lifeAmount.ToString();
 
         
-            soapImage.sprite = lifeSoap[maxHealth - lifeAmount];
+            //soapImage.sprite = lifeSoap[maxHealth - lifeAmount];
        
 
 
         if (lifeAmount <= 0)
         {
-            gameOver.SetActive(true);
-            player.SetActive(false);
-            backgroundMusic.StopMusic();
 
+            YouLose();
         }
     }
 
@@ -72,9 +70,22 @@ public class PointSystem : MonoBehaviour {
 
         if (meterFilled == 1)
         {
+            YouWin();
+        }
+    }
+
+    public void YouWin()
+    {
+
             youWin.SetActive(true);
             player.SetActive(false);
             backgroundMusic.StopMusic();
-        }
+    }
+
+    public void YouLose()
+    {
+        gameOver.SetActive(true);
+        player.SetActive(false);
+        backgroundMusic.StopMusic();
     }
 }

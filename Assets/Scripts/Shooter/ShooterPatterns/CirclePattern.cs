@@ -5,44 +5,32 @@ using UnityEngine;
 public class CirclePattern : MonoBehaviour {
 
     [SerializeField] private GameObject bulletPrefab;
-
-    [Tooltip("List of the points the bullet will shoot from")]
-    [SerializeField] private List<Transform> spawnList = new List<Transform>();
-
+    [SerializeField] private GameObject playerObject;
     [Tooltip("Will the object start shooting to the right or not")]
-    [SerializeField] private bool startDirectionRight = false;
-
+    [SerializeField] private bool Right = false;
     [Tooltip("Will the object change direction every 360 degrees")]
     [SerializeField] private bool changeEveryWave = false;
-
     [Tooltip("How fast the object will turn every second")]
     [SerializeField] private float timePerWave = 1;
-
+    [Tooltip("The maximum amount of bullets the object will shoot")]
+    [SerializeField] private int totalBullets = 250;
     [Tooltip("The maxiumu amount of bullets the object will shoot every 360 degrees")]
     [SerializeField] private int bulletsPerWave = 25;
-
     [Tooltip("How many seconds after the bullet have been created that it will be destroyed")]
     [SerializeField] private int bulletLifeTime = 10;
-
-    [Tooltip("The distance from spawn it will travel when it spawns")]
-    [SerializeField]
-    private float bulletOffset = 0;
-
-
     //Variables not available in the inspector
     //Start
     private float shootTimer = 0;
     private float tempTime = 0;
     private int isRight = 1;
-    private int shotsFiredInWave = 0;
-
-    private float firerate;
+    private int shotsFired = 0;
+    private int currentBulletsPerWave = 0;
     //End
 
 
 	// Use this for initialization
 	void Start () {
-        if (!startDirectionRight)
+        if (!Right)
         {
             isRight = 1;
         }
@@ -50,79 +38,59 @@ public class CirclePattern : MonoBehaviour {
         {
             isRight = -1;
         }
-
-        for (int i = 0; i < spawnList.Count; i++)
-        {
-            if (spawnList[i] == null)
-            {
-                spawnList.RemoveAt(i);
-                i--;
-            }
-        }
-
-        if (spawnList.Count == 0)
-        {
-            spawnList.Add(transform);
-        }
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        //bulletsPerWave = Mathf.Clamp(bulletsPerWave, 0, (int)((float)timePerWave / Time.deltaTime));
-        firerate = timePerWave / (float)bulletsPerWave;
-        //firerate = Mathf.Clamp(firerate, Time.deltaTime, float.MaxValue);
-
         tempTime += Time.deltaTime;
         shootTimer += Time.deltaTime;
 
-        //if (shootTimer >= firerate)
-        while (shootTimer >= firerate)
+        if (shootTimer >= timePerWave / bulletsPerWave)
         {
-            if (changeEveryWave == true
-                && shotsFiredInWave >= bulletsPerWave)
+            if (shotsFired < bulletsPerWave)
             {
-                isRight = -isRight;
+                if (changeEveryWave)
+                {
+                    if (currentBulletsPerWave < bulletsPerWave)
+                    {
+                        Shoot();
+                        shootTimer = 0;
+                    }
+                    else
+                    {
+                        isRight = -isRight;
+                        currentBulletsPerWave = 0;
+                    }
+                }
+                else
+                {
+                    Shoot();
+                    shootTimer = 0;
+                }
             }
-
-            if (shotsFiredInWave >= bulletsPerWave)
-            {
-                shotsFiredInWave = 0;
-            }
-
-            Shoot();
-
-            //shootTimer = 0;
-            shootTimer -= firerate;
         }
+
+
 	}
 
     private void Shoot()
     {
-        float rotationPerBullet = 360f / (float)bulletsPerWave;
-        Quaternion rotation = Quaternion.Euler(0, 0, (rotationPerBullet * (float)shotsFiredInWave) * isRight);
+        //float degrees = -isRight * Mathf.PingPong((tempTime - Time.deltaTime) * (4f / timePerWave) + 1, 2)
+        //    + isRight;
+
+        //degrees *= 360;
+
+        //Debug.Log(degrees);
+
+        //Quaternion rotation = Quaternion.Euler(0, 0, degrees);
 
 
-        for (int i = 0; i < spawnList.Count; i++)
-        {
-            if (spawnList[i] != null)
-            {
-                Vector3 bulletSpawnPosition = spawnList[i].position;
-
-                Quaternion bulletRotation = spawnList[i].rotation * rotation;
-
-                var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition, bulletRotation);
-                bullet.transform.position += bullet.transform.up * bulletOffset;
-
-                Destroy(bullet, bulletLifeTime);
-            }
-
-            else
-            {
-                spawnList.RemoveAt(i);
-                i--;
-            }
-        }
-
-        shotsFiredInWave++;
+        Quaternion rotation = Quaternion.Euler(0, 0, (360 * tempTime) * isRight);
+        Vector3 bulletPosition = new Vector3(playerObject.transform.position.x, playerObject.transform.position.y, playerObject.transform.position.z);
+            var bullet = (GameObject)Instantiate(bulletPrefab, bulletPosition, bulletPrefab.transform.rotation * rotation);
+            shotsFired++;
+            currentBulletsPerWave++;
+            Destroy(bullet.gameObject, bulletLifeTime);
+            //Debug.Log(shotsFired);
     }
 }

@@ -15,6 +15,9 @@ public class PowerPickup : MonoBehaviour {
     public GameObject audioSourceObject;
     private GameObject player;
 
+    public bool damageTrudges = false;
+    public TrudgesHealthBar trudgesHealthBar;
+
     private Timer timer;
     private bool timerOn = false;
     private PlayerAnimationController playerAnim;
@@ -55,6 +58,11 @@ public class PowerPickup : MonoBehaviour {
                 {
                     playerAnim.PickedUpBag();
                 }
+
+                if (damageTrudges)
+                {
+                    trudgesHealthBar.UpdateBar();
+                }
                 pointSystem.FillMeter(fillMeterWith);
                 Destroy (gameObject);
             }
@@ -76,7 +84,7 @@ public class PowerPickup : MonoBehaviour {
         //If ending interaction with player before timer expires, reset and stop timer so that objects don't get picked up while left alone, or when entering the hitbox of a new object
         if (other.gameObject.tag == playerTag)
         {
-            timer.Time = 0;
+            timer.Time = 0f;
             timerOn = false;
         }
     }

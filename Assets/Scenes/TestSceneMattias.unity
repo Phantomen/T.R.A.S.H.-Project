@@ -306,7 +306,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4543253652485624, guid: 0f5b353a5daef3c4c92eab500e3f3833, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114539089294509804, guid: 0f5b353a5daef3c4c92eab500e3f3833,
         type: 2}
@@ -351,7 +351,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1379048615412826, guid: 0f5b353a5daef3c4c92eab500e3f3833, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 212913965136676122, guid: 0f5b353a5daef3c4c92eab500e3f3833,
         type: 2}
@@ -393,7 +393,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &595041744
 AudioSource:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d0c0a8d2d312f141a2fa3e0e499c81d, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -485,7 +485,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &780628399
 GameObject:
@@ -553,7 +553,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824387781
 GameObject:
@@ -737,20 +737,20 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1026272600}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 710d71a853f1cde4399564961402c15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   laserNode: {fileID: 1224027911022068, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
-  nodeAmount: 8
-  firstNodePositionX: -3.75
-  NodePositionY: 4.25
+  nodeAmount: 3
   nodeLaserDelay: 5
-  distanceFromCenter: {x: 0, y: 0, z: 0}
+  distanceFromCenter: {x: 0, y: 0}
   secondsBeforeMovement: 1
   movementSpeed: 1
-  SetLaserPattern: 0
+  SetLaserPattern: 1
+  firstNodePositionX: -3.75
+  NodePositionY: 4.25
 --- !u!1 &1149286516
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ Transform:
   m_LocalScale: {x: 1.9531455, y: 1.9531455, z: 1.9531455}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1419388084
 GameObject:
@@ -963,7 +963,7 @@ Transform:
   m_LocalScale: {x: 1.9531455, y: 1.9531455, z: 1.9531455}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1592183509
 GameObject:
@@ -1025,8 +1025,71 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1795592712
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: timeBeforeStart
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: warningLaser
+      value: 
+      objectReference: {fileID: 1653378150125998, guid: 7231c4232f77e64438d1b62663c35bec,
+        type: 2}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: activeLaserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 329eb0a1d09f52548b9f5b250d1825e0, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1821391341
 GameObject:
   m_ObjectHideFlags: 0
@@ -1109,7 +1172,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4985116785638430, guid: f0e8e926a021cb74192186c4a5084e27, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1546747515364120, guid: f0e8e926a021cb74192186c4a5084e27, type: 2}
       propertyPath: m_Name
@@ -1165,5 +1228,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

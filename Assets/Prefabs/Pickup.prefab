@@ -74,8 +74,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2045151821
+  m_SortingLayer: 1
   m_SortingOrder: 0
 --- !u!33 &33040678918302382
 MeshFilter:
@@ -124,4 +124,3 @@ MonoBehaviour:
   pointSystem: {fileID: 0}
   playerTag: Player
   fillMeterWith: 1
-  audioSourceObject: {fileID: 0}

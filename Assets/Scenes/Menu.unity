@@ -1227,6 +1227,7 @@ GameObject:
   - component: {fileID: 587435006}
   - component: {fileID: 587435007}
   - component: {fileID: 587435008}
+  - component: {fileID: 587435009}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1338,6 +1339,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &587435009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 587435005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08971f15fdcbc6d43bb0b7c006d30193, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &718957240
 GameObject:
   m_ObjectHideFlags: 0
@@ -1538,11 +1550,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Art - Rebecka
-
-    programming- Rebecka
-
-    ALLTING - REBECKA'
+  m_Text: "Art - Grafiker\nProgrammering - R\xF6dhake, Sjuk mattias och Liten arg
+    dv\xE4rg\nLjud och musik - gulliga sm\xE5 barn och en l\xE4skig gubbe\nMenyuppl\xE4gg
+    - Rebecka"
 --- !u!222 &731916217
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1644,7 +1654,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MinionPatternWave3
+          m_StringArgument: "Scen f\xF6r testnings momentet"
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1706,7 +1716,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1149387472}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16, y: 124, z: 0}
+  m_LocalPosition: {x: -18, y: -11.899994, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1496374508}
@@ -1714,7 +1724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -16, y: 124}
+  m_AnchoredPosition: {x: -18, y: -11.9}
   m_SizeDelta: {x: 278.6, y: 333.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1149387474
@@ -1743,16 +1753,17 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This is a game made of trash.
-
-
-    We''re all very proud of ourselves.'
+  m_Text: "This is a game made of trash.\n\nWe're all very proud of ourselves.\n\n\r\n\r\n\r\n
+    \                   _,;_;/-\",_\r\n                 ,\")  (  ((O) \"  .`,\r\n
+    \              ,` (    )  ;  -.,/;`}\r\n             ,\"  o    (  ( (  . -_-.\r\n
+    \           `.  ;      ;  ) ) \\`; \\;\r\n              `., )   (  ( _-`   \\,'\r\n
+    \                \"`'-,,`.jb\r\n\r\n"
 --- !u!222 &1149387475
 CanvasRenderer:
   m_ObjectHideFlags: 0
