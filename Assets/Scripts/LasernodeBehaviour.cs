@@ -1,23 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class LasernodeBehaviour : MonoBehaviour {
     [SerializeField] GameObject laserNode;
     [SerializeField] int nodeAmount = 8;
-    [SerializeField] float firstNodePositionX = -3f;
-    [SerializeField] float NodePositionY = 2f;
     [SerializeField] float nodeLaserDelay = 2f;
-    [SerializeField] Vector3 distanceFromCenter;
+    [SerializeField] Vector2 distanceFromCenter;
     [SerializeField] float secondsBeforeMovement;
     [SerializeField] float movementSpeed;
     public enum ActiveLaserPattern
     {
         LaserWavePattern,
         LaserCrossPattern,
-        LaserFollowPattern
+        LaserFollowPattern,
+        LaserCirclePattern
     }
     [SerializeField] ActiveLaserPattern SetLaserPattern;
+    [SerializeField] float firstNodePositionX = -3f;
+    [SerializeField] float NodePositionY = 2f;
 
 
     float mathshit;
@@ -31,7 +33,7 @@ public class LasernodeBehaviour : MonoBehaviour {
     Vector3 stageDimensions;
     bool nodeDone = false;
     bool lastNode = false;
-    
+    bool line = true;
 
 
     // Use this for initialization
@@ -55,6 +57,22 @@ public class LasernodeBehaviour : MonoBehaviour {
             {
                 nodeLaserDelay -= Time.deltaTime;
             }
+
+            switch (SetLaserPattern)
+            {
+                case ActiveLaserPattern.LaserCirclePattern:
+                    line = false;
+                    break;
+                case ActiveLaserPattern.LaserCrossPattern:
+                    line = true;
+                    break;
+                case ActiveLaserPattern.LaserFollowPattern:
+                    line = true;
+                    break;
+                case ActiveLaserPattern.LaserWavePattern:
+                    line = true;
+                    break;
+            }
         }
 
 
@@ -65,7 +83,7 @@ public class LasernodeBehaviour : MonoBehaviour {
         for (int i = 0; i < nodeAmount; i++)
         {
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
-            Vector3 nodePosition = new Vector3(this.transform.position.x + distanceFromCenter.x, this.transform.position.y + distanceFromCenter.y, this.transform.position.z + distanceFromCenter.z);
+            Vector3 nodePosition = new Vector3(this.transform.position.x + distanceFromCenter.x, this.transform.position.y + distanceFromCenter.y, this.transform.position.z);
             var lasernode = (GameObject)Instantiate(laserNode, nodePosition, rotation);
             nodeList.Add(lasernode);
         }
@@ -73,14 +91,28 @@ public class LasernodeBehaviour : MonoBehaviour {
 
     void moveNode()
     {
-        for (int i = 0; i < nodeAmount; i++)
+        if (line)
         {
-            nodeList[i].GetComponent<ObjectMover>().moveTo = new Vector2(firstNodePositionX, NodePositionY);
-            nodeList[i].GetComponent<ObjectMover>().willMove = true;
-            firstNodePositionX += mathshit;
-            if(i >= nodeAmount - 1)
+            for (int i = 0; i < nodeAmount; i++)
             {
-                lastNode = true;
+                nodeList[i].GetComponent<ObjectMover>().moveTo = new Vector2(firstNodePositionX, NodePositionY);
+                nodeList[i].GetComponent<ObjectMover>().willMove = true;
+                firstNodePositionX += mathshit;
+                if (i >= nodeAmount - 1)
+                {
+                    lastNode = true;
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < nodeAmount; i++)
+            {
+                
+                if (i >= nodeAmount - 1)
+                {
+                    lastNode = true;
+                }
             }
         }
 

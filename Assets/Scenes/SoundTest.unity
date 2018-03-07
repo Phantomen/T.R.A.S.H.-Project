@@ -1605,3 +1605,45 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!1001 &2134469609
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4211562087554060, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+  m_IsPrefabParent: 0

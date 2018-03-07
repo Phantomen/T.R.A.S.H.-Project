@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ShooterPatternCross : ShooterPattern
 {
-    private List<Transform> spawnList = new List<Transform>();
 
     [Tooltip("What type of bullet the gameobject will shoot")]
     [SerializeField]
@@ -57,7 +56,7 @@ public class ShooterPatternCross : ShooterPattern
 
     private void ShootPattern(GameObject shooterGameObject)
     {
-        for (int i = 0; i < bulletsPerWave; i++)
+        for (int i = 0; i < bulletsPerWave + 1; i++)
         {
             actualRotation += /*Graderna på en cirkel, 360 är ju en hel cirkel*/ (360 / bulletsPerWave);
             Quaternion rotation = Quaternion.Euler(0, 0, actualRotation + rotateTimer);
@@ -80,12 +79,7 @@ public class ShooterPatternCross : ShooterPattern
 
     public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
     {
-        spawnList = bulletSpawnList;
 
-        if (spawnList.Count == 0)
-        {
-            bulletSpawnList.Add(shooterGameObject.transform);
-        }
     }
 }
 

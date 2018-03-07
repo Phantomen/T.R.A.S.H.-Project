@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4913352592616164}
-  - component: {fileID: 114810861218084580}
   - component: {fileID: 212611069107683518}
   - component: {fileID: 58790666683271248}
   - component: {fileID: 114130250598140244}
+  - component: {fileID: 95963695214716262}
   m_Layer: 0
   m_Name: Spraybottle
   m_TagString: Spraybottle
@@ -58,6 +58,23 @@ CircleCollider2D:
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
   m_Radius: 0.15197846
+--- !u!95 &95963695214716262
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267924528312750}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a296516b9f578af41ae28ca6cfe9c99e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114130250598140244
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,22 +91,7 @@ MonoBehaviour:
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: 3540253293612d6418328509dcc097fa, type: 3}
   audioSourceChildNamePickup: Trash pickup
---- !u!114 &114810861218084580
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267924528312750}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b994f54e002ac4ba7e6244d49e0624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupTimeInSeconds: 0.5
-  pointSystem: {fileID: 0}
-  playerTag: Player
-  fillMeterWith: 1
-  audioSourceObject: {fileID: 0}
+  activateHealthBar: 1
 --- !u!212 &212611069107683518
 SpriteRenderer:
   m_ObjectHideFlags: 1

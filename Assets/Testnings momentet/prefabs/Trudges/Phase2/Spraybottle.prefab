@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 212645629197747104}
   - component: {fileID: 58362858394032546}
   - component: {fileID: 114644228365447540}
+  - component: {fileID: 95704884088242938}
   m_Layer: 0
   m_Name: Spraybottle
   m_TagString: Spraybottle
@@ -58,6 +59,23 @@ CircleCollider2D:
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
   m_Radius: 0.15197846
+--- !u!95 &95704884088242938
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1911744203153542}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a296516b9f578af41ae28ca6cfe9c99e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114254035726285174
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -74,6 +92,8 @@ MonoBehaviour:
   playerTag: Player
   fillMeterWith: 1
   audioSourceObject: {fileID: 0}
+  damageTrudges: 0
+  trudgesHealthBar: {fileID: 0}
 --- !u!114 &114644228365447540
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +110,7 @@ MonoBehaviour:
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: 3540253293612d6418328509dcc097fa, type: 3}
   audioSourceChildNamePickup: Trash pickup
+  activateHealthBar: 1
 --- !u!212 &212645629197747104
 SpriteRenderer:
   m_ObjectHideFlags: 1

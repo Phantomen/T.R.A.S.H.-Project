@@ -92,6 +92,8 @@ MonoBehaviour:
   playerTag: Player
   fillMeterWith: 1
   audioSourceObject: {fileID: 0}
+  damageTrudges: 0
+  trudgesHealthBar: {fileID: 0}
 --- !u!114 &114851409032012304
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,7 +108,7 @@ MonoBehaviour:
   pickupTimeInSeconds: 0.5
   playerTag: Player
   fillMeterWith: 1
-  audioClip: {fileID: 8300000, guid: 11afe3b7ace425144b764845621f8f3d, type: 3}
+  audioClip: {fileID: 8300000, guid: b8861550f813af74483ca87e405778bf, type: 3}
   audioSourceChildNamePickup: Trash pickup
 --- !u!212 &212912155923865326
 SpriteRenderer:

@@ -17,8 +17,6 @@ public class LaserFollowPattern : MonoBehaviour {
     [SerializeField] private AudioClip windDownLaserSound;
 
     List<GameObject> laserList = new List<GameObject>();
-    //GameObject newLaser;
-    //GameObject activeNewLaser;
     bool warningLaserSpawned = false;
     bool activeLaserSpawned = false;
     bool laserReady = false;
@@ -65,7 +63,6 @@ public class LaserFollowPattern : MonoBehaviour {
                     Vector3 laserPosition = new Vector3(this.transform.position.x + distanceFromCenter.x, this.transform.position.y + distanceFromCenter.y, this.transform.position.z + distanceFromCenter.z);
                     var laser = (GameObject)Instantiate(activeLaser, laserPosition, laserList[0].transform.rotation);
                     laserList.Add(laser);
-                    //activeNewLaser = laser;
                     laserList[1].GetComponent<AudioSource>().clip = activeLaserSound;
                     laserList[1].GetComponent<AudioSource>().Play();
                     activeLaserSpawned = true;
@@ -89,15 +86,10 @@ public class LaserFollowPattern : MonoBehaviour {
                         {
                             laserList[1].GetComponent<AudioSource>().Play();
                         }
-                        //for (int i = 0; i < activeNewLaser.GetComponent<AudioSource>().time; i++)
-                        //{
-                        //    activeNewLaser.GetComponent<AudioSource>().pitch -= Time.deltaTime;
-                        //}
                         laserList[1].transform.localScale = new Vector3(laserList[1].transform.localScale.x - (Time.deltaTime * laserGrowthSpeed), 1, 1);
                     }
                     else
                     {
-                        //activeNewLaser.GetComponent<AudioSource>().Stop();
                         Destroy(laserList[1]);
                         laserList.Remove(laserList[1]);
                         laserReadyTimer = tempTimerHolderReadyTimer;
@@ -121,7 +113,6 @@ public class LaserFollowPattern : MonoBehaviour {
         Vector3 laserPosition = new Vector3(this.gameObject.transform.position.x + distanceFromCenter.x, this.gameObject.transform.position.y + distanceFromCenter.y, this.gameObject.transform.position.z + distanceFromCenter.z);
         var laser = (GameObject)Instantiate(laserObject, laserPosition, Quaternion.identity);
         laserList.Add(laser);
-        //newLaser = laser;
         warningLaserSpawned = true;
     }
 }

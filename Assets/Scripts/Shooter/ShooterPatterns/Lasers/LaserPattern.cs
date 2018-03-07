@@ -15,6 +15,9 @@ public class LaserPattern : MonoBehaviour {
     [SerializeField] private float degreesFromCenter = 45f;
     [SerializeField] private float timePerPause = 3f;
     [SerializeField] private float laserStopTimer = 2f;
+    [SerializeField] private AudioClip extractLaserSound;
+    [SerializeField] private AudioClip activeLaserSound;
+    [SerializeField] private AudioClip retractLaserSound;
     GameObject newLaser;
     Vector3 currentPos;
     float extractTimer;
@@ -57,6 +60,11 @@ public class LaserPattern : MonoBehaviour {
             }
         } else
         {
+            newLaser.GetComponent<AudioSource>().clip = activeLaserSound;
+            if (!newLaser.GetComponent<AudioSource>().isPlaying)
+            {
+                newLaser.GetComponent<AudioSource>().Play();
+            }
             extractLaser(newLaser);
             if (EnableRotation)
             {
@@ -78,7 +86,12 @@ public class LaserPattern : MonoBehaviour {
     void extractLaser(GameObject laser)
     {
         if (laser.transform.localScale.x <= maxSize)
-        { 
+        {
+            laser.GetComponent<AudioSource>().clip = extractLaserSound;
+            if (!laser.GetComponent<AudioSource>().isPlaying)
+            {
+               laser.GetComponent<AudioSource>().Play();
+            }
             laser.transform.localScale = new Vector3(laser.transform.localScale.x + (Time.deltaTime * growthSpeed), 1, 1);
         }
     }
@@ -87,6 +100,11 @@ public class LaserPattern : MonoBehaviour {
     {
         if (laser.transform.localScale.x >= 0.01)
         {
+            laser.GetComponent<AudioSource>().clip = retractLaserSound;
+            if (!laser.GetComponent<AudioSource>().isPlaying)
+            {
+                laser.GetComponent<AudioSource>().Play();
+            }
             laser.transform.localScale = new Vector3(laser.transform.localScale.x - (Time.deltaTime * growthSpeed), 1, 1);
         }
     }

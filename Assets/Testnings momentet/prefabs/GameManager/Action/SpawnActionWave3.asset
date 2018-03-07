@@ -14,6 +14,7 @@ MonoBehaviour:
   spawnList:
   - minionPrefabs:
     - {fileID: 1018407611383262, guid: 4338a01f453dfce408449823b0f38a59, type: 2}
+    - {fileID: 1659046324469548, guid: f34559f5852eccd4aacd68e57f10b477, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0.1
     numberOfSpawns: 1
@@ -22,6 +23,6 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 16
     currentDelay: 0.1
-    currentTime: 14.900151
+    currentTime: 4.079997
   orbitSpawnList: []
   pickUpList: []

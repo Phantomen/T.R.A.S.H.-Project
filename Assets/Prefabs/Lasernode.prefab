@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1224027911022068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.49, y: -1.04, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
@@ -73,7 +73,7 @@ MonoBehaviour:
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
   distanceFromCenter: {x: 0, y: 0, z: 0}
-  laserAmount: 4
+  laserAmount: 6
   angleOffset: 360
   startingRotation: 0
   maxSize: 1
@@ -82,7 +82,7 @@ MonoBehaviour:
   startRotatingRight: 1
   timePerPause: 3
   laserStopTimer: 2
-  turnSpeed: 20
+  turnSpeed: 10
 --- !u!114 &114275528115310084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -105,6 +105,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
+  activeLaserSound: {fileID: 8300000, guid: 329eb0a1d09f52548b9f5b250d1825e0, type: 3}
+  retractLaserSound: {fileID: 8300000, guid: d348707fd31d51a4d87bfa0a141b11f1, type: 3}
 --- !u!114 &114863925910433242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -128,8 +131,8 @@ MonoBehaviour:
   laserMaxSize: 1
   laserGrowthSpeed: 1
   warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 8300000, guid: d348707fd31d51a4d87bfa0a141b11f1, type: 3}
 --- !u!212 &212246802134963850
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -162,7 +165,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1111977943
-  m_SortingLayer: 0
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

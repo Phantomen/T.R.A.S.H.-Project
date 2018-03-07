@@ -12,14 +12,17 @@ public class TrashPickup : MonoBehaviour {
     public string playerTag = "Player";
     [Tooltip("Amount that item fills meter with")]
     public int fillMeterWith = 1;
-    private GameObject player;
 
-    private Timer timer;
-    private bool timerOn = false;
-    private PlayerAnimationController playerAnim;
-    private AudioSource audioSource;
     public AudioClip audioClip;
     public string audioSourceChildNamePickup = "Trash pickup";
+    public bool activateHealthBar = false;
+
+    private TrudgesHealthBar trudgesHealthBar;
+    private GameObject player;
+    private AudioSource audioSource;
+    private PlayerAnimationController playerAnim;
+    private Timer timer;
+    private bool timerOn = false;
 
     // Use this for initialization
     void Start()
@@ -33,6 +36,8 @@ public class TrashPickup : MonoBehaviour {
         pointSystem = GameObject.FindGameObjectWithTag("PointSystem").GetComponent<PointSystem>();
 
         audioSource = GameObject.FindGameObjectWithTag("AudioSource").transform.Find(audioSourceChildNamePickup).GetComponent<AudioSource>();
+
+        trudgesHealthBar = GameObject.FindGameObjectWithTag("Bar").GetComponent<TrudgesHealthBar>();
     }
 
     void FixedUpdate()
@@ -60,6 +65,11 @@ public class TrashPickup : MonoBehaviour {
                 else if (gameObject.tag == "Trashbag")
                 {
                     playerAnim.PickedUpBag();
+                }
+
+                if (activateHealthBar && trudgesHealthBar != null)
+                {
+                    trudgesHealthBar.UpdateBar();
                 }
                 pointSystem.FillMeter(fillMeterWith);
                 Destroy(gameObject);
