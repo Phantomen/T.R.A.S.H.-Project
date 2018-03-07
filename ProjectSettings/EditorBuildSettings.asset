@@ -4,4 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/PressToStart.unity
+    guid: ab3bfb3502b85334999b4b0cf39fa9ed
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: c618554d2a9c02e42a821df5880aa79d
+  - enabled: 1
+    path: "Assets/Scenes/Scen f\xF6r testnings momentet.unity"
+    guid: 28fefcfefec0c6540a54a95fd26c111e

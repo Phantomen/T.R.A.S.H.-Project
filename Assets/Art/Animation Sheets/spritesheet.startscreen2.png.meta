@@ -1,19 +1,19 @@
 fileFormatVersion: 2
-guid: 69fdda06779c44e4fa50d979c2e930f2
-timeCreated: 1518620474
+guid: ff9972edc9a1bc64fad127fa2da33fc6
+timeCreated: 1520429073
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: spritesheet.startscreen_0
-    21300002: spritesheet.startscreen_1
-    21300004: spritesheet.startscreen_2
-    21300006: spritesheet.startscreen_3
-    21300008: spritesheet.startscreen_4
-    21300010: spritesheet.startscreen_5
-    21300012: spritesheet.startscreen_6
-    21300014: spritesheet.startscreen_7
-    21300016: spritesheet.startscreen_8
-    21300018: spritesheet.startscreen_9
+    21300000: spritesheet.startscreen2_0
+    21300002: spritesheet.startscreen2_1
+    21300004: spritesheet.startscreen2_2
+    21300006: spritesheet.startscreen2_3
+    21300008: spritesheet.startscreen2_4
+    21300010: spritesheet.startscreen2_5
+    21300012: spritesheet.startscreen2_6
+    21300014: spritesheet.startscreen2_7
+    21300016: spritesheet.startscreen2_8
+    21300018: spritesheet.startscreen2_9
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -88,7 +88,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spritesheet.startscreen_0
+      name: spritesheet.startscreen2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -102,7 +102,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_1
+      name: spritesheet.startscreen2_1
       rect:
         serializedVersion: 2
         x: 256
@@ -116,7 +116,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_2
+      name: spritesheet.startscreen2_2
       rect:
         serializedVersion: 2
         x: 512
@@ -130,7 +130,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_3
+      name: spritesheet.startscreen2_3
       rect:
         serializedVersion: 2
         x: 768
@@ -144,7 +144,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_4
+      name: spritesheet.startscreen2_4
       rect:
         serializedVersion: 2
         x: 1024
@@ -158,7 +158,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_5
+      name: spritesheet.startscreen2_5
       rect:
         serializedVersion: 2
         x: 0
@@ -172,7 +172,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_6
+      name: spritesheet.startscreen2_6
       rect:
         serializedVersion: 2
         x: 256
@@ -186,7 +186,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_7
+      name: spritesheet.startscreen2_7
       rect:
         serializedVersion: 2
         x: 512
@@ -200,7 +200,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_8
+      name: spritesheet.startscreen2_8
       rect:
         serializedVersion: 2
         x: 768
@@ -214,7 +214,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: spritesheet.startscreen_9
+      name: spritesheet.startscreen2_9
       rect:
         serializedVersion: 2
         x: 1024
