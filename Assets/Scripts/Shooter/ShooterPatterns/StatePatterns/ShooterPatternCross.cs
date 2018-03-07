@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ShooterPatternCross : ShooterPattern
 {
-<<<<<<< HEAD
-=======
-
->>>>>>> master
     [Tooltip("What type of bullet the gameobject will shoot")]
     [SerializeField]
     private GameObject bulletPrefab;
@@ -56,11 +52,7 @@ public class ShooterPatternCross : ShooterPattern
 
     private void ShootPattern()
     {
-<<<<<<< HEAD
         for (int si = 0; si < spawnList.Count; si++)
-=======
-        for (int i = 0; i < bulletsPerWave + 1; i++)
->>>>>>> master
         {
             for (int i = 0; i < bulletsPerWave; i++)
             {
@@ -89,7 +81,6 @@ public class ShooterPatternCross : ShooterPattern
 
         GameObjectsTransformList tl = shooterGameObject.GetComponent<GameObjectsTransformList>();
 
-<<<<<<< HEAD
         if (bulletSpawnList.Count > 0
             && tl.transformList.Count > 0
             && tl != null)
@@ -146,11 +137,6 @@ public class ShooterPatternCross : ShooterPattern
         rotateTimer = -rotateSpeed / fireRate;
 
         shootTimer = 1;
-=======
-    public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
-    {
-
->>>>>>> master
     }
 
     //public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
