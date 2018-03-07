@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Trashbag
   - bullet
+  - PointSystem
+  - AudioSource
+  - Spraybottle
+  - Trashbag
+  - Bar
   layers:
   - Default
   - TransparentFX

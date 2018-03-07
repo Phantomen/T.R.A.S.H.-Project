@@ -6,23 +6,22 @@ using UnityEngine.UI;
 public class PointSystem : MonoBehaviour {
 
     //public GameObject player;
-    public GameObject gameOver, youWin, meterUI, audioSource;
+    public GameObject gameOver, youWin, meterUI, audioSource, powerUpReady;
 
     private GameObject player;
 
     public Text life, meter;
-    public int lifeAmount = 3, meterFilled = 1;
+    public int lifeAmount = 3;
     public BackgroundMusic backgroundMusic;
-    //True fills the meter, false depletes meter
-    //public bool depleteOrFill = false;
-    //public List<Sprite> lifeSoap = new List<Sprite>();
     public List<Sprite> meterBar = new List<Sprite>();
+    public int meterGoalvalue;
 
     Image meterImage;
 
     //For when depleteOrFill is true, starts off the value at 0 instead of the meterFilled value
-    private int meterStartValue = 0, meterGoalvalue, maxHealth;
-   // private AudioSource audio;
+    private int meterStartValue = 0, maxHealth, meterFilled = 0;
+    private bool meterFull = false;
+  
 
     // Use this for initialization
     void Start () {
@@ -33,7 +32,7 @@ public class PointSystem : MonoBehaviour {
         life.text = "Life: " + lifeAmount.ToString();
         maxHealth = lifeAmount;
 
-        meterGoalvalue = meterFilled;
+        //meterGoalvalue = meterFilled;
 
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -44,33 +43,27 @@ public class PointSystem : MonoBehaviour {
             lifeAmount -= other;
             life.text = "Life: " + lifeAmount.ToString();
 
-        
-            //soapImage.sprite = lifeSoap[maxHealth - lifeAmount];
-       
-
-
         if (lifeAmount <= 0)
         {
-
             YouLose();
         }
     }
 
     public void FillMeter(int other)
     {
-        meterFilled -= other;
+        meterFilled += other;
 
 
-
-		//Kommenterad bort pga fler sprites i testning
-        //meterImage.sprite = meterBar[meterGoalvalue - meterFilled];
-
-
-
-
-        if (meterFilled == 1)
+        if (meterFull == false)
         {
-            YouWin();
+            meterImage.sprite = meterBar[meterFilled];
+        }
+
+        if (meterFilled == 5 && meterFull == false)
+        {
+            //activateMeter thingy
+            powerUpReady.SetActive(true);
+            meterFull = true;
         }
     }
 
@@ -87,5 +80,16 @@ public class PointSystem : MonoBehaviour {
         gameOver.SetActive(true);
         player.SetActive(false);
         backgroundMusic.StopMusic();
+    }
+
+    void FixedUpdate()
+    {
+       if (Input.GetKeyDown("space") && meterFull == true)
+       {
+            powerUpReady.SetActive(false);
+            meterFull = false;
+            meterFilled = 0;
+            meterImage.sprite = meterBar[meterFilled];
+       }
     }
 }
