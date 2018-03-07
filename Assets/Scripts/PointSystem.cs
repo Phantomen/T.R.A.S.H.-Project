@@ -16,6 +16,8 @@ public class PointSystem : MonoBehaviour {
     public List<Sprite> meterBar = new List<Sprite>();
     public int meterGoalvalue;
 
+    public GameObject[] bullets;
+
     Image meterImage;
 
     //For when depleteOrFill is true, starts off the value at 0 instead of the meterFilled value
@@ -90,6 +92,12 @@ public class PointSystem : MonoBehaviour {
             meterFull = false;
             meterFilled = 0;
             meterImage.sprite = meterBar[meterFilled];
+
+            bullets = GameObject.FindGameObjectsWithTag("bullet");
+            foreach (GameObject bullet in bullets )
+            {
+                Destroy(bullet);
+            }
        }
     }
 }

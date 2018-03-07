@@ -458,7 +458,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 203e7691736da414fafcea21271b600b, type: 2}
   gizmoSize: 0.25
-  phaseBulletSpawnList: []
   minionList: []
   itemList: []
   playerGameObject: {fileID: 0}
@@ -521,7 +520,7 @@ MonoBehaviour:
   powerUpReady: {fileID: 2010933891}
   life: {fileID: 1641990087}
   meter: {fileID: 1255072146}
-  lifeAmount: 50
+  lifeAmount: 3
   backgroundMusic: {fileID: 1389673574}
   meterBar:
   - {fileID: 21300000, guid: 165ea03107cd7d34ebe06be57ed7b701, type: 3}
@@ -531,6 +530,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 174f6e79b0b1b2e4283d2897c84d6dae, type: 3}
   - {fileID: 21300000, guid: 69b384dc9dbec014da6a1a39c488af95, type: 3}
   meterGoalvalue: 6
+  bullets: []
 --- !u!4 &260299327
 Transform:
   m_ObjectHideFlags: 0
