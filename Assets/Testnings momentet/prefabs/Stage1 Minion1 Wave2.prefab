@@ -115,7 +115,7 @@ MonoBehaviour:
     shotNumber: 10
     delayBetweenShots: 1
     delayForFirstShot: 1
-    bulletLifeTime: 5
+    bulletLifeTime: 10
     shotIndex: 0
   startDelay: 0
 --- !u!212 &212161311317415290

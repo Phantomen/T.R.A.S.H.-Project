@@ -458,7 +458,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 11400000, guid: 203e7691736da414fafcea21271b600b, type: 2}
   gizmoSize: 0.25
-  phaseBulletSpawnList: []
   minionList: []
   itemList: []
   playerGameObject: {fileID: 0}
@@ -521,7 +520,7 @@ MonoBehaviour:
   powerUpReady: {fileID: 2010933891}
   life: {fileID: 1641990087}
   meter: {fileID: 1255072146}
-  lifeAmount: 50
+  lifeAmount: 10
   backgroundMusic: {fileID: 1389673574}
   meterBar:
   - {fileID: 21300000, guid: 165ea03107cd7d34ebe06be57ed7b701, type: 3}
@@ -3018,7 +3017,7 @@ Prefab:
     - target: {fileID: 58955618799012184, guid: da11c1cb6982b6f469931a8eb01639fd,
         type: 2}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 58417538413608776, guid: da11c1cb6982b6f469931a8eb01639fd,
         type: 2}
@@ -3128,6 +3127,11 @@ Prefab:
         type: 2}
       propertyPath: m_Radius
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82164578390749564, guid: da11c1cb6982b6f469931a8eb01639fd,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da11c1cb6982b6f469931a8eb01639fd, type: 2}

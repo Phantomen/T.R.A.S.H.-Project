@@ -58,7 +58,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15197846
+  m_Radius: 0.5
 --- !u!95 &95748706748024600
 Animator:
   serializedVersion: 3
@@ -92,6 +92,8 @@ MonoBehaviour:
   playerTag: Player
   fillMeterWith: 1
   audioSourceObject: {fileID: 0}
+  damageTrudges: 0
+  trudgesHealthBar: {fileID: 0}
 --- !u!114 &114643029967120530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,6 +110,7 @@ MonoBehaviour:
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: 3540253293612d6418328509dcc097fa, type: 3}
   audioSourceChildNamePickup: Trash pickup
+  activateHealthBar: 0
 --- !u!212 &212017646108806876
 SpriteRenderer:
   m_ObjectHideFlags: 1

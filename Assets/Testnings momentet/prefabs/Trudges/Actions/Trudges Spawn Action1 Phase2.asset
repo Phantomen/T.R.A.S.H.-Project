@@ -15,8 +15,11 @@ MonoBehaviour:
   orbitSpawnList: []
   pickUpList:
   - minionPrefabs:
-    - {fileID: 1911744203153542, guid: 17e93a41cf4c65b45a665f3255cb867a, type: 2}
-    - {fileID: 1181205295733746, guid: 057c229f707d4494197d2dc0fc8ea1fd, type: 2}
+    - {fileID: 1140019591317774, guid: 48aa0b0b14edbc94a996dddd1d3a6788, type: 2}
+    - {fileID: 1255224754391942, guid: e2efd127fbe2a6143aebbb52504d42b8, type: 2}
+    - {fileID: 1140019591317774, guid: 4e26831d790a02f438830cc66b0a7227, type: 2}
+    - {fileID: 1140019591317774, guid: b64834ba601f5df438185f1515ec2659, type: 2}
+    - {fileID: 1140019591317774, guid: a375ab16a7c009a47973903b0eb88ef4, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0
     numberOfSpawns: 1
@@ -25,4 +28,4 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 0
     currentDelay: 0
-    currentTime: 4.5399966
+    currentTime: 7.7199936

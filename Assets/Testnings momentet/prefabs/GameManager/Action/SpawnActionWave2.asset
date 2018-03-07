@@ -18,18 +18,20 @@ MonoBehaviour:
     spawnStartDelay: 0
     delayBetweenSpawns: 2
     numberOfSpawns: 10
-    currentSpawnCount: 5
+    currentSpawnCount: 10
     destroySpawnedAfterTime: 1
     spawnFromObject: 0
     lifeTime: 12
     currentDelay: 2
-    currentTime: 0.71999514
+    currentTime: 12.040074
   orbitSpawnList: []
   pickUpList:
   - minionPrefabs:
-    - {fileID: 1687764444167374, guid: 5789b9fe04439ba47aacf43426115220, type: 2}
-    - {fileID: 1837525914935328, guid: 45f396e41fb5aa54d94bc111232085fc, type: 2}
-    - {fileID: 1770670686560610, guid: df15615a3b9397748b5b25bace20c45f, type: 2}
+    - {fileID: 1659590428255722, guid: 9073bc16836508c47bd1e1507e148c32, type: 2}
+    - {fileID: 1661135269410120, guid: cc3f273c10156b54c9506843a3491b81, type: 2}
+    - {fileID: 1661135269410120, guid: cabbab4d1295acf4b952902792f18b5b, type: 2}
+    - {fileID: 1661135269410120, guid: 0d9a7eec4e9b2b949817b853f8c57946, type: 2}
+    - {fileID: 1661135269410120, guid: fcf0ec025d0875443a270c49268fc39b, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0
     numberOfSpawns: 1
@@ -38,4 +40,4 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 0
     currentDelay: 0
-    currentTime: 8.72001
+    currentTime: 30.040497

@@ -91,7 +91,8 @@ MonoBehaviour:
   playerTag: Player
   fillMeterWith: 1
   audioSourceObject: {fileID: 0}
-  player: {fileID: 0}
+  damageTrudges: 0
+  trudgesHealthBar: {fileID: 0}
 --- !u!212 &212647075670274940
 SpriteRenderer:
   m_ObjectHideFlags: 1

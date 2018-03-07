@@ -101,7 +101,7 @@ MonoBehaviour:
   distanceFromCenter: 0
   timerPerWave: 0.1
   bulletsPerWave: 1
-  delayBetweenWaves: 0.75
+  delayBetweenWaves: 0.5
   destroyBulletTime: 5
   startDelay: 0
   bulletSpawnPosition:
