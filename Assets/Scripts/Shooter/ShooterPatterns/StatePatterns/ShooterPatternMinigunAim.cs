@@ -82,6 +82,8 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
     public override void Shoot(GameObject shooterGameObject)
     {
+        ClampValues();
+
         currentDelay.Time += Time.deltaTime;
 
         if (currentDelay.Expired == true)
@@ -382,6 +384,8 @@ public class ShooterPatternMinigunAim : ShooterPattern {
         }
 
         delayBetweenBullets = timePerWave / (float)bulletsPerWave;
+
+        ClampValues();
     }
 
 
@@ -418,4 +422,11 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
     //    delayBetweenBullets = timePerWave / (float)bulletsPerWave;
     //}
+
+    public override void ClampValues()
+    {
+        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
+        bulletLifeTime = Mathf.Clamp(bulletLifeTime, 0, float.MaxValue);
+
+    }
 }

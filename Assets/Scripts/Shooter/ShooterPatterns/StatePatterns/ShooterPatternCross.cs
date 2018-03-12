@@ -38,8 +38,7 @@ public class ShooterPatternCross : ShooterPattern
 
     public override void Shoot(GameObject shooterGameObject)
     {
-        fireRate = Mathf.Clamp(fireRate, float.Epsilon, float.MaxValue);
-        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
+        ClampValues();
         shootTimer += Time.deltaTime * fireRate;
 
         if (shootTimer >= 1)
@@ -137,6 +136,8 @@ public class ShooterPatternCross : ShooterPattern
         rotateTimer = -rotateSpeed / fireRate;
 
         shootTimer = 1;
+
+        ClampValues();
     }
 
     //public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
@@ -148,4 +149,11 @@ public class ShooterPatternCross : ShooterPattern
     //        spawnList.Add(shooterGameObject.transform);
     //    }
     //}
+
+    public override void ClampValues()
+    {
+        fireRate = Mathf.Clamp(fireRate, float.Epsilon, float.MaxValue);
+        bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
+        destroyTime = Mathf.Clamp(destroyTime, 0, float.MaxValue);
+    }
 }

@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class ShooterPatternSpread : ShooterPattern
 {
-    public int numberOfWaves = 1;
+    [Tooltip("How many waves it will shoot")]
+    [SerializeField]
+    private int numberOfWaves = 1;
     private int currentWave = 1;
 
 
-    public List<SpreadShot> spreadShotList = new List<SpreadShot>();
-
-
+    [Tooltip("List of how it will shoot")]
+    [SerializeField]
+    private List<SpreadShot> spreadShotList = new List<SpreadShot>();
 
 
     private int listIndex = 0;
@@ -20,11 +22,14 @@ public class ShooterPatternSpread : ShooterPattern
     private Timer currentDelay;
 
 
-    public float startDelay = 0;
+    [Tooltip("Delay before it starts fireing")]
+    [SerializeField]
+    private float startDelay = 0;
 
 
     public override void Shoot(GameObject shooterGameObject)
     {
+        ClampValues();
         if (currentWave <= numberOfWaves)
         {
             currentDelay.Time += Time.deltaTime;
@@ -177,6 +182,13 @@ public class ShooterPatternSpread : ShooterPattern
             listIndex = 0;
             currentWave = 1;
         }
+
+        ClampValues();
+    }
+
+    public override void ClampValues()
+    {
+        numberOfWaves = Mathf.Clamp(numberOfWaves, 1, int.MaxValue);
     }
 
     //public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
