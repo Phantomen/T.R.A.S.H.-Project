@@ -15,9 +15,13 @@ public abstract class ShooterPattern : MonoBehaviour {
 
     //private abstract void ShootPattern();
 
+
     //public abstract void Reset();
 
     public abstract void Reset(GameObject shooterGameObject);
 
     //public abstract void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList);
+
+
+    public abstract void ClampValues();
 }
