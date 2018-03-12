@@ -42,7 +42,7 @@ public class PrefabSpawner : MonoBehaviour {
             bool transformPositionAdded = false;
             for (int spawnIndex = 0; spawnIndex < prefabList[listIndex].spawnList.Count; spawnIndex++)
             {
-                if (prefabList[listIndex].spawnList[spawnIndex] != null)
+                if (prefabList[listIndex].spawnList[spawnIndex] == null)
                 {
                     if (transformPositionAdded == false)
                     {
@@ -69,8 +69,8 @@ public class PrefabSpawner : MonoBehaviour {
                 if (prefabList[listIndex].prefab != null)
                 {
                     var spawnedPrefab = (GameObject)Instantiate(prefabList[listIndex].prefab,
-                        prefabList[listIndex].spawnList[spawnIndex].position,
-                        prefabList[listIndex].spawnList[spawnIndex].rotation);
+                        prefabList[listIndex].spawnList[spawnIndex].transform.position,
+                        prefabList[listIndex].spawnList[spawnIndex].transform.rotation);
 
                     spawnedPrefab.transform.parent = gameObject.transform;
 
@@ -105,6 +105,7 @@ public class PrefabSpawner : MonoBehaviour {
 }
 
 
+[System.Serializable]
 public class PrefabSpawn
 {
     public GameObject prefab;
