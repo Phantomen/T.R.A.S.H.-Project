@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TagTriggerRandomShooter : MonoBehaviour {
 
+    private bool triggered = false;
+
     [Tooltip("The objects to spawn")]
     [SerializeField]
     private List<GameObject> spawnObjectPrefab = new List<GameObject>();
@@ -13,9 +15,9 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     //private List<Transform> spawnPositionsTransforms = new List<Transform>();
 
 
-    [Tooltip("The delay between each spawn")]
+    [Tooltip("Bullets fired per second")]
     [SerializeField]
-    private float spawnDelay = 0.5f;
+    private float firerate = 1f;
 
 
     [Tooltip("Delay before it starts spawning")]
@@ -39,6 +41,10 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     private float yLocalPositionLimitOffset;
 
 
+    [Tooltip("The random degree gets lower at the closer to the end points in the ")]
+    [SerializeField]
+    private bool degreeChangeCloserToEndPoints = true;
+
     [Tooltip("Max degrees")]
     [SerializeField]
     private float maxDegreesFromCenter = 45;
@@ -47,16 +53,10 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     [SerializeField]
     private float minDegreesFromCenter = 0;
 
-    [Tooltip("The random degree gets lower at the closer to the end points in the ")]
-    [SerializeField]
-    private bool degreeChangeCloserToEndPoints = true;
 
     [Tooltip("Time until destroyed")]
     [SerializeField]
     private float destroyTime = 5;
-
-
-    private bool triggered = false;
 
     private bool currentlySpawning;
 
@@ -70,6 +70,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         xLocalPositionLimitOffset = Mathf.Clamp(xLocalPositionLimitOffset, 0, float.MaxValue);
         maxDegreesFromCenter = Mathf.Clamp(maxDegreesFromCenter, 0, 360);
         minDegreesFromCenter = Mathf.Clamp(minDegreesFromCenter, -360, 360);
+        firerate = Mathf.Clamp(firerate, float.MinValue, float.MaxValue);
     }
 
     // Update is called once per frame
@@ -78,9 +79,10 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         xLocalPositionLimitOffset = Mathf.Clamp(xLocalPositionLimitOffset, 0, float.MaxValue);
         maxDegreesFromCenter = Mathf.Clamp(maxDegreesFromCenter, 0, 360);
         minDegreesFromCenter = Mathf.Clamp(minDegreesFromCenter, -360, 360);
+        firerate = Mathf.Clamp(firerate, float.MinValue, float.MaxValue);
 
-        if (true)
-        //if (triggered == true)
+
+        if (triggered == true)
         {
             currentDelay.Time += Time.deltaTime;
 
@@ -88,9 +90,9 @@ public class TagTriggerRandomShooter : MonoBehaviour {
             {
                 currentDelay.Time -= currentDelay.Duration;
 
-                if (currentDelay.Duration != spawnDelay)
+                if (currentDelay.Duration != (1 / firerate))
                 {
-                    currentDelay.Duration = spawnDelay;
+                    currentDelay.Duration = 1 / firerate;
                 }
 
                 Spawn();
@@ -104,9 +106,11 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         {
             if (spawnObjectPrefab[i] != null)
             {
-                float xPositionOffset = -0.001f;//Random.Range(-xLocalPositionLimitOffset, xLocalPositionLimitOffset);
+                //Offset
+                float xPositionOffset = Random.Range(-xLocalPositionLimitOffset, xLocalPositionLimitOffset);
                 float yPositionOffset = Random.Range(-yLocalPositionLimitOffset, yLocalPositionLimitOffset);
 
+                //Rotation of bullet
                 float newRot = Random.Range(-maxDegreesFromCenter, maxDegreesFromCenter);
 
                 if (degreeChangeCloserToEndPoints == true && xLocalPositionLimitOffset > 0)
@@ -114,11 +118,8 @@ public class TagTriggerRandomShooter : MonoBehaviour {
                     if (xPositionOffset > 0)
                     {
                         float multX = xPositionOffset / xLocalPositionLimitOffset;
-                        float degreeChange = maxDegreesFromCenter + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
 
-                        degreeChange = degreeChange - degreeChange * multX;
-
-                        degreeChange = minDegreesFromCenter + degreeChange;
+                        float degreeChange = (minDegreesFromCenter * multX) - (maxDegreesFromCenter * (1 - multX));
 
                         newRot = Random.Range(degreeChange, maxDegreesFromCenter);
                     }
@@ -126,12 +127,8 @@ public class TagTriggerRandomShooter : MonoBehaviour {
                     else if (xPositionOffset < 0)
                     {
                         float multX = xPositionOffset / -xLocalPositionLimitOffset;
-                        float degreeChange = maxDegreesFromCenter + Mathf.Sqrt(Mathf.Pow(minDegreesFromCenter, 2));
 
-                        degreeChange = degreeChange - degreeChange * multX;
-
-                        degreeChange = minDegreesFromCenter + degreeChange;
-                        Debug.Log(degreeChange);
+                        float degreeChange = (minDegreesFromCenter * multX) - (maxDegreesFromCenter * (1 - multX));
 
                         newRot = -1 * Random.Range(degreeChange, maxDegreesFromCenter);
                     }
@@ -150,5 +147,21 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         var bullet = (GameObject)Instantiate(bulletPrefab, newPos, newRotation * transform.rotation);
 
         Destroy(bullet, destroyTime);
+    }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (triggered == false)
+        {
+            for (int i = 0; i < triggerTags.Length; i++)
+            {
+                if (collision.tag == triggerTags[i])
+                {
+                    triggered = true;
+                    break;
+                }
+            }
+        }
     }
 }
