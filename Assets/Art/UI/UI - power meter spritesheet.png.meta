@@ -1,18 +1,25 @@
 fileFormatVersion: 2
-guid: f50a252811303be45b94431390141dc4
-timeCreated: 1520847587
+guid: 73b5bbadc23218841913680d9b4e9ed9
+timeCreated: 1520854027
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Trudges_-_Attack_Spreadsheet_0
-    21300002: Trudges_-_Attack_Spreadsheet_1
-    21300004: Trudges_-_Attack_Spreadsheet_2
-    21300006: Trudges_-_Attack_Spreadsheet_3
-    21300008: Trudges_-_Attack_Spreadsheet_4
-    21300010: Trudges_-_Attack_Spreadsheet_5
-    21300012: Trudges_-_Attack_Spreadsheet_6
-    21300014: Trudges_-_Attack_Spreadsheet_7
-    21300016: Trudges_-_Attack_Spreadsheet_8
+    21300000: UI - power meter spritesheet_0
+    21300002: UI - power meter spritesheet_1
+    21300004: UI - power meter spritesheet_2
+    21300006: UI - power meter spritesheet_3
+    21300008: UI - power meter spritesheet_4
+    21300010: UI - power meter spritesheet_5
+    21300012: UI - power meter spritesheet_6
+    21300014: UI - power meter spritesheet_7
+    21300016: UI - power meter spritesheet_8
+    21300018: UI - power meter spritesheet_9
+    21300020: UI - power meter spritesheet_10
+    21300022: UI - power meter spritesheet_11
+    21300024: UI - power meter spritesheet_12
+    21300026: UI - power meter spritesheet_13
+    21300028: UI - power meter spritesheet_14
+    21300030: UI - power meter spritesheet_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -55,7 +62,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 80
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -87,7 +94,63 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_0
+      name: UI - power meter spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 384
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_4
       rect:
         serializedVersion: 2
         x: 0
@@ -95,13 +158,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_1
+      name: UI - power meter spritesheet_5
       rect:
         serializedVersion: 2
         x: 128
@@ -109,13 +172,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_2
+      name: UI - power meter spritesheet_6
       rect:
         serializedVersion: 2
         x: 256
@@ -123,13 +186,27 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_3
+      name: UI - power meter spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -137,13 +214,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_4
+      name: UI - power meter spritesheet_9
       rect:
         serializedVersion: 2
         x: 128
@@ -151,13 +228,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_5
+      name: UI - power meter spritesheet_10
       rect:
         serializedVersion: 2
         x: 256
@@ -165,13 +242,27 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_6
+      name: UI - power meter spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_12
       rect:
         serializedVersion: 2
         x: 0
@@ -179,13 +270,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_7
+      name: UI - power meter spritesheet_13
       rect:
         serializedVersion: 2
         x: 128
@@ -193,13 +284,13 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_8
+      name: UI - power meter spritesheet_14
       rect:
         serializedVersion: 2
         x: 256
@@ -207,7 +298,21 @@ TextureImporter:
         width: 128
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: UI - power meter spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

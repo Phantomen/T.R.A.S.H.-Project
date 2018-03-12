@@ -24,7 +24,9 @@ public class TrudgesHealthBar : MonoBehaviour {
     public void UpdateBar()
     {
         damageTaken ++;
-        healthBarSpriterenderer.sprite = healthBar[damageTaken];
+            
+            healthBarSpriterenderer.sprite = healthBar[damageTaken];
+        
 
         if (damageTaken == 5)
         {

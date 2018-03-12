@@ -58,8 +58,13 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
+<<<<<<< Updated upstream:Assets/Testnings momentet/prefabs/Trudges/Phase1/Spraybottle (1).prefab
   m_Radius: 0.15197846
 --- !u!95 &95494752413867010
+=======
+  m_Radius: 0.27
+--- !u!95 &95068128492547680
+>>>>>>> Stashed changes:Assets/Testnings momentet/prefabs/PickUps/Wave1/Spraybottle (1) 2.prefab
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -89,6 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupTimeInSeconds: 0.5
   playerTag: Player
+  trashTag: Trashbag
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: 3540253293612d6418328509dcc097fa, type: 3}
   audioSourceChildNamePickup: Trash pickup

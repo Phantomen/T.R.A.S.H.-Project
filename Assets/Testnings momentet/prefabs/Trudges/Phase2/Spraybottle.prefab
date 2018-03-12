@@ -58,8 +58,13 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
+<<<<<<< Updated upstream:Assets/Testnings momentet/prefabs/Trudges/Phase2/Spraybottle.prefab
   m_Radius: 0.15197846
 --- !u!95 &95704884088242938
+=======
+  m_Radius: 0.27
+--- !u!95 &95068128492547680
+>>>>>>> Stashed changes:Assets/Testnings momentet/prefabs/PickUps/Wave1/Spraybottle (1) 3.prefab
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -90,6 +95,7 @@ MonoBehaviour:
   pickupTimeInSeconds: 0.5
   pointSystem: {fileID: 0}
   playerTag: Player
+  trashTag: Trashbag
   fillMeterWith: 1
   audioSourceObject: {fileID: 0}
   damageTrudges: 0

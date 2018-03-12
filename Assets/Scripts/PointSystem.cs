@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PointSystem : MonoBehaviour {
 
     //public GameObject player;
-    public GameObject gameOver, youWin, meterUI, audioSource, powerUpReady;
+    public GameObject gameOver, youWin, meterUI, audioSource, powerUpReady, flashingMeterUI, emptyingMeterUI;
 
     private GameObject player;
 
@@ -23,7 +23,8 @@ public class PointSystem : MonoBehaviour {
     //For when depleteOrFill is true, starts off the value at 0 instead of the meterFilled value
     private int meterStartValue = 0, maxHealth, meterFilled = 0;
     private bool meterFull = false;
-  
+    private float tempTime;
+
 
     // Use this for initialization
     void Start () {
@@ -65,7 +66,9 @@ public class PointSystem : MonoBehaviour {
         {
             //activateMeter thingy
             powerUpReady.SetActive(true);
+            flashingMeterUI.SetActive(true);
             meterFull = true;
+            
         }
     }
 
@@ -89,6 +92,8 @@ public class PointSystem : MonoBehaviour {
        if (Input.GetKeyDown("space") && meterFull == true)
        {
             powerUpReady.SetActive(false);
+            flashingMeterUI.SetActive(false);
+            emptyingMeterUI.SetActive(true);
             meterFull = false;
             meterFilled = 0;
             meterImage.sprite = meterBar[meterFilled];

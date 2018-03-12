@@ -1,18 +1,21 @@
 fileFormatVersion: 2
-guid: f50a252811303be45b94431390141dc4
-timeCreated: 1520847587
+guid: 9ecb605229196844eb14791303e1edae
+timeCreated: 1520859759
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Trudges_-_Attack_Spreadsheet_0
-    21300002: Trudges_-_Attack_Spreadsheet_1
-    21300004: Trudges_-_Attack_Spreadsheet_2
-    21300006: Trudges_-_Attack_Spreadsheet_3
-    21300008: Trudges_-_Attack_Spreadsheet_4
-    21300010: Trudges_-_Attack_Spreadsheet_5
-    21300012: Trudges_-_Attack_Spreadsheet_6
-    21300014: Trudges_-_Attack_Spreadsheet_7
-    21300016: Trudges_-_Attack_Spreadsheet_8
+    21300000: Pickup_Bottle_Alert_0
+    21300002: Pickup_Bottle_Alert_1
+    21300004: Pickup_Bottle_Alert_2
+    21300006: Pickup_Bottle_Alert_3
+    21300008: Pickup_Bottle_Alert_4
+    21300010: Pickup_Bottle_Alert_5
+    21300012: Pickup_Bottle_Alert_6
+    21300014: Pickup_Bottle_Alert_7
+    21300016: Pickup_Bottle_Alert_8
+    21300018: Pickup_Bottle_Alert_9
+    21300020: Pickup_Bottle_Alert_10
+    21300022: Pickup_Bottle_Alert_11
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -87,13 +90,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_0
+      name: Pickup_Bottle_Alert_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 256
-        width: 128
-        height: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -101,13 +104,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_1
+      name: Pickup_Bottle_Alert_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup_Bottle_Alert_2
       rect:
         serializedVersion: 2
         x: 128
-        y: 256
-        width: 128
-        height: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,13 +132,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_2
+      name: Pickup_Bottle_Alert_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup_Bottle_Alert_4
       rect:
         serializedVersion: 2
         x: 256
-        y: 256
-        width: 128
-        height: 128
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,13 +160,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_3
+      name: Pickup_Bottle_Alert_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 128
-        height: 128
+        x: 320
+        y: 64
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,41 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_5
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_6
+      name: Pickup_Bottle_Alert_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,13 +188,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_7
+      name: Pickup_Bottle_Alert_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup_Bottle_Alert_8
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -199,13 +216,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Trudges_-_Attack_Spreadsheet_8
+      name: Pickup_Bottle_Alert_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup_Bottle_Alert_10
       rect:
         serializedVersion: 2
         x: 256
         y: 0
-        width: 128
-        height: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Pickup_Bottle_Alert_11
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
