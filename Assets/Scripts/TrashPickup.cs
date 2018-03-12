@@ -21,6 +21,7 @@ public class TrashPickup : MonoBehaviour {
     private GameObject player;
     private AudioSource audioSource;
     private PlayerAnimationController playerAnim;
+    private Animator ownAnim;
     private Timer timer;
     private bool timerOn = false;
 
@@ -32,6 +33,7 @@ public class TrashPickup : MonoBehaviour {
 
         player = GameObject.FindGameObjectWithTag(playerTag);
         playerAnim = player.GetComponent<PlayerAnimationController>();
+        ownAnim = GetComponent<Animator>();
 
         pointSystem = GameObject.FindGameObjectWithTag("PointSystem").GetComponent<PointSystem>();
 
@@ -84,6 +86,8 @@ public class TrashPickup : MonoBehaviour {
         if (other.gameObject.tag == playerTag)
         {
             timerOn = true;
+            ownAnim.SetBool("Jumping", true);
+            
         }
     }
 
@@ -93,7 +97,9 @@ public class TrashPickup : MonoBehaviour {
         if (other.gameObject.tag == playerTag)
         {
             timer.Time = 0;
-            timerOn = false;
+            timerOn = false;            
+            ownAnim.SetBool("Jumping", false);
+            
         }
     }
 }

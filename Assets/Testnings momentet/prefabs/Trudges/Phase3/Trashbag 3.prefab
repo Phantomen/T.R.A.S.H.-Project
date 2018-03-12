@@ -9,46 +9,46 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1305904989810590}
+  m_RootGameObject: {fileID: 1671627057456354}
   m_IsPrefabParent: 1
---- !u!1 &1305904989810590
+--- !u!1 &1671627057456354
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4411956599173480}
-  - component: {fileID: 212239982796137262}
-  - component: {fileID: 58422234324208278}
-  - component: {fileID: 95795898910400272}
-  - component: {fileID: 114946516771199378}
+  - component: {fileID: 4868894255935484}
+  - component: {fileID: 212091166579574034}
+  - component: {fileID: 58275593390723672}
+  - component: {fileID: 95490725987083172}
+  - component: {fileID: 114784425878775008}
   m_Layer: 0
-  m_Name: Trashbag (1)
+  m_Name: Trashbag 3
   m_TagString: Trashbag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4411956599173480
+--- !u!4 &4868894255935484
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1305904989810590}
+  m_GameObject: {fileID: 1671627057456354}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 1, z: 0}
+  m_LocalPosition: {x: 4, y: -3, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &58422234324208278
+--- !u!58 &58275593390723672
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1305904989810590}
+  m_GameObject: {fileID: 1671627057456354}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -58,13 +58,13 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
---- !u!95 &95795898910400272
+--- !u!95 &95490725987083172
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1305904989810590}
+  m_GameObject: {fileID: 1671627057456354}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e340395cfbfd1a247bae32b61ac4dc3d, type: 2}
@@ -75,12 +75,12 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114946516771199378
+--- !u!114 &114784425878775008
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1305904989810590}
+  m_GameObject: {fileID: 1671627057456354}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94cb0972aa449f243a198559eac09431, type: 3}
@@ -92,12 +92,12 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: b8861550f813af74483ca87e405778bf, type: 3}
   audioSourceChildNamePickup: Trash pickup
   activateHealthBar: 1
---- !u!212 &212239982796137262
+--- !u!212 &212091166579574034
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1305904989810590}
+  m_GameObject: {fileID: 1671627057456354}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 0c2de800ba1dcdd4fa37f949b0eadf88
-timeCreated: 1519218005
+guid: 02cfeec07467c0a46a819d77a64b21aa
+timeCreated: 1520845675
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: "UI - bakgrund spelsk\xE4rm_0"
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -40,13 +41,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -76,7 +77,21 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: "UI - bakgrund spelsk\xE4rm_0"
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 0
+        width: 105
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 

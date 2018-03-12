@@ -55,7 +55,9 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1318410379317502, guid: a9c842612a7b1c94da0a260c5ab26051,
     type: 2}
   bulletsPerWave: 6
-  fireRate: 10
+  fireRate: 6
   destroyTime: 15
+>>>>>>> Stashed changes
+>>>>>>> RebeckaBranch
   rotateSpeed: 45
   distanceFromCenter: 1
