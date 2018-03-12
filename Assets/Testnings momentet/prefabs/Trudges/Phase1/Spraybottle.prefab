@@ -59,9 +59,12 @@ CircleCollider2D:
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
 <<<<<<< Updated upstream:Assets/Testnings momentet/prefabs/Trudges/Phase1/Spraybottle.prefab
+<<<<<<< Updated upstream:Assets/Testnings momentet/prefabs/Trudges/Phase1/Spraybottle.prefab
   m_Radius: 0.15197846
 --- !u!95 &95496258178071806
 =======
+=======
+>>>>>>> Stashed changes:Assets/Testnings momentet/prefabs/PickUps/Wave1/Spraybottle (1) 2.prefab
   m_Radius: 0.27
 --- !u!95 &95068128492547680
 >>>>>>> Stashed changes:Assets/Testnings momentet/prefabs/PickUps/Wave1/Spraybottle (1) 1.prefab

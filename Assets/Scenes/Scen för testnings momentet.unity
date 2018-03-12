@@ -622,7 +622,11 @@ MonoBehaviour:
   life: {fileID: 1641990087}
   meter: {fileID: 1255072146}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   lifeAmount: 3
+=======
+  lifeAmount: 100
+>>>>>>> Stashed changes
 =======
   lifeAmount: 100
 >>>>>>> Stashed changes

@@ -55,9 +55,12 @@ MonoBehaviour:
     type: 2}
   bulletsPerWave: 6
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   fireRate: 10
   destroyTimer: 5
 =======
+=======
+>>>>>>> Stashed changes
   fireRate: 6
   destroyTime: 15
 >>>>>>> Stashed changes

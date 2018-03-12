@@ -59,7 +59,11 @@ CircleCollider2D:
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   m_Radius: 0.15197846
+=======
+  m_Radius: 0.27
+>>>>>>> Stashed changes
 =======
   m_Radius: 0.27
 >>>>>>> Stashed changes
