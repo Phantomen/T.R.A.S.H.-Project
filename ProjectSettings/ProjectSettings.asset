@@ -610,9 +610,9 @@ PlayerSettings:
     UNet: 1
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 2211d0c2-2c91-47aa-80b2-8166c9b89bc7
+  cloudProjectId: 9404e6ef-1aad-4e8d-9b31-541143d4a6f6
   projectName: T.R.A.S.H. Apeeling Games
-  organizationId: trash-f28cfa9a-3ba9-4f9d-9e03-bc3c736f10cc
+  organizationId: unity_zlk5elsqyuxy9w
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

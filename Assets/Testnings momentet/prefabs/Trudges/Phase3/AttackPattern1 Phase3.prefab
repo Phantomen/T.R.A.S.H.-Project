@@ -51,11 +51,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7e9a10655712ab449928fe4f6477aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletSpawnList: []
   bulletPrefab: {fileID: 1718528284402092, guid: 6a1d43f74b094fd479bba6b09c2d350b,
     type: 2}
   bulletsPerWave: 2
   fireRate: 10
-  destroyTimer: 12
+  destroyTime: 15
   rotateSpeed: 90
   distanceFromCenter: 0.1
-  degreesOffset: 0

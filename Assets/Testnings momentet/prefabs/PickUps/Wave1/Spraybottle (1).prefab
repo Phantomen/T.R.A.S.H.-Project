@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1661135269410120}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1, y: 1, z: 0}
+  m_LocalPosition: {x: -2, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -58,15 +58,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.048021525, y: 0}
   serializedVersion: 2
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  m_Radius: 0.15197846
-=======
   m_Radius: 0.27
->>>>>>> Stashed changes
-=======
-  m_Radius: 0.27
->>>>>>> Stashed changes
 --- !u!95 &95068128492547680
 Animator:
   serializedVersion: 3
@@ -101,6 +93,7 @@ MonoBehaviour:
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: 3540253293612d6418328509dcc097fa, type: 3}
   audioSourceChildNamePickup: Trash pickup
+  activateHealthBar: 0
 --- !u!114 &114929861726289370
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -117,6 +110,8 @@ MonoBehaviour:
   playerTag: Player
   fillMeterWith: 1
   audioSourceObject: {fileID: 0}
+  damageTrudges: 0
+  trudgesHealthBar: {fileID: 0}
 --- !u!212 &212476805183820840
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dd10ee45741c74a9e049dcdaeeacbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletSpawnList:
+  - phaseIndex: 0
+    spawnPointIndex: 
   bulletPrefab: {fileID: 1950253078743948, guid: 551af4dcb9e1e3b48b75804b7b0d8ce8,
     type: 2}
   lerpType: 0
