@@ -4,7 +4,7 @@ using UnityEngine;
 
 
 [CreateAssetMenu(menuName = "Actions/SpawnRingOfAnnihilation")]
-public class SpawnRingOfAnnihilation : StateAction {
+public class SpawnRingOfAnnihilationAction : StateAction {
 
     [Tooltip("The blank")]
     [SerializeField]
