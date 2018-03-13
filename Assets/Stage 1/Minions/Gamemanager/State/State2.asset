@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: State2
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: 750519926f97e6a4481636182340d466, type: 2}
+  - {fileID: 11400000, guid: e502a27475274434881182c3f9b4042b, type: 2}
   transitions:
   - decision: {fileID: 11400000, guid: bf07a4cc356e17148ba25527a85e5502, type: 2}
-    trueState: {fileID: 11400000, guid: e5d41a8350a8e7249a1af494dec8e0cb, type: 2}
+    trueState: {fileID: 11400000, guid: 34915cd32011bae4aa275ae068be1127, type: 2}
     falseState: {fileID: 11400000}
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

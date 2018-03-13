@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnList:
   - minionPrefabs:
-    - {fileID: 1507402502412494, guid: f8d785641b8f2124683f8a2b0fd99841, type: 2}
-    - {fileID: 1086042788409744, guid: 82e3297d062cb6b49921347844654674, type: 2}
+    - {fileID: 1729157061602682, guid: 292632703f05bbf44b72695ef7aca0f8, type: 2}
+    - {fileID: 1622451403340558, guid: ef6b2cf5de47b3b41b4b134cd0ab2af4, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 2
     numberOfSpawns: 10

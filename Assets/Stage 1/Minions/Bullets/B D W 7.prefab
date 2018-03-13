@@ -9,48 +9,48 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1729157061602682}
+  m_RootGameObject: {fileID: 1095849363163726}
   m_IsPrefabParent: 1
---- !u!1 &1729157061602682
+--- !u!1 &1095849363163726
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4449404600317124}
-  - component: {fileID: 212663624918109702}
-  - component: {fileID: 50478397752337926}
-  - component: {fileID: 114651247112702772}
-  - component: {fileID: 114816306934209680}
-  - component: {fileID: 95980699491469072}
-  m_Layer: 0
-  m_Name: Wave 2 Minion R
-  m_TagString: Untagged
+  - component: {fileID: 4423616599395330}
+  - component: {fileID: 212057079254993498}
+  - component: {fileID: 50227897490244590}
+  - component: {fileID: 114052107883977264}
+  - component: {fileID: 95587281607841704}
+  - component: {fileID: 114680951338122338}
+  m_Layer: 8
+  m_Name: B D W 7
+  m_TagString: bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4449404600317124
+--- !u!4 &4423616599395330
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -4, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1095849363163726}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!50 &50478397752337926
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50227897490244590
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1095849363163726}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -64,16 +64,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &95980699491469072
+--- !u!95 &95587281607841704
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1095849363163726}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c71e6bc8bd813a4d967ac7c141c3250, type: 2}
+  m_Controller: {fileID: 9100000, guid: 92eef7688c2039f4092f6c79a66cf06a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -81,49 +81,35 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114651247112702772
+--- !u!114 &114052107883977264
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1095849363163726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818a4b90017920f488fbb4801779b155, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114680951338122338
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1095849363163726}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bb268a4672a84814eacdf489954f6493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
---- !u!114 &114816306934209680
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 497f7403b610cfd458b8784f2c644b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfWaves: 40
-  spreadShotList:
-  - bulletPrefab: {fileID: 1966829560777176, guid: 635640c84928bdb4294f3416f59f7e45,
-      type: 2}
-    bulletSpawnPosition: []
-    spawnDistanceFromCenter: 0.2
-    degreesFromCenter: 360
-    bulletsPerShot: 7
-    shotNumber: 10
-    delayBetweenShots: 1
-    delayForFirstShot: 1
-    bulletLifeTime: 10
-    shotIndex: 0
-  startDelay: 0
---- !u!212 &212663624918109702
+--- !u!212 &212057079254993498
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1095849363163726}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -152,12 +138,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: c040259f1b22bf44db67fadc0276cb86, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a7ac7f109a4b2442b6e5d6d080fdf3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.09, y: 0.14}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

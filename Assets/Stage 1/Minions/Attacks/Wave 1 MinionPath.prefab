@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4352862580724812}
   m_Layer: 0
-  m_Name: Stage1 MinionWave1 Wave4
+  m_Name: Wave 1 MinionPath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
