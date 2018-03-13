@@ -13,8 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnList:
   - minionPrefabs:
-    - {fileID: 1544024329197108, guid: 0e8ede8573db45d42a88b94d69630f89, type: 2}
-    - {fileID: 1946860044629476, guid: 7be94b3bc31570845bd4a03d6b02cf4a, type: 2}
+    - {fileID: 1326785638982650, guid: 9e49c6468e625604abc18f7512cc55d4, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0.1
     numberOfSpawns: 1
@@ -23,6 +22,17 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 16
     currentDelay: 0.1
-    currentTime: 3.839997
+    currentTime: 3.6799972
+  - minionPrefabs:
+    - {fileID: 1544024329197108, guid: 0e8ede8573db45d42a88b94d69630f89, type: 2}
+    spawnStartDelay: 4
+    delayBetweenSpawns: 0.1
+    numberOfSpawns: 1
+    currentSpawnCount: 0
+    destroySpawnedAfterTime: 1
+    spawnFromObject: 0
+    lifeTime: 10
+    currentDelay: 4
+    currentTime: 3.6799972
   orbitSpawnList: []
   pickUpList: []

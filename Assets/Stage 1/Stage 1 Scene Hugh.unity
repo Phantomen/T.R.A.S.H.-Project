@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049fdd102723ef246be52ce60d6e54c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: b7520020688e5704abf9555b205f4be8, type: 2}
+  currentState: {fileID: 11400000, guid: 8b01cbbf898c9874da96754e8d943669, type: 2}
   gizmoSize: 0.25
   minionList: []
   itemList: []

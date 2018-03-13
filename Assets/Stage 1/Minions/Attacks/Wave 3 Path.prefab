@@ -132,21 +132,21 @@ MonoBehaviour:
   closed: 0
   points:
   - controlType: 0
-    positionLocal: {x: 0, y: 6, z: 0}
+    positionLocal: {x: 0, y: 3, z: 0}
     controlFirstLocal: {x: 0, y: 0, z: 0.05}
     controlSecondLocal: {x: 0, y: 0, z: -0.05}
     pointTransform: {fileID: 0}
     curve: {fileID: 114490258593990380}
     fieldsValues: []
   - controlType: 0
-    positionLocal: {x: 0, y: 3, z: 0}
+    positionLocal: {x: 0, y: 0, z: 0}
     controlFirstLocal: {x: 1, y: 0, z: 0}
     controlSecondLocal: {x: -1, y: 0, z: 0}
     pointTransform: {fileID: 0}
     curve: {fileID: 114490258593990380}
     fieldsValues: []
   - controlType: 0
-    positionLocal: {x: 0, y: 6, z: 0}
+    positionLocal: {x: 0, y: 3, z: 0}
     controlFirstLocal: {x: 1, y: 0, z: 0}
     controlSecondLocal: {x: -1, y: 0, z: 0}
     pointTransform: {fileID: 0}
@@ -270,7 +270,7 @@ MonoBehaviour:
   repeatCircle: []
   bouncingBetweenPoints: 0
   bounceBetweenPoints: {x: 0, y: 0}
-  objectPrefab: {fileID: 1544024329197108, guid: 0e8ede8573db45d42a88b94d69630f89,
+  objectPrefab: {fileID: 1946860044629476, guid: 7be94b3bc31570845bd4a03d6b02cf4a,
     type: 2}
   destroyObjectTimeAfterPathDestroyed: 20
 --- !u!114 &114923135463861602

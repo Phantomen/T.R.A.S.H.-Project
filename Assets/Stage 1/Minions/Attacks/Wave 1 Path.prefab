@@ -26,7 +26,7 @@ GameObject:
   - component: {fileID: 114200948490482252}
   - component: {fileID: 114339432529463264}
   m_Layer: 0
-  m_Name: Stage1 Path1 Wave2
+  m_Name: Wave 1 Path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -384,6 +384,6 @@ MonoBehaviour:
     currentCircles: 0
   bouncingBetweenPoints: 0
   bounceBetweenPoints: {x: 0, y: 0}
-  objectPrefab: {fileID: 1999821546778160, guid: d01febb9afe9b1646bb76cccc70e7016,
+  objectPrefab: {fileID: 1261776477355446, guid: 900887d57c35c4c4eb69a04e26f07125,
     type: 2}
   destroyObjectTimeAfterPathDestroyed: 20

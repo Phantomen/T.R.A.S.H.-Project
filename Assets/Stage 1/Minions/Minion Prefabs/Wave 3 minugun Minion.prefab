@@ -9,48 +9,47 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1729157061602682}
+  m_RootGameObject: {fileID: 1544024329197108}
   m_IsPrefabParent: 1
---- !u!1 &1729157061602682
+--- !u!1 &1544024329197108
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4449404600317124}
-  - component: {fileID: 212663624918109702}
-  - component: {fileID: 50478397752337926}
-  - component: {fileID: 114651247112702772}
-  - component: {fileID: 114816306934209680}
-  - component: {fileID: 95980699491469072}
+  - component: {fileID: 4417337098570796}
+  - component: {fileID: 212286745970763744}
+  - component: {fileID: 50098123218842730}
+  - component: {fileID: 95279933146273494}
+  - component: {fileID: 114556375260949574}
   m_Layer: 0
-  m_Name: Wave 2 Minion R
+  m_Name: Wave 3 minugun Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4449404600317124
+--- !u!4 &4417337098570796
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -4, y: 5, z: 0}
+  m_GameObject: {fileID: 1544024329197108}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!50 &50478397752337926
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50098123218842730
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1544024329197108}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -63,17 +62,17 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
---- !u!95 &95980699491469072
+  m_Constraints: 0
+--- !u!95 &95279933146273494
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1544024329197108}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1c71e6bc8bd813a4d967ac7c141c3250, type: 2}
+  m_Controller: {fileID: 9100000, guid: fef6cf91554b1534390c772e070608c6, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -81,49 +80,38 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114651247112702772
+--- !u!114 &114556375260949574
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1544024329197108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb268a4672a84814eacdf489954f6493, type: 3}
+  m_Script: {fileID: 11500000, guid: 51e451a734808cb4ca4bd73e724116f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
---- !u!114 &114816306934209680
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 497f7403b610cfd458b8784f2c644b02, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  numberOfWaves: 40
-  spreadShotList:
-  - bulletPrefab: {fileID: 1095849363163726, guid: 3e5cd97f8dc41d84a82f7b44a478ca6b,
-      type: 2}
-    bulletSpawnPosition: []
-    spawnDistanceFromCenter: 0.2
-    degreesFromCenter: 360
-    bulletsPerShot: 7
-    shotNumber: 10
-    delayBetweenShots: 1
-    delayForFirstShot: 1
-    bulletLifeTime: 10
-    shotIndex: 0
+  bulletPrefab: {fileID: 1095849363163726, guid: fd6c6a3d2472b7945aa2e4a5842b03b7,
+    type: 2}
+  lerpType: 0
+  InstantTurnOnStartOfNewWave: 0
+  atStartAimedAtPlayer: 1
+  continueToTurnDuringDelayBetweenWaves: 1
+  turningSpeed: 100
+  distanceFromCenter: 0
+  timerPerWave: 0.1
+  bulletsPerWave: 1
+  delayBetweenWaves: 0.5
+  destroyBulletTime: 5
   startDelay: 0
---- !u!212 &212663624918109702
+  bulletSpawnPosition:
+  - {fileID: 4417337098570796}
+--- !u!212 &212286745970763744
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729157061602682}
+  m_GameObject: {fileID: 1544024329197108}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -152,10 +140,10 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300014, guid: c040259f1b22bf44db67fadc0276cb86, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cd25524f8bf2c974b9370e66287b8cd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 1
+  m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}
   m_AdaptiveModeThreshold: 0.5
