@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e850d2583c0c734d8bfa25057421773, type: 3}
+  m_Name: T SpawnPickup
+  m_EditorClassIdentifier: 
+  pickupList:
+  - {fileID: 1020100998897280, guid: 8c6ca039b46442b47a4d1297816582a3, type: 2}
+  - {fileID: 1487527534228176, guid: 87f5ae8e694e66f479e416061d3b2a04, type: 2}
+  - {fileID: 1001701036780182, guid: d41d91b783d3b8b4eaf83c057f469f0f, type: 2}
+  - {fileID: 1091294214424932, guid: 501acbc186bccd64793f02121cc515bf, type: 2}
+  - {fileID: 1980547236841882, guid: c635bbfda7b297748bc9b654225913eb, type: 2}

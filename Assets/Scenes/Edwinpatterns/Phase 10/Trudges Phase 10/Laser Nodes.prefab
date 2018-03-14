@@ -474,12 +474,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114063654277937042
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -493,6 +493,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -501,6 +503,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -526,6 +529,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114109215616810606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -548,6 +554,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114171941731975668
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,12 +621,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114229532417124190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -631,6 +640,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -639,6 +650,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -664,6 +676,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114260158209065160
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,12 +698,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114261478084479796
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -711,6 +726,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114274724394501074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -730,12 +748,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114332007161657862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -755,12 +773,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114332868599019212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -780,12 +798,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114349602233062612
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -805,12 +823,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
-  warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  warningLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114401689296531490
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -824,6 +842,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -832,6 +852,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -863,6 +884,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -871,6 +894,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -896,6 +920,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114462133484188826
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -915,12 +942,12 @@ MonoBehaviour:
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserReadyTimer: 0.5
   laserLoadUpTimer: 0.5
-  laserStayActiveTimer: 0.5
+  laserStayActiveTimer: 1
   laserMaxSize: 1
   laserGrowthSpeed: 1
   warningLaserSound: {fileID: 8300000, guid: 30bf9090bb375934c9f7e35810ec2c89, type: 3}
-  activeLaserSound: {fileID: 8300000, guid: 0b6a7830654a68c4699e4887eaffde7e, type: 3}
-  windDownLaserSound: {fileID: 8300000, guid: a042bbddf6dee4346867ec02fba9decb, type: 3}
+  activeLaserSound: {fileID: 8300000, guid: bdba85ed20d632240ba2ef80b4738930, type: 3}
+  windDownLaserSound: {fileID: 0}
 --- !u!114 &114528693095815956
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -964,6 +991,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -972,6 +1001,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -1012,6 +1042,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114705346118582398
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1025,6 +1058,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -1033,6 +1068,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -1049,6 +1085,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -1057,6 +1095,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -1073,6 +1112,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 1296081081461362, guid: f3358a398db17444d9838a710f3a5840,
     type: 2}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 0, y: 0, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -1081,6 +1122,7 @@ MonoBehaviour:
   growthSpeed: 1
   EnableRotation: 1
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 20
@@ -1121,6 +1163,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!114 &114870699046977908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1143,6 +1188,9 @@ MonoBehaviour:
   degreesFromCenter: 25
   timePerPause: 3.8
   laserStopTimer: 2
+  extractLaserSound: {fileID: 0}
+  activeLaserSound: {fileID: 0}
+  retractLaserSound: {fileID: 0}
 --- !u!212 &212266388430237398
 SpriteRenderer:
   m_ObjectHideFlags: 1

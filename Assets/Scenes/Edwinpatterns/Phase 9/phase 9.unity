@@ -241,6 +241,11 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: activeLaserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f46626a925bbbb49a74b1afec53a288, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
   m_IsPrefabParent: 0
@@ -402,6 +407,11 @@ Prefab:
       propertyPath: laserStopTimer
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: activeLaserSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f46626a925bbbb49a74b1afec53a288, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
   m_IsPrefabParent: 0
@@ -422,6 +432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserPrefab: {fileID: 0}
+  warningLaser: {fileID: 0}
+  activeLaserSound: {fileID: 0}
   distanceFromCenter: {x: 3, y: 3, z: 0}
   laserAmount: 4
   angleOffset: 360
@@ -430,6 +442,7 @@ MonoBehaviour:
   growthSpeed: 0
   EnableRotation: 0
   startRotatingRight: 1
+  timeBeforeStart: 5
   timePerPause: 3
   laserStopTimer: 2
   turnSpeed: 3

@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a197bbe4be69464ba4aec49f1f7492b, type: 3}
+  m_Name: Wave 3 SpawnAction
+  m_EditorClassIdentifier: 
+  spawnList:
+  - minionPrefabs:
+    - {fileID: 1326785638982650, guid: 9e49c6468e625604abc18f7512cc55d4, type: 2}
+    spawnStartDelay: 0
+    delayBetweenSpawns: 0.1
+    numberOfSpawns: 1
+    currentSpawnCount: 1
+    destroySpawnedAfterTime: 1
+    spawnFromObject: 0
+    lifeTime: 13
+    currentDelay: 0.1
+    currentTime: 14.040132
+  - minionPrefabs:
+    - {fileID: 1544024329197108, guid: 0e8ede8573db45d42a88b94d69630f89, type: 2}
+    spawnStartDelay: 4
+    delayBetweenSpawns: 0.1
+    numberOfSpawns: 1
+    currentSpawnCount: 1
+    destroySpawnedAfterTime: 1
+    spawnFromObject: 0
+    lifeTime: 10
+    currentDelay: 0.1
+    currentTime: 10.040037
+  orbitSpawnList: []
+  pickUpList: []
