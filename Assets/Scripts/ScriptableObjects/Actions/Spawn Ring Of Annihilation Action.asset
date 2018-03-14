@@ -1,0 +1,14 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a17c2ae20198e8d45bd971593b3d6c74, type: 3}
+  m_Name: Spawn Ring Of Annihilation Action
+  m_EditorClassIdentifier: 
+  blank: {fileID: 1048653860342526, guid: 334579675f46cd147b356447c2974819, type: 2}
