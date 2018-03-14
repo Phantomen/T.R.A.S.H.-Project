@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114224627483704814}
   - component: {fileID: 199799900302095650}
   - component: {fileID: 58752053350676940}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: RingOfDestruction
   m_TagString: DestructionRing
   m_Icon: {fileID: 0}
@@ -50,7 +50,6 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1263175252878054}
   m_Enabled: 1
-
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114785881504387882}
   - component: {fileID: 199803301308849742}
   - component: {fileID: 58844277080129700}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: RingOfAnnihilation
   m_TagString: DestructionRing
   m_Icon: {fileID: 0}

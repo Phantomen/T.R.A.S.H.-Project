@@ -73,10 +73,10 @@ MonoBehaviour:
   bulletPrefab: {fileID: 1095849363163726, guid: 489ceed36fe3c66439baaf961de7e703,
     type: 2}
   spawnList: []
-  bulletsPerWave: 1
+  bulletsPerWave: 2
   fireRate: 50
   destroyTime: 10
-  rotateSpeed: 1000
+  rotateSpeed: 528
   distanceFromCenter: 0.5
 --- !u!212 &212652503869365374
 SpriteRenderer:

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50308207377315678}
   - component: {fileID: 114633343657717344}
   - component: {fileID: 95057985655878002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Wave 3 Minion 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

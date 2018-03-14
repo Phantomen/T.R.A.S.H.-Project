@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 95707030091081000}
   - component: {fileID: 114920734579896406}
   m_Layer: 0
-  m_Name: Wave 5 Minion
+  m_Name: Wave 6 Minion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35,7 +35,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573285592734448}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -70,13 +70,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c85fba9fa6835fc4aa13cf9aecd92124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1095849363163726, guid: 489ceed36fe3c66439baaf961de7e703,
+  bulletPrefab: {fileID: 1095849363163726, guid: 32d8b818b12e6e44a863423eb7937ed7,
     type: 2}
   spawnList: []
-  bulletsPerWave: 5
-  fireRate: 50
+  bulletsPerWave: 10
+  fireRate: 15
   destroyTime: 10
-  rotateSpeed: 999
+  rotateSpeed: 199
   distanceFromCenter: 0.5
 --- !u!212 &212652503869365374
 SpriteRenderer:
