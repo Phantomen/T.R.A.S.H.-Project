@@ -49,6 +49,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4420746250601580}
+  - component: {fileID: 114207872534478328}
   m_Layer: 0
   m_Name: Trash spawner
   m_TagString: Untagged
@@ -184,3 +185,23 @@ Transform:
   m_Father: {fileID: 4420746250601580}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114207872534478328
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1253147925564910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4567d0f7bedf3499b3cc3e45d16903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyWhenEmpty: 1
+  prefabList:
+  - prefab: {fileID: 1140019591317774, guid: 0b68bf3ca01fdb0438f5026e9a2d0441, type: 2}
+    spawnList:
+    - {fileID: 4129701557133954}
+    - {fileID: 4240765164711764}
+    - {fileID: 4084969146553366}
+    - {fileID: 4484244986228002}
+    - {fileID: 4175680639488380}
