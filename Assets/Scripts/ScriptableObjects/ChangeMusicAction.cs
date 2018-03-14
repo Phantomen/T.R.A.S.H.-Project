@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[CreateAssetMenu(menuName = "Actions/ChangeMusic")]
 public class ChangeMusicAction : StateAction {
 
     [Tooltip("The clip that starts playing")]
     [SerializeField]
-    private AudioClip startclip;
+    private AudioClip startClip;
 
     [Tooltip("The clip that will loop after teh startclip is done")]
     [SerializeField]
     private AudioClip loopClip;
+
+    private bool triggered = false;
 
     public override void Act(StateController controller)
     {
@@ -19,16 +23,20 @@ public class ChangeMusicAction : StateAction {
 
     private void ChangeMusic()
     {
-        GameObject audioS = GameObject.FindGameObjectWithTag("AudioSource");
+        if (triggered == false)
+        {
+            triggered = true;
 
-        BackgroundMusic bm = audioS.GetComponentInChildren<BackgroundMusic>();
+            GameObject audioS = GameObject.FindGameObjectWithTag("AudioSource");
 
-        MonoBehaviour monoBehavior = new MonoBehaviour();
-        monoBehavior.StartCoroutine(bm.PlayEngineSound(startclip, loopClip));
+            BackgroundMusic bm = audioS.GetComponentInChildren<BackgroundMusic>();
+
+            bm.ChangeMusic(startClip, loopClip);
+        }
     }
 
     public override void Reset(StateController controller)
     {
-        throw new System.NotImplementedException();
+        triggered = false;
     }
 }
