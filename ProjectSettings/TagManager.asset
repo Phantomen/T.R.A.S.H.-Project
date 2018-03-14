@@ -10,7 +10,6 @@ TagManager:
   - Spraybottle
   - Trashbag
   - Bar
-  - ButtonActivated
   layers:
   - Default
   - TransparentFX

@@ -5,20 +5,19 @@ using UnityEngine.UI;
 
 public class SoundSettingInPlay : MonoBehaviour {
 
-    public Sprite buttonOn, buttonOff;
-    public GameObject toggleButton;
+   
+    public TogglButtonImage toggleButton;
     public bool muteWithSpacebar = false, isButton = false;
     AudioSource audiosource;
-    Image buttonImage;
+    
 	// Use this for initialization
 	void Start ()
     {
         audiosource = GetComponent<AudioSource>();
-
+       
         if (isButton)
         {
-            buttonImage = toggleButton.GetComponent<Image>();
-            buttonImage.sprite = buttonOn;
+            toggleButton = toggleButton.GetComponent<TogglButtonImage>();
         }
 	}
 	
@@ -34,15 +33,7 @@ public class SoundSettingInPlay : MonoBehaviour {
         audiosource.mute = !audiosource.mute;
         if (isButton)
         {
-            if (buttonImage.sprite == buttonOn)
-            {
-                buttonImage.sprite = buttonOff;
-            }
-            else if (buttonImage.sprite == buttonOff)
-            {
-                buttonImage.sprite = buttonOn;
-            }
-
+            toggleButton.ToggleSprite();
 
         }
     }
