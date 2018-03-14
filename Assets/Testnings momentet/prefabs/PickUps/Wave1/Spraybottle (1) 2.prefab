@@ -60,8 +60,6 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.27
 --- !u!95 &95068128492547680
->>>>>>> Stashed changes:Assets/Testnings momentet/prefabs/PickUps/Wave1/Spraybottle (1) 1.prefab
->>>>>>> RebeckaBranch:Assets/Testnings momentet/prefabs/Trudges/Phase1/Spraybottle.prefab
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1

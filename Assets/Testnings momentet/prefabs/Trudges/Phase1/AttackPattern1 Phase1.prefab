@@ -57,7 +57,5 @@ MonoBehaviour:
   bulletsPerWave: 6
   fireRate: 6
   destroyTime: 15
->>>>>>> Stashed changes
->>>>>>> RebeckaBranch
   rotateSpeed: 45
   distanceFromCenter: 1

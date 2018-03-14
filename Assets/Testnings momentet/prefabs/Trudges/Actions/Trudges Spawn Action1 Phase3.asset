@@ -24,17 +24,20 @@ MonoBehaviour:
     spawnFromObject: 1
     lifeTime: 0
     currentDelay: 0
-    currentTime: 10.2800455
+    currentTime: 0.02
   pickUpList:
   - minionPrefabs:
->>>>>>> Stashed changes
->>>>>>> RebeckaBranch
-    spawnStartDelay: 0
-    delayBetweenSpawns: 0
+    - {fileID: 1671627057456354, guid: 71d7bff48300ef24ba6eb86aae3e84fb, type: 2}
+    - {fileID: 1671627057456354, guid: fe4a9a87e9c72c94890d0049fb0a6e98, type: 2}
+    - {fileID: 1671627057456354, guid: 9a67cdf89c8a8d34da0b00ff7d5dc21f, type: 2}
+    - {fileID: 1671627057456354, guid: 2156b2337ab423b40ac5d039194dd4d4, type: 2}
+    - {fileID: 1671627057456354, guid: 5b183c77d986a0b43bc7a0419d54e2da, type: 2}
+    spawnStartDelay: 1
+    delayBetweenSpawns: 1
     numberOfSpawns: 1
-    currentSpawnCount: 1
-    destroySpawnedAfterTime: 0
+    currentSpawnCount: 0
+    destroySpawnedAfterTime: 1
     spawnFromObject: 0
-    lifeTime: 0
-    currentDelay: 0
-    currentTime: 10.2800455
+    lifeTime: 10
+    currentDelay: 1
+    currentTime: 0.02

@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4460792375085398}
-  - component: {fileID: 114872168237020128}
   - component: {fileID: 212264717667425774}
   - component: {fileID: 58748686403187438}
   - component: {fileID: 95494131370562930}
@@ -93,25 +92,6 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: b8861550f813af74483ca87e405778bf, type: 3}
   audioSourceChildNamePickup: Trash pickup
   activateHealthBar: 0
---- !u!114 &114872168237020128
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1255224754391942}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b994f54e002ac4ba7e6244d49e0624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupTimeInSeconds: 0.5
-  pointSystem: {fileID: 0}
-  playerTag: Player
-  fillMeterWith: 1
-  audioSourceObject: {fileID: 0}
-  damageTrudges: 0
-  trudgesHealthBar: {fileID: 114776986533680354, guid: 549f6269ad27e1f4d8dc347114ba1727,
-    type: 2}
 --- !u!212 &212264717667425774
 SpriteRenderer:
   m_ObjectHideFlags: 1
