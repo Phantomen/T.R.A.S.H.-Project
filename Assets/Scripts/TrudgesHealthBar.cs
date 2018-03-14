@@ -26,11 +26,24 @@ public class TrudgesHealthBar : MonoBehaviour {
         damageTaken ++;
             
             healthBarSpriterenderer.sprite = healthBar[damageTaken];
-        
+    }
 
-        if (damageTaken == 5)
+    public void ResetBar()
+    {
+        damageTaken = 0;
+
+        healthBarSpriterenderer.sprite = healthBar[damageTaken];
+    }
+
+    public bool CheckFullDamage()
+    {
+        bool fullDamage = false;
+
+        if (damageTaken >= healthBar.Count - 1)
         {
-            pointSystem.YouWin();
+            fullDamage = true;
         }
+
+        return fullDamage;
     }
 }

@@ -14,8 +14,7 @@ public class BackgroundMusic : MonoBehaviour {
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(playEngineSound());
-
+        StartCoroutine(PlayEngineSound(engineStartClip, engineLoopClip));
 	}
 	
 	// Update is called once per frame
@@ -29,14 +28,14 @@ public class BackgroundMusic : MonoBehaviour {
 
     //}
 
-    IEnumerator playEngineSound()
+    public IEnumerator PlayEngineSound(AudioClip startClip, AudioClip loopClip)
     {
-        audioSource.clip = engineStartClip;
+        audioSource.clip = startClip;
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);
         if (keepPlaying)
         {
-        audioSource.clip = engineLoopClip;
+        audioSource.clip = loopClip;
         audioSource.Play();
         }
     }
