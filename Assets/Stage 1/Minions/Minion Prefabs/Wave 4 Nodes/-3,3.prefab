@@ -55,4 +55,4 @@ MonoBehaviour:
   prefabList:
   - prefab: {fileID: 1573285592734448, guid: fc11539c8f1001341b88ec452a682d2f, type: 2}
     spawnList:
-    - {fileID: 0}
+    - {fileID: 4017644778666562}

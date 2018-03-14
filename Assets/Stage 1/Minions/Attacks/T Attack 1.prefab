@@ -9,50 +9,53 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1643955189126834}
+  m_RootGameObject: {fileID: 1693333701216144}
   m_IsPrefabParent: 1
---- !u!1 &1643955189126834
+--- !u!1 &1693333701216144
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4296266562824704}
-  - component: {fileID: 114872760467567924}
+  - component: {fileID: 4543034823179760}
+  - component: {fileID: 114954485817976044}
   m_Layer: 0
-  m_Name: 1,1
+  m_Name: T Attack 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4296266562824704
+--- !u!4 &4543034823179760
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643955189126834}
+  m_GameObject: {fileID: 1693333701216144}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114872760467567924
+--- !u!114 &114954485817976044
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643955189126834}
+  m_GameObject: {fileID: 1693333701216144}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e4567d0f7bedf3499b3cc3e45d16903, type: 3}
+  m_Script: {fileID: 11500000, guid: c7e9a10655712ab449928fe4f6477aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyWhenEmpty: 1
-  prefabList:
-  - prefab: {fileID: 1573285592734448, guid: fc11539c8f1001341b88ec452a682d2f, type: 2}
-    spawnList:
-    - {fileID: 4296266562824704}
+  bulletSpawnList: []
+  bulletPrefab: {fileID: 1095849363163726, guid: 501d3e105ee7647479fc1a2fc3ddba6c,
+    type: 2}
+  bulletsPerWave: 4
+  fireRate: 1
+  destroyTime: 15
+  rotateSpeed: 0
+  distanceFromCenter: 0.5

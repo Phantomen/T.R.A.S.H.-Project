@@ -272,7 +272,7 @@ MonoBehaviour:
   bounceBetweenPoints: {x: 0, y: 0}
   objectPrefab: {fileID: 1946860044629476, guid: 7be94b3bc31570845bd4a03d6b02cf4a,
     type: 2}
-  destroyObjectTimeAfterPathDestroyed: 20
+  destroyObjectTimeAfterPathDestroyed: 1
 --- !u!114 &114923135463861602
 MonoBehaviour:
   m_ObjectHideFlags: 2

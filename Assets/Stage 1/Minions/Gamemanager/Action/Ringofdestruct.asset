@@ -8,20 +8,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a197bbe4be69464ba4aec49f1f7492b, type: 3}
-  m_Name: SpawnTrudges
+  m_Script: {fileID: 11500000, guid: b621f83233c76704a96672d584bb5693, type: 3}
+  m_Name: Ringofdestruct
   m_EditorClassIdentifier: 
   spawnList:
   - minionPrefabs:
-    - {fileID: 1052713426006280, guid: efeba4cf263fd5d438c296f67425f589, type: 2}
+    - {fileID: 1048653860342526, guid: 334579675f46cd147b356447c2974819, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0
-    numberOfSpawns: 1
-    currentSpawnCount: 1
+    numberOfSpawns: 0
+    currentSpawnCount: 0
     destroySpawnedAfterTime: 0
     spawnFromObject: 0
     lifeTime: 0
     currentDelay: 0
-    currentTime: 2.1599987
-  orbitSpawnList: []
-  pickUpList: []
+    currentTime: 10.000039

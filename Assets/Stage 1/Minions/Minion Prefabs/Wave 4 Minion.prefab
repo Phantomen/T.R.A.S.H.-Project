@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4034347371474966}
   - component: {fileID: 212652503869365374}
   - component: {fileID: 95707030091081000}
-  - component: {fileID: 114690603013425402}
+  - component: {fileID: 114920734579896406}
   m_Layer: 0
   m_Name: Wave 4 Minion
   m_TagString: Untagged
@@ -51,7 +51,7 @@ Animator:
   m_GameObject: {fileID: 1573285592734448}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6f194f1bd1658424d8a1d3ca5fc0297b, type: 2}
+  m_Controller: {fileID: 9100000, guid: bc72e7c4013f88441a2da5cb42e0e09b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -59,7 +59,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114690603013425402
+--- !u!114 &114920734579896406
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -67,17 +67,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1573285592734448}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7e9a10655712ab449928fe4f6477aa3, type: 3}
+  m_Script: {fileID: 11500000, guid: c85fba9fa6835fc4aa13cf9aecd92124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletSpawnList: []
   bulletPrefab: {fileID: 1095849363163726, guid: 489ceed36fe3c66439baaf961de7e703,
     type: 2}
-  bulletsPerWave: 4
-  fireRate: 1
-  destroyTime: 5
-  rotateSpeed: 0
-  distanceFromCenter: 0
+  spawnList: []
+  bulletsPerWave: 1
+  fireRate: 50
+  destroyTime: 10
+  rotateSpeed: 1000
+  distanceFromCenter: 0.5
 --- !u!212 &212652503869365374
 SpriteRenderer:
   m_ObjectHideFlags: 1
