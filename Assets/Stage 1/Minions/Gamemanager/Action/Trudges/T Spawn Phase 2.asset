@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a197bbe4be69464ba4aec49f1f7492b, type: 3}
+  m_Name: T Spawn Phase 2
+  m_EditorClassIdentifier: 
+  spawnList:
+  - minionPrefabs:
+    - {fileID: 1217393096149340, guid: 6908512f32bdb0a4099a0df694c1c781, type: 2}
+    - {fileID: 1749410428025458, guid: fb76c3768e265654ca9766487f52177f, type: 2}
+    - {fileID: 1954057833107496, guid: 21e29f0b02bd3bf48956473075966d56, type: 2}
+    - {fileID: 1534725622759194, guid: 5355f639f6167074db4504a7d9774795, type: 2}
+    spawnStartDelay: 0
+    delayBetweenSpawns: 0
+    numberOfSpawns: 1
+    currentSpawnCount: 1
+    destroySpawnedAfterTime: 0
+    spawnFromObject: 0
+    lifeTime: 40
+    currentDelay: 0
+    currentTime: 109.273674
+  orbitSpawnList: []
+  pickUpList: []

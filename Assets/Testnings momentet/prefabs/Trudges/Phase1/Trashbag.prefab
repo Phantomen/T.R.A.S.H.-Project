@@ -92,7 +92,7 @@ MonoBehaviour:
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: b8861550f813af74483ca87e405778bf, type: 3}
   audioSourceChildNamePickup: Trash pickup
-  activateHealthBar: 0
+  activateHealthBar: 1
 --- !u!114 &114254823254225150
 MonoBehaviour:
   m_ObjectHideFlags: 1
