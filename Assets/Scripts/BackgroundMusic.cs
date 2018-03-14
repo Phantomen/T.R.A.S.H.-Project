@@ -31,6 +31,7 @@ public class BackgroundMusic : MonoBehaviour {
     public IEnumerator PlayEngineSound(AudioClip startClip, AudioClip loopClip)
     {
         audioSource.clip = startClip;
+        Debug.Log(startClip);
         audioSource.Play();
         yield return new WaitForSeconds(audioSource.clip.length);
         if (keepPlaying)
@@ -38,6 +39,11 @@ public class BackgroundMusic : MonoBehaviour {
         audioSource.clip = loopClip;
         audioSource.Play();
         }
+    }
+
+    public void ChangeMusic(AudioClip startClip, AudioClip loopClip)
+    {
+        StartCoroutine(PlayEngineSound(startClip, loopClip));
     }
 
     public void StopMusic()

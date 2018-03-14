@@ -14,5 +14,6 @@ MonoBehaviour:
   actions:
   - {fileID: 11400000, guid: 3a845fc39bee2164e9ee2c101a448d2e, type: 2}
   - {fileID: 11400000, guid: 8fb831335e656444fa79b12771500621, type: 2}
+  - {fileID: 11400000, guid: 8eacb92557aefbb4baaa6aebbc158c52, type: 2}
   transitions: []
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

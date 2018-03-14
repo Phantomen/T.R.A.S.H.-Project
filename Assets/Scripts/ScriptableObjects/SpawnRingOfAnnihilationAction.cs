@@ -16,6 +16,7 @@ public class SpawnRingOfAnnihilationAction : StateAction {
     {
         if (triggered == false)
         {
+            triggered = true;
             TriggedBlank(controller);
         }
     }
