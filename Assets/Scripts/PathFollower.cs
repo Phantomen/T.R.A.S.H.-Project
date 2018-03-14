@@ -13,9 +13,9 @@ public class PathFollower : MonoBehaviour {
 
     public enum OverflowType
     {
-        Cycle = 0,
-        PingPong,
-        Stop
+        Stop = 0,
+        Cycle = 1,
+        PingPong = 2
     }
 
     public enum DestructionType
@@ -116,6 +116,22 @@ public class PathFollower : MonoBehaviour {
 
 
         GetComponent<BGCcCursorObjectTranslate>().ObjectToManipulate = objectToMove.transform;
+
+
+        switch (overflowType)
+        {
+            case OverflowType.Stop:
+                cursorLinear.OverflowControl = BGCcCursorChangeLinear.OverflowControlEnum.Stop;
+                break;
+
+            case OverflowType.Cycle:
+                cursorLinear.OverflowControl = BGCcCursorChangeLinear.OverflowControlEnum.Cycle;
+                break;
+
+            case OverflowType.PingPong:
+                cursorLinear.OverflowControl = BGCcCursorChangeLinear.OverflowControlEnum.PingPong;
+                break;
+        }
     }
 	
 	// Update is called once per frame
@@ -754,12 +770,8 @@ public class PathFollower : MonoBehaviour {
 
         else if (overflowType == OverflowType.Stop)
         {
-            //Bool pathFinished = true;
-
-            //Set so it moves to the next state
-            //objectToMove.getComponent<finishedPath>.nextAction();
-            //Destroy(gameObject); //Destroys the path and not the gameobject that moved
-            //DestroyGameObject();
+            pointIndex = 0;
+            DestroyGameObject();
         }
     }
 

@@ -20,8 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4243724765915578}
   - component: {fileID: 198904250143824234}
-  - component: {fileID: 199803301308849742}
   - component: {fileID: 114785881504387882}
+  - component: {fileID: 199803301308849742}
+  - component: {fileID: 58844277080129700}
   m_Layer: 0
   m_Name: RingOfAnnihilation
   m_TagString: DestructionRing
@@ -42,6 +43,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &58844277080129700
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1048653860342526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.0001
 --- !u!114 &114785881504387882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -265,7 +281,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 40
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -2441,7 +2457,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     range: {x: 0, y: 1}
   CollisionModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 3
     type: 1
     collisionMode: 1

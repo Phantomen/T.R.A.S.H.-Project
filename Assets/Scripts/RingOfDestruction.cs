@@ -6,26 +6,34 @@ public class RingOfDestruction : MonoBehaviour {
 
     private ParticleSystem parSys;
 
-    List<ParticleSystem.Particle> enterList = new List<ParticleSystem.Particle>();
+    CircleCollider2D col2D;
+
 
     // Use this for initialization
     void Start () {
         parSys = GetComponent<ParticleSystem>();
-	}
+        col2D = GetComponent<CircleCollider2D>();
 
-    //void OnParticleTrigger()
-    //{
-    //    int numEnter = parSys.GetTriggerParticles(ParticleSystemTriggerEventType.Enter, enterList);
-    //    Debug.Log(numEnter);
+        col2D.enabled = false;
+    }
 
-    //    for (int i = 0; i < numEnter; i++)
-    //    {
-    //        Debug.Log("HIT");
-    //    }
-    //}
-
-    void OnParticleCollision(GameObject other)
+    private void Update()
     {
-        Destroy(other);
+        if (parSys.isPlaying == true)
+        {
+            col2D.enabled = true;
+        }
+
+        else
+        {
+            col2D.enabled = false;
+        }
+
+        col2D.radius = (parSys.time / parSys.startLifetime) * (parSys.startSize / 2);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Destroy(collision.gameObject);
     }
 }
