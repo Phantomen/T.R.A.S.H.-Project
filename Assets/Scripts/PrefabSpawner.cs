@@ -57,6 +57,11 @@ public class PrefabSpawner : MonoBehaviour {
                     }
                 }
             }
+
+            if (prefabList[listIndex].spawnList.Count == 0)
+            {
+                prefabList[listIndex].spawnList.Add(transform);
+            }
         }
     }
 
