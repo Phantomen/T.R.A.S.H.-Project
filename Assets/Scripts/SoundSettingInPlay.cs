@@ -7,7 +7,7 @@ public class SoundSettingInPlay : MonoBehaviour {
 
    
     public TogglButtonImage toggleButton;
-    public bool muteWithSpacebar = false, isButton = false;
+    public bool isButton = false;
     AudioSource audiosource;
     
 	// Use this for initialization
@@ -15,18 +15,11 @@ public class SoundSettingInPlay : MonoBehaviour {
     {
         audiosource = GetComponent<AudioSource>();
        
-        if (isButton)
-        {
+        
             toggleButton = toggleButton.GetComponent<TogglButtonImage>();
-        }
+        
 	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && muteWithSpacebar)
-            ToggleSound();
-    }
+
 
     public void ToggleSound()
     {
