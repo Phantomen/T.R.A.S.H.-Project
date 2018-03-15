@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 95373669184962858}
   - component: {fileID: 114305481019202458}
   - component: {fileID: 60726173188284786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet Spear
   m_TagString: bullet
   m_Icon: {fileID: 0}

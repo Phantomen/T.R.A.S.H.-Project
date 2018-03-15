@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114359232181076550}
   - component: {fileID: 95760617971387128}
   - component: {fileID: 114345932055719114}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet Triangle
   m_TagString: bullet
   m_Icon: {fileID: 0}

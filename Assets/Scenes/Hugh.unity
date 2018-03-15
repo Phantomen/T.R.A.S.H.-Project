@@ -998,6 +998,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 69b384dc9dbec014da6a1a39c488af95, type: 3}
   meterGoalvalue: 6
   bullets: []
+  blank: {fileID: 1263175252878054, guid: d35128db07751e0408a6ab84df0dd626, type: 2}
 --- !u!4 &260299327
 Transform:
   m_ObjectHideFlags: 0
