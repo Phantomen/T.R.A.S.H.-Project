@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1617743352973702}
+  m_IsPrefabParent: 1
+--- !u!1 &1617743352973702
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4397575901916500}
+  - component: {fileID: 114767732115237614}
+  m_Layer: 0
+  m_Name: PointSystem
+  m_TagString: PointSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4397575901916500
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617743352973702}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114767732115237614
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1617743352973702}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df0a1e02782d3d14c8f75d00d7a2c283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameOver: {fileID: 0}
+  youWin: {fileID: 0}
+  meterUI: {fileID: 0}
+  audioSource: {fileID: 0}
+  powerUpReady: {fileID: 0}
+  flashingMeterUI: {fileID: 0}
+  emptyingMeterUI: {fileID: 0}
+  life: {fileID: 0}
+  meter: {fileID: 0}
+  lifeAmount: 100
+  backgroundMusic: {fileID: 0}
+  meterBar:
+  - {fileID: 21300000, guid: 165ea03107cd7d34ebe06be57ed7b701, type: 3}
+  - {fileID: 21300000, guid: ec86bc13e44740e4cb36797a75b7af81, type: 3}
+  - {fileID: 21300000, guid: f9af43d3c04bad742a94bca9032ce424, type: 3}
+  - {fileID: 21300000, guid: 8c68552832852af40bbb79c77184691b, type: 3}
+  - {fileID: 21300000, guid: 174f6e79b0b1b2e4283d2897c84d6dae, type: 3}
+  - {fileID: 21300000, guid: 69b384dc9dbec014da6a1a39c488af95, type: 3}
+  meterGoalvalue: 6
+  bullets: []
+  blank: {fileID: 1263175252878054, guid: d35128db07751e0408a6ab84df0dd626, type: 2}
