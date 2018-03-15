@@ -40,7 +40,10 @@ public class TrudgesHealthBar : MonoBehaviour {
         healthBarSpriterenderer.sprite = healthBar[damageTaken];
 
         //Play damage sound
-        //Do not play sound if damage taken == 0
+        if (damageTaken < healthBar.Count - 1)
+        {
+            AudioSource.PlayClipAtPoint(damageSound, new Vector3());
+        }
     }
 
     public void ResetBar()
@@ -50,9 +53,9 @@ public class TrudgesHealthBar : MonoBehaviour {
         healthBarSpriterenderer.sprite = healthBar[damageTaken];
 
         //Play PhaseChangeSound
+        AudioSource.PlayClipAtPoint(phaseChangeSound, new Vector3());
 
-        //Animator, play the damage animation
-
+        //Plays the "slam" animation once 
         bossAnimator.SetTrigger("Slam");
     }
 
