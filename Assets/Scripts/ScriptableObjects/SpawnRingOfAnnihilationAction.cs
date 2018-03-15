@@ -23,7 +23,7 @@ public class SpawnRingOfAnnihilationAction : StateAction {
 
     private void TriggedBlank(StateController controller)
     {
-        Instantiate(blank, controller.playerGameObject.transform.position, new Quaternion());
+        Instantiate(blank, controller.gameObject.transform.position, new Quaternion());
     }
 
 

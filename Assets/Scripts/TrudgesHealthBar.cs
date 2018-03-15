@@ -12,12 +12,24 @@ public class TrudgesHealthBar : MonoBehaviour {
     private SpriteRenderer healthBarSpriterenderer;
     private PointSystem pointSystem;
 
+    [Tooltip("Sound to play when boss takes damage")]
+    [SerializeField]
+    private AudioClip damageSound;
+
+    [Tooltip("Sound to play when boss changes phase (reset healthbar)")]
+    [SerializeField]
+    private AudioClip phaseChangeSound;
+
+    private Animator bossAnimator;
+
     // Use this for initialization
     void Start ()
     {
         healthBarSpriterenderer = healthBarObject.GetComponent<SpriteRenderer>();
         healthBarSpriterenderer.sprite = healthBar[0];
         pointSystem = GameObject.FindGameObjectWithTag("PointSystem").GetComponent<PointSystem>();
+
+        bossAnimator = gameObject.transform.parent.gameObject.GetComponentInChildren<Animator>();
     }
 
 
@@ -25,7 +37,13 @@ public class TrudgesHealthBar : MonoBehaviour {
     {
         damageTaken ++;
             
-            healthBarSpriterenderer.sprite = healthBar[damageTaken];
+        healthBarSpriterenderer.sprite = healthBar[damageTaken];
+
+        //Play damage sound
+        if (damageTaken < healthBar.Count - 1)
+        {
+            AudioSource.PlayClipAtPoint(damageSound, new Vector3());
+        }
     }
 
     public void ResetBar()
@@ -33,6 +51,12 @@ public class TrudgesHealthBar : MonoBehaviour {
         damageTaken = 0;
 
         healthBarSpriterenderer.sprite = healthBar[damageTaken];
+
+        //Play PhaseChangeSound
+        AudioSource.PlayClipAtPoint(phaseChangeSound, new Vector3());
+
+        //Plays the "slam" animation once 
+        bossAnimator.SetTrigger("Slam");
     }
 
     public bool CheckFullDamage()

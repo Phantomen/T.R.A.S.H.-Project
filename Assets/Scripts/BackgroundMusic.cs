@@ -31,7 +31,6 @@ public class BackgroundMusic : MonoBehaviour {
     public IEnumerator PlayEngineSound(AudioClip startClip, AudioClip loopClip)
     {
         audioSource.clip = startClip;
-        Debug.Log(startClip);
         audioSource.Play();
         yield return new WaitForSecondsRealtime(audioSource.clip.length);
         if (keepPlaying)
