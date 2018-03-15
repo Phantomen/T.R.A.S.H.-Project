@@ -10,6 +10,11 @@ public class BossPickupSpawnerAction : StateAction {
     private GameObject[] pickupList = new GameObject[5];
     private int currentSpawnIndex = 0;
 
+    [Tooltip("The delay before the first spawn")]
+    [SerializeField]
+    private float startDelay = 0;
+    private float currentTime = 0;
+
     private GameObject currentPickupInScene = null; 
 
 
@@ -24,15 +29,25 @@ public class BossPickupSpawnerAction : StateAction {
 
     private void SpawnPickups()
     {
-        var pickup = (GameObject)Instantiate(pickupList[currentSpawnIndex]);
-        currentPickupInScene = pickup;
+        if (currentTime < startDelay)
+        {
+            currentTime += Time.deltaTime;
+        }
 
-        currentSpawnIndex++;
+        if (currentTime >= startDelay)
+        {
+            var pickup = (GameObject)Instantiate(pickupList[currentSpawnIndex]);
+            currentPickupInScene = pickup;
+
+            currentSpawnIndex++;
+        }
     }
 
 
     public override void Reset(StateController controller)
     {
+        currentTime = 0;
+
         currentSpawnIndex = 0;
 
         if (currentPickupInScene != null)
