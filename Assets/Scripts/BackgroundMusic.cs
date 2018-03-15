@@ -14,8 +14,7 @@ public class BackgroundMusic : MonoBehaviour {
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(playEngineSound());
-
+        StartCoroutine(PlayEngineSound(engineStartClip, engineLoopClip));
 	}
 	
 	// Update is called once per frame
@@ -29,16 +28,22 @@ public class BackgroundMusic : MonoBehaviour {
 
     //}
 
-    IEnumerator playEngineSound()
+    public IEnumerator PlayEngineSound(AudioClip startClip, AudioClip loopClip)
     {
-        audioSource.clip = engineStartClip;
+        audioSource.clip = startClip;
+        Debug.Log(startClip);
         audioSource.Play();
         yield return new WaitForSecondsRealtime(audioSource.clip.length);
         if (keepPlaying)
         {
-        audioSource.clip = engineLoopClip;
+        audioSource.clip = loopClip;
         audioSource.Play();
         }
+    }
+
+    public void ChangeMusic(AudioClip startClip, AudioClip loopClip)
+    {
+        StartCoroutine(PlayEngineSound(startClip, loopClip));
     }
 
     public void StopMusic()

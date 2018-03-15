@@ -26,6 +26,9 @@ public class PointSystem : MonoBehaviour {
     private float tempTime;
 
 
+    public GameObject blank;
+
+
     // Use this for initialization
     void Start () {
 
@@ -62,13 +65,12 @@ public class PointSystem : MonoBehaviour {
             meterImage.sprite = meterBar[meterFilled];
         }
 
-        if (meterFilled == 5 && meterFull == false)
+        if (meterFilled >= 5)
         {
             //activateMeter thingy
             powerUpReady.SetActive(true);
             flashingMeterUI.SetActive(true);
             meterFull = true;
-            
         }
     }
 
@@ -95,14 +97,27 @@ public class PointSystem : MonoBehaviour {
             flashingMeterUI.SetActive(false);
             emptyingMeterUI.SetActive(true);
             meterFull = false;
-            meterFilled = 0;
-            meterImage.sprite = meterBar[meterFilled];
+            meterFilled -= 5;
 
-            bullets = GameObject.FindGameObjectsWithTag("bullet");
-            foreach (GameObject bullet in bullets )
+            int filled = meterFilled;
+
+            if (meterFilled >= 5)
             {
-                Destroy(bullet);
+                filled = 5;
+                meterFull = true;
+                powerUpReady.SetActive(true);
+                flashingMeterUI.SetActive(true);
             }
+
+            meterImage.sprite = meterBar[filled];
+
+            //bullets = GameObject.FindGameObjectsWithTag("bullet");
+            //foreach (GameObject bullet in bullets )
+            //{
+            //    Destroy(bullet);
+            //}
+
+            Instantiate(blank, player.transform.position, new Quaternion());
        }
     }
 }

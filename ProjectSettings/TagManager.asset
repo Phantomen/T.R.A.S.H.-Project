@@ -10,6 +10,7 @@ TagManager:
   - Spraybottle
   - Trashbag
   - Bar
+  - DestructionRing
   layers:
   - Default
   - TransparentFX
@@ -19,11 +20,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bullet
+  - Pickup
+  - Minion
+  - DestructionRing
+  - AnnihilationRing
   - 
   - 
   - 
