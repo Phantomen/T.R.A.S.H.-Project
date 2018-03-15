@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114694801111386226}
   - component: {fileID: 95582320237435708}
   - component: {fileID: 114789255955543692}
-  - component: {fileID: 68720444089168784}
+  - component: {fileID: 58682184872483780}
   m_Layer: 8
   m_Name: B C T 3
   m_TagString: bullet
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &68720444089168784
-EdgeCollider2D:
+--- !u!58 &58682184872483780
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -78,10 +78,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.08, y: 0}
-  - {x: 0.08, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.08
 --- !u!95 &95582320237435708
 Animator:
   serializedVersion: 3
