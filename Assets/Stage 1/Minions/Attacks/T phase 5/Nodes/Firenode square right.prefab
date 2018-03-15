@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4586982454780922}
   - component: {fileID: 212369414023149546}
   - component: {fileID: 114963927006188436}
-  m_Layer: 0
+  - component: {fileID: 58973406837026232}
+  m_Layer: 10
   m_Name: Firenode square right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,6 +42,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 270}
+--- !u!58 &58973406837026232
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542158571585776}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.100000024
 --- !u!114 &114963927006188436
 MonoBehaviour:
   m_ObjectHideFlags: 1

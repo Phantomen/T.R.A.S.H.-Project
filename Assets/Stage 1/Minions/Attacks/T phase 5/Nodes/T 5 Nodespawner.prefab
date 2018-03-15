@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4397684240065438}
   - component: {fileID: 114082185505655444}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: T 5 Nodespawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}

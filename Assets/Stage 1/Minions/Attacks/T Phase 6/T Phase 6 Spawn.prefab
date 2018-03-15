@@ -9,43 +9,43 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1147293714526130}
+  m_RootGameObject: {fileID: 1638431795744130}
   m_IsPrefabParent: 1
---- !u!1 &1147293714526130
+--- !u!1 &1638431795744130
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4692660163520738}
-  - component: {fileID: 114642269425872286}
-  m_Layer: 10
-  m_Name: T 5 Nodes 2
+  - component: {fileID: 4830039462629542}
+  - component: {fileID: 114241408585994220}
+  m_Layer: 0
+  m_Name: T Phase 6 Spawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4692660163520738
+--- !u!4 &4830039462629542
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1147293714526130}
+  m_GameObject: {fileID: 1638431795744130}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114642269425872286
+--- !u!114 &114241408585994220
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1147293714526130}
+  m_GameObject: {fileID: 1638431795744130}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1e4567d0f7bedf3499b3cc3e45d16903, type: 3}
@@ -53,15 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   destroyWhenEmpty: 1
   prefabList:
-  - prefab: {fileID: 1955961097187312, guid: 1a0fa3e40e878a440901acb87fb592d2, type: 2}
+  - prefab: {fileID: 1261776477355446, guid: 5382efe45a7762942acfb27937177753, type: 2}
     spawnList:
-    - {fileID: 4400120014357174, guid: 1a0fa3e40e878a440901acb87fb592d2, type: 2}
-  - prefab: {fileID: 1234145772630412, guid: ae62a2dffcec54a418eb95f0093decbc, type: 2}
-    spawnList:
-    - {fileID: 4640586286593766, guid: ae62a2dffcec54a418eb95f0093decbc, type: 2}
-  - prefab: {fileID: 1487275764818520, guid: 0c5654f7e095d004c894a781304d98d0, type: 2}
-    spawnList:
-    - {fileID: 4715945278147720, guid: 0c5654f7e095d004c894a781304d98d0, type: 2}
-  - prefab: {fileID: 1944512859568452, guid: 0ed283002563e284cae8e75e60d134f5, type: 2}
-    spawnList:
-    - {fileID: 4245327991749350, guid: 0ed283002563e284cae8e75e60d134f5, type: 2}
+    - {fileID: 4627041133504658, guid: b7e6a406d7acbf347b3b1d5862c3075c, type: 2}
+    - {fileID: 4711868513663816, guid: e9f6385b6f580b942977e51a0ccbce51, type: 2}
+    - {fileID: 4694445509397008, guid: 91b46bbfe7c3d8742aeefd94c4578673, type: 2}
