@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Actions/BossHealthReset")]
 public class BossHealthResetAction : StateAction {
 
+    private bool triggered = false;
+
     public override void Act(StateController controller)
     {
         ResetHealth(controller);
@@ -12,13 +14,17 @@ public class BossHealthResetAction : StateAction {
 
     private void ResetHealth(StateController controller)
     {
-        TrudgesHealthBar hpBar = controller.GetComponentInChildren<TrudgesHealthBar>();
+        if (triggered == false)
+        {
+            triggered = true;
+            TrudgesHealthBar hpBar = controller.GetComponentInChildren<TrudgesHealthBar>();
 
-        hpBar.ResetBar();
+            hpBar.ResetBar();
+        }
     }
 
     public override void Reset(StateController controller)
     {
-        ResetHealth(controller);
+        triggered = false;
     }
 }
