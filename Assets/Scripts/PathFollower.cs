@@ -136,6 +136,12 @@ public class PathFollower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        if (objectToMove == null)
+        {
+            Destroy(gameObject);
+        }
+
         stoppedTimer.Time += Time.deltaTime;
         StopForTime();
 
