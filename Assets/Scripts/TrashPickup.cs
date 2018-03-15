@@ -39,7 +39,7 @@ public class TrashPickup : MonoBehaviour {
 
         audioSource = GameObject.FindGameObjectWithTag("AudioSource").transform.Find(audioSourceChildNamePickup).GetComponent<AudioSource>();
 
-        trudgesHealthBar = GameObject.FindGameObjectWithTag("Bar").GetComponent<TrudgesHealthBar>();
+        trudgesHealthBar = GameObject.FindGameObjectWithTag("Boss").GetComponentInChildren<TrudgesHealthBar>();
     }
 
     void FixedUpdate()
@@ -57,8 +57,6 @@ public class TrashPickup : MonoBehaviour {
                 audioSource.clip = audioClip;
                 audioSource.Play();
 
-                
-                
                 if (gameObject.tag == "Spraybottle")
                 {
                     playerAnim.PickedUpSpray();

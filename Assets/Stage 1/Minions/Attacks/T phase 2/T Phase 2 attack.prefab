@@ -53,17 +53,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletSpawnList:
   - phaseIndex: 0
-    spawnPointIndex: 
+    spawnPointIndex: 00000000
   bulletPrefab: {fileID: 1095849363163726, guid: 044219ff298439b49a7720a51fa3eb92,
     type: 2}
   lerpType: 0
   instantlyTurnOnNewWave: 0
   aimAtPlayerAtStart: 1
-  turnDuringDelay: 0
-  turnrate: 45
+  turnDuringDelay: 1
+  turnrate: 1000
   distanceFromCenter: 0
   timePerWave: 1
   delayBetweenWaves: 1
   bulletsPerWave: 10
-  bulletLifeTime: 5
+  bulletLifeTime: 15
   startDelay: 0
