@@ -14,27 +14,25 @@ public class EscapeMenu : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (active == true)
-            {
-                ToggleOff();
-
-            }
-            else if (active == false)
-            {
-                ToggleOn();
-            }
+            ToggleActive();
         }
 	}
 
-    public void ToggleOn()
+    public void ToggleActive()
     {
-        toBeToggled.SetActive(true);
-        active = true;
+        if (active == true)
+        {
+
+            toBeToggled.SetActive(false);
+            active = false;
+            Time.timeScale = 1;
+        }
+        else if (active == false)
+        {
+            toBeToggled.SetActive(true);
+            active = true;
+            Time.timeScale = 0;
+        }
     }
 
-    public void ToggleOff()
-    {
-        toBeToggled.SetActive(false);
-        active = false;
-    }
 }
