@@ -22,30 +22,29 @@ public class DoNotTurnObjectsChildrenWithParent : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
+        //for each transform
 		for (int i = 0; i < objectsToTurnList.Count; i++)
         {
             if (objectsToTurnList[i] != null)
             {
                 GameObject parentGameObject = objectsToTurnList[i].transform.parent.gameObject;
 
+                //If transform has a parent
                 if (parentGameObject != null)
                 {
+                    //Takes parents local rotation
                     float newRotX = parentGameObject.transform.localRotation.eulerAngles.x;
                     float newRotY = parentGameObject.transform.localRotation.eulerAngles.y;
                     float newRotZ = parentGameObject.transform.localRotation.eulerAngles.z;
 
+                    //Reverses rotation from parant
                     newRotX = -newRotX;
                     newRotY = -newRotY;
                     newRotZ = -newRotZ;
 
-                    //Debug.Log(parentGameObject.transform.rotation.eulerAngles.z + "\n" + newRotation.eulerAngles.z);
-
-                    //Aims directly, up does not depend on parent
-                    //newRotZ = 0;
-                    //Quaternion newRotation = Quaternion.Euler(newRotX, newRotY, newRotZ);
-
                     Quaternion newRotation = Quaternion.Euler(newRotX, newRotY, newRotZ);
 
+                    //Sets own rotation to negative parent transformation
                     objectsToTurnList[i].transform.localRotation = newRotation;
                 }
 
