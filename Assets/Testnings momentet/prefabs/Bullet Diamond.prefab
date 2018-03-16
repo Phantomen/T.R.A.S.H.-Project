@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114052107883977264}
   - component: {fileID: 95587281607841704}
   - component: {fileID: 114680951338122338}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bullet Diamond
   m_TagString: bullet
   m_Icon: {fileID: 0}

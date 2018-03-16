@@ -7,11 +7,22 @@ public class PressToStart : MonoBehaviour {
 
 
     public string menuToLoad;
-	// Update is called once per frame
+    private AudioSource audio;
+    // Update is called once per frame
+
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
 	void Update ()
     {
         if (Input.anyKey)
         {
+            if (audio != null)
+            {
+
+            audio.Play();
+            }
             Application.LoadLevel(menuToLoad);
         }
 

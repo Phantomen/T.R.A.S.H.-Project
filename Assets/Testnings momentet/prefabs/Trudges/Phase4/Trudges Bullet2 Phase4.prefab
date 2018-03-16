@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58426443646959028}
   - component: {fileID: 212086501538438154}
   - component: {fileID: 95432936765898950}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trudges Bullet2 Phase4
   m_TagString: bullet
   m_Icon: {fileID: 0}

@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 58347492318669206}
   - component: {fileID: 95270795024571938}
   - component: {fileID: 212984326579920278}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Minion Bullet1 Phase3
   m_TagString: bullet
   m_Icon: {fileID: 0}

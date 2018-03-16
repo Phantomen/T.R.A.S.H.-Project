@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 95080590195540644}
   - component: {fileID: 114279044238071112}
   - component: {fileID: 58461553181446942}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stage1 minion1bullet1 wave1
   m_TagString: bullet
   m_Icon: {fileID: 0}

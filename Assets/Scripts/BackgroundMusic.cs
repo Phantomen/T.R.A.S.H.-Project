@@ -32,7 +32,7 @@ public class BackgroundMusic : MonoBehaviour {
     {
         audioSource.clip = startClip;
         audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
+        yield return new WaitForSecondsRealtime(audioSource.clip.length);
         if (keepPlaying)
         {
         audioSource.clip = loopClip;

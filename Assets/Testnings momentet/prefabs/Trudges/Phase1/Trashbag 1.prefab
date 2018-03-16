@@ -19,10 +19,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4258523376336562}
-  - component: {fileID: 114254823254225150}
   - component: {fileID: 212234764619458836}
   - component: {fileID: 58296591323850052}
   - component: {fileID: 114159174744499914}
+  - component: {fileID: 95390711200944498}
   m_Layer: 0
   m_Name: Trashbag 1
   m_TagString: Trashbag
@@ -59,6 +59,23 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.27
 --- !u!95 &95068128492547680
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140019591317774}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e340395cfbfd1a247bae32b61ac4dc3d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95390711200944498
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
