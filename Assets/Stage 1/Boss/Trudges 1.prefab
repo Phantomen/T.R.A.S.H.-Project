@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4231122566352822}
   - component: {fileID: 114351002403758618}
+  - component: {fileID: 114500866544429406}
   m_Layer: 0
   m_Name: Trudges 1
-  m_TagString: Untagged
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -159,12 +160,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049fdd102723ef246be52ce60d6e54c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: 1349f3ad764c39e429cd35688ab16da5, type: 2}
+  currentState: {fileID: 11400000, guid: ec37de656031f0943af74736da41e89d, type: 2}
   gizmoSize: 0.25
   minionList: []
   itemList: []
   playerGameObject: {fileID: 0}
   stateTimeElapsed: 0
+--- !u!114 &114500866544429406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1052713426006280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23938099ec51a39448c361f35cfa894e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transformList:
+  - bulletSpawnList:
+    - {fileID: 4716455258742154}
 --- !u!114 &114776986533680354
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -184,6 +199,8 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b55f4205d1ca7b04bb53a68645fb40b1, type: 3}
   - {fileID: 21300000, guid: e8ef2e7dd5d4a484689358e41c262b0c, type: 3}
   - {fileID: 21300000, guid: 88075b9baf880f54f871848adb936fb5, type: 3}
+  damageSound: {fileID: 8300000, guid: 2f6665cb008131541a939e7f07fb0a37, type: 3}
+  phaseChangeSound: {fileID: 8300000, guid: 22469e49a9a7c3648bc75cb28e3e8cb1, type: 3}
 --- !u!212 &212485297912618682
 SpriteRenderer:
   m_ObjectHideFlags: 1

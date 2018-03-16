@@ -11,6 +11,7 @@ TagManager:
   - Trashbag
   - Bar
   - DestructionRing
+  - Boss
   layers:
   - Default
   - TransparentFX

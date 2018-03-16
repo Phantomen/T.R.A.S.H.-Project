@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bc63e9911469824e9bd8ef9bd3975ea, type: 3}
+  m_Name: Start Trudges theme
+  m_EditorClassIdentifier: 
+  startClip: {fileID: 8300000, guid: cc1084e824d29ab4fa308c8abb823038, type: 3}
+  loopClip: {fileID: 8300000, guid: 27fedf3577e507049a4b2e4fe643f06d, type: 3}

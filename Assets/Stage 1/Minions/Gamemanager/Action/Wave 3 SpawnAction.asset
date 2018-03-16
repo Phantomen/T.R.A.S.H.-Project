@@ -34,5 +34,17 @@ MonoBehaviour:
     lifeTime: 10
     currentDelay: 0.1
     currentTime: 10.040037
+  - minionPrefabs:
+    - {fileID: 1659590428255722, guid: e3390fc3bd69b0846aa9c9c258a5b53f, type: 2}
+    - {fileID: 1659590428255722, guid: d5ab2248978200c49ad6955196de6bdb, type: 2}
+    spawnStartDelay: 4
+    delayBetweenSpawns: 0.1
+    numberOfSpawns: 1
+    currentSpawnCount: 1
+    destroySpawnedAfterTime: 1
+    spawnFromObject: 0
+    lifeTime: 10
+    currentDelay: 0.1
+    currentTime: 10.040037
   orbitSpawnList: []
   pickUpList: []

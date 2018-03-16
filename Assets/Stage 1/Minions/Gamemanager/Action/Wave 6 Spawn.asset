@@ -18,10 +18,10 @@ MonoBehaviour:
     delayBetweenSpawns: 0
     numberOfSpawns: 1
     currentSpawnCount: 1
-    destroySpawnedAfterTime: 0
+    destroySpawnedAfterTime: 1
     spawnFromObject: 0
-    lifeTime: 0
+    lifeTime: 14
     currentDelay: 0
-    currentTime: 8.960015
+    currentTime: 15.000154
   orbitSpawnList: []
   pickUpList: []

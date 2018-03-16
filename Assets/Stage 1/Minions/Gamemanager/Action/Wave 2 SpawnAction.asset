@@ -27,12 +27,8 @@ MonoBehaviour:
   orbitSpawnList: []
   pickUpList:
   - minionPrefabs:
-    - {fileID: 1659590428255722, guid: 9073bc16836508c47bd1e1507e148c32, type: 2}
-    - {fileID: 1661135269410120, guid: cc3f273c10156b54c9506843a3491b81, type: 2}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 1661135269410120, guid: fcf0ec025d0875443a270c49268fc39b, type: 2}
-    spawnStartDelay: 0
+    - {fileID: 1659590428255722, guid: 55c2e38c23a520f43bf654874b453e85, type: 2}
+    spawnStartDelay: 2
     delayBetweenSpawns: 0
     numberOfSpawns: 1
     currentSpawnCount: 1

@@ -555,7 +555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049fdd102723ef246be52ce60d6e54c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: 8b01cbbf898c9874da96754e8d943669, type: 2}
+  currentState: {fileID: 11400000, guid: c7c9ef91b76084745ace83cfdc24f2ca, type: 2}
   gizmoSize: 0.25
   minionList: []
   itemList: []
@@ -615,13 +615,13 @@ MonoBehaviour:
   gameOver: {fileID: 833520937}
   youWin: {fileID: 830571730}
   meterUI: {fileID: 1965656042}
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1151638891}
   powerUpReady: {fileID: 1006403423}
   flashingMeterUI: {fileID: 2052424760}
   emptyingMeterUI: {fileID: 36915284}
   life: {fileID: 1641990087}
   meter: {fileID: 1255072146}
-  lifeAmount: 10
+  lifeAmount: 100
   backgroundMusic: {fileID: 1389673574}
   meterBar:
   - {fileID: 21300000, guid: 165ea03107cd7d34ebe06be57ed7b701, type: 3}
@@ -1938,6 +1938,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1036581998597736, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 82690833815350632, guid: a4d7d3934a1457b4aa14bfe55ab5d994,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0f46626a925bbbb49a74b1afec53a288, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a4d7d3934a1457b4aa14bfe55ab5d994, type: 2}
   m_IsPrefabParent: 0

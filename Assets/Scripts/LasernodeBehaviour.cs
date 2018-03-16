@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEditor;
+using UnityEditor;
 
 public class LasernodeBehaviour : MonoBehaviour {
     [SerializeField] GameObject laserNode;
@@ -35,19 +35,40 @@ public class LasernodeBehaviour : MonoBehaviour {
     bool lastNode = false;
     bool line = true;
 
+    float x = 0;
+    float y = 0;
+    float angleAsRadians = 0;
 
     // Use this for initialization
     void Start () {
         mathshit = (Mathf.Abs(firstNodePositionX) * 2) / (nodeAmount - 1);
         stageDimensions = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, 0));
         SendoutNode(nodeAmount);
+        switch (SetLaserPattern) {
+            case ActiveLaserPattern.LaserCirclePattern:
+                line = false;
+                moveNode();
+                break;
+            case ActiveLaserPattern.LaserCrossPattern:
+                line = true;
+                moveNode();
+                break;
+            case ActiveLaserPattern.LaserFollowPattern:
+                line = true;
+                moveNode();
+                break;
+            case ActiveLaserPattern.LaserWavePattern:
+                line = true;
+                moveNode();
+                break;
+        }
         //objectmover = laserNode.GetComponent<ObjectMover>();
-        moveNode();
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        if(lastNode)
+    
+        if (lastNode)
         {
             if (nodeLaserDelay <= 0)
             {
@@ -56,22 +77,6 @@ public class LasernodeBehaviour : MonoBehaviour {
             else
             {
                 nodeLaserDelay -= Time.deltaTime;
-            }
-
-            switch (SetLaserPattern)
-            {
-                case ActiveLaserPattern.LaserCirclePattern:
-                    line = false;
-                    break;
-                case ActiveLaserPattern.LaserCrossPattern:
-                    line = true;
-                    break;
-                case ActiveLaserPattern.LaserFollowPattern:
-                    line = true;
-                    break;
-                case ActiveLaserPattern.LaserWavePattern:
-                    line = true;
-                    break;
             }
         }
 
@@ -108,7 +113,14 @@ public class LasernodeBehaviour : MonoBehaviour {
         {
             for (int i = 0; i < nodeAmount; i++)
             {
-                
+                //angleAsRadians = (360 * Mathf.PI) / 180;
+                //x += gameObject.transform.position.x + Mathf.Cos(angleAsRadians) * 2;
+                //y += gameObject.transform.position.y + Mathf.Sin(angleAsRadians) * 2;
+                x += gameObject.transform.position.x + (Mathf.Sin(360));
+                y += gameObject.transform.position.y + (Mathf.Cos(360));
+                nodeList[i].GetComponent<ObjectMover>().moveTo = new Vector2(x, y);
+                nodeList[i].GetComponent<ObjectMover>().willMove = true;
+
                 if (i >= nodeAmount - 1)
                 {
                     lastNode = true;
@@ -126,6 +138,7 @@ public class LasernodeBehaviour : MonoBehaviour {
             {
                 case ActiveLaserPattern.LaserCrossPattern:
                     nodeList[i].GetComponent<LaserCrossPattern>().enabled = true;
+                    nodeList[i].GetComponent<LaserCrossPattern>().enabled = true;
                 break;
                 case ActiveLaserPattern.LaserFollowPattern:
                     nodeList[i].GetComponent<LaserFollowPattern>().enabled = true;
@@ -133,6 +146,9 @@ public class LasernodeBehaviour : MonoBehaviour {
                 case ActiveLaserPattern.LaserWavePattern:
                     nodeList[i].GetComponent<LaserPattern>().enabled = true;
                 break;
+                case ActiveLaserPattern.LaserCirclePattern:
+                    line = false;
+                    break;
             }
 
             

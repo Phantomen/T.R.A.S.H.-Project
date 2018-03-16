@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Name: T Prestate 1
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: 49dc6fe78e3447548bfab4d187eed77a, type: 2}
+  - {fileID: 0}
   transitions:
   - decision: {fileID: 11400000, guid: d73dadea688400549b1a94b1adeb8f36, type: 2}
-    trueState: {fileID: 0}
-    falseState: {fileID: 0}
+    trueState: {fileID: 11400000, guid: 1349f3ad764c39e429cd35688ab16da5, type: 2}
+    falseState: {fileID: 11400000}
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

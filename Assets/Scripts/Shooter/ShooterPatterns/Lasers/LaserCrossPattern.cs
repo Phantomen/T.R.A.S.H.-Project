@@ -6,6 +6,7 @@ public class LaserCrossPattern : MonoBehaviour {
     [SerializeField] private GameObject laserPrefab;
     [SerializeField] private GameObject warningLaser;
     [SerializeField] private AudioClip activeLaserSound;
+    [SerializeField] private AudioClip windDownLaserSound;
     [SerializeField] private Vector3 distanceFromCenter;
     [SerializeField] private int laserAmount = 4;
     [SerializeField] private int angleOffset = 360;
@@ -29,7 +30,7 @@ public class LaserCrossPattern : MonoBehaviour {
     bool warningLaserSpawned = true;
     bool timerGo;
     bool firstTimeSpawned = true;
-    int angle = 0;
+    float angle = 0;
 
     float tempStopTimer;
 
@@ -37,7 +38,6 @@ public class LaserCrossPattern : MonoBehaviour {
     void Start()
     {
         spawnWarningLaser();
-        //Laser();
         tempStopTimer = laserStopTimer;
         timerBeforeStart = timeBeforeStart;
     }
@@ -45,6 +45,14 @@ public class LaserCrossPattern : MonoBehaviour {
     // Update is called once per frame
     void FixedUpdate()
     {
+        for (int i = 0; i < laserAmount; i++) {
+            rotateLaser(warningLaserList[i], true);
+            if(laserSpawned)
+            {
+                rotateLaser(laserList[i], true);
+            }
+        }
+
         if (timerBeforeStart <= 0)
         {
             extractTimer += Time.deltaTime * growthSpeed;
@@ -65,42 +73,27 @@ public class LaserCrossPattern : MonoBehaviour {
                 {
                     laserPauseTimer = 0;
                     laserStopTimer = tempStopTimer;
-                    //timerBeforeStart = timeBeforeStart;
                 }
                 else
                 {
+                    playSound(windDownLaserSound, false);
                     for (int i = 0; i < laserAmount; i++)
                     {
-                        rotateLaser(laserList[i], false);
                         retractLaser(laserList[i]);
-                    }
-                    if(!warningLaserSpawned)
-                    {
-                        laserPrefab.GetComponent<AudioSource>().Stop();
-                        spawnWarningLaser();
-                        warningLaserSpawned = true;
                     }
                     laserStopTimer -= Time.deltaTime;
                 }
             }
             else
             {
-                laserPrefab.GetComponent<AudioSource>().Play();
+                if (!laserList[0].GetComponent<AudioSource>().isPlaying) 
+                {
+                    playSound(activeLaserSound, true);
+                }
+
                 for (int i = 0; i < laserAmount; i++)
                 {
                     extractLaser(laserList[i]);
-                    warningLaserSpawned = false;
-                    //Destroy(warningLaserList[i]);
-                    //warningLaserList.Remove(warningLaserList[i]);
-                }
-                destroyWarningLaser();
-
-                if (EnableRotation)
-                {
-                    for (int i = 0; i < laserAmount; i++)
-                    {
-                        rotateLaser(laserList[i], true);
-                    }
                 }
             }
         }
@@ -117,8 +110,10 @@ public class LaserCrossPattern : MonoBehaviour {
             angle += angleOffset / laserAmount;
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
             Vector3 laserPosition = new Vector3(this.transform.position.x + distanceFromCenter.x, this.transform.position.y + distanceFromCenter.y, this.transform.position.z + distanceFromCenter.z);
-            var laser = (GameObject)Instantiate(laserPrefab, laserPosition, rotation);
-            laserList.Add(laser);
+            var laser = (GameObject)Instantiate(laserPrefab, laserPosition, warningLaserList[i].transform.rotation);
+            laser.transform.localScale = new Vector3(0.01f, 1, 1);
+            extractLaser(laser);
+            laserList.Add(laser);           
         }
         angle = 0;
         firstTimeSpawned = false;
@@ -130,7 +125,7 @@ public class LaserCrossPattern : MonoBehaviour {
         for (int i = 0; i < laserAmount; i++)
         {
             angle += angleOffset / laserAmount;
-            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            Quaternion rotation = Quaternion.Euler(0, 0, angle + startingRotation);
             Vector3 laserPosition = new Vector3(this.transform.position.x + distanceFromCenter.x, this.transform.position.y + distanceFromCenter.y, this.transform.position.z + distanceFromCenter.z);
             if (!firstTimeSpawned)
             {
@@ -153,14 +148,11 @@ public class LaserCrossPattern : MonoBehaviour {
             {
                 Destroy(warningLaserList[i]);
             }
-            warningLaserList.Clear();
         }
     }
 
     void extractLaser(GameObject laser)
     {
-        laserPrefab.gameObject.GetComponent<AudioSource>().clip = activeLaserSound;
-        laserPrefab.gameObject.GetComponent<AudioSource>().Play();
         if (laser.transform.localScale.x <= maxSize)
         {
             laser.transform.localScale = new Vector3(laser.transform.localScale.x + (Time.deltaTime * growthSpeed), 1, 1);
@@ -169,7 +161,10 @@ public class LaserCrossPattern : MonoBehaviour {
 
     void retractLaser(GameObject laser)
     {
-        laserPrefab.gameObject.GetComponent<AudioSource>().Stop();
+        //if (!laserList[0].GetComponent<AudioSource>().isPlaying) 
+        //{
+        //    playSound(windDownLaserSound, true);
+        //}
         if (laser.transform.localScale.x >= 0.01)
         {
             laser.transform.localScale = new Vector3(laser.transform.localScale.x - (Time.deltaTime * growthSpeed), 1, 1);
@@ -201,5 +196,19 @@ public class LaserCrossPattern : MonoBehaviour {
         {
             timerGo = false;
         }
+    }
+
+    void playSound(AudioClip clip, bool on)
+    {
+        if(on)
+        {
+                laserList[0].GetComponent<AudioSource>().clip = clip;
+                laserList[0].GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+                laserList[0].GetComponent<AudioSource>().Stop();
+        }
+                
     }
 }

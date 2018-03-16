@@ -108,7 +108,26 @@ MonoBehaviour:
   fillMeterWith: 1
   audioClip: {fileID: 8300000, guid: b8861550f813af74483ca87e405778bf, type: 3}
   audioSourceChildNamePickup: Trash pickup
-  activateHealthBar: 0
+  activateHealthBar: 1
+--- !u!114 &114254823254225150
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1140019591317774}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b994f54e002ac4ba7e6244d49e0624, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupTimeInSeconds: 0.5
+  pointSystem: {fileID: 0}
+  playerTag: Player
+  fillMeterWith: 1
+  audioSourceObject: {fileID: 0}
+  damageTrudges: 0
+  trudgesHealthBar: {fileID: 114776986533680354, guid: 549f6269ad27e1f4d8dc347114ba1727,
+    type: 2}
 --- !u!212 &212234764619458836
 SpriteRenderer:
   m_ObjectHideFlags: 1

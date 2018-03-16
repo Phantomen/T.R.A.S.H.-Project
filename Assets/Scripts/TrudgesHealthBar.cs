@@ -20,6 +20,8 @@ public class TrudgesHealthBar : MonoBehaviour {
     [SerializeField]
     private AudioClip phaseChangeSound;
 
+    AudioSource audioSource;
+
     private Animator bossAnimator;
 
     // Use this for initialization
@@ -30,6 +32,8 @@ public class TrudgesHealthBar : MonoBehaviour {
         pointSystem = GameObject.FindGameObjectWithTag("PointSystem").GetComponent<PointSystem>();
 
         bossAnimator = gameObject.transform.parent.gameObject.GetComponentInChildren<Animator>();
+
+        audioSource = GameObject.FindGameObjectWithTag("AudioSource").transform.Find("BossSpecial").GetComponent<AudioSource>();
     }
 
 
@@ -42,7 +46,8 @@ public class TrudgesHealthBar : MonoBehaviour {
         //Play damage sound
         if (damageTaken < healthBar.Count - 1)
         {
-            AudioSource.PlayClipAtPoint(damageSound, new Vector3());
+            audioSource.clip = damageSound;
+            audioSource.Play();
         }
     }
 
@@ -53,7 +58,8 @@ public class TrudgesHealthBar : MonoBehaviour {
         healthBarSpriterenderer.sprite = healthBar[damageTaken];
 
         //Play PhaseChangeSound
-        AudioSource.PlayClipAtPoint(phaseChangeSound, new Vector3());
+        audioSource.clip = phaseChangeSound;
+        audioSource.Play();
 
         //Plays the "slam" animation once 
         bossAnimator.SetTrigger("Slam");
