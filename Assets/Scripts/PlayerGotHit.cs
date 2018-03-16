@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerGotHit : MonoBehaviour {
 
+    public GameObject activeLaser;
     public PointSystem pointSystem;
     public int damageTakenByHits = 1;
     public float invincibleTime = 1f;
     public bool invincible = false;
+
 
 
     private int boopCount;
@@ -75,6 +77,19 @@ public class PlayerGotHit : MonoBehaviour {
             //animator.SetBool("GetHit", true);
             playerAnim.GotHit();
             Destroy(other.gameObject, 0.1f);
+
+        }
+        else if (other.gameObject.tag == "laser" && invincible == false)
+        {
+
+            sound.Play();
+            boopCount++;
+            pointSystem.ChangeLife(damageTakenByHits);
+            timerOn = true;
+            invincible = true;
+            //gotHit = true;
+            //animator.SetBool("GetHit", true);
+            playerAnim.GotHit();
 
         }
     }

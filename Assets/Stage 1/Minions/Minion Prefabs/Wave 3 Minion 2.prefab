@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 497f7403b610cfd458b8784f2c644b02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfWaves: 20
+  numberOfWaves: 30
   spreadShotList:
   - bulletPrefab: {fileID: 1095849363163726, guid: 43fa2dc4e76b05b428302e554df30a48,
       type: 2}

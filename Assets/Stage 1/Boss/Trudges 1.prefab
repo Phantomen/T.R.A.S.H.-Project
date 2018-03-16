@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049fdd102723ef246be52ce60d6e54c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: 94e68672077cb124283c1a0f75188583, type: 2}
+  currentState: {fileID: 11400000, guid: ec37de656031f0943af74736da41e89d, type: 2}
   gizmoSize: 0.25
   minionList: []
   itemList: []
@@ -199,7 +199,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b55f4205d1ca7b04bb53a68645fb40b1, type: 3}
   - {fileID: 21300000, guid: e8ef2e7dd5d4a484689358e41c262b0c, type: 3}
   - {fileID: 21300000, guid: 88075b9baf880f54f871848adb936fb5, type: 3}
-  damageSound: {fileID: 8300000, guid: 2f6665cb008131541a939e7f07fb0a37, type: 3}
+  damageSound: {fileID: 8300000, guid: 9248a0b4d9f25d94faf76c3ca7560dc4, type: 3}
   phaseChangeSound: {fileID: 8300000, guid: 22469e49a9a7c3648bc75cb28e3e8cb1, type: 3}
 --- !u!212 &212485297912618682
 SpriteRenderer:

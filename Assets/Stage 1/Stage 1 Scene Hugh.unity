@@ -446,7 +446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 049fdd102723ef246be52ce60d6e54c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 11400000, guid: cbca2e2849a635b4db8d9c8f87695c30, type: 2}
+  currentState: {fileID: 11400000, guid: c7c9ef91b76084745ace83cfdc24f2ca, type: 2}
   gizmoSize: 0.25
   minionList: []
   itemList: []
@@ -850,6 +850,11 @@ Prefab:
       propertyPath: backgroundMusic
       value: 
       objectReference: {fileID: 1389673574}
+    - target: {fileID: 114767732115237614, guid: 924e6731b6877f04fa2ee4f475c3fcac,
+        type: 2}
+      propertyPath: lifeAmount
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 924e6731b6877f04fa2ee4f475c3fcac, type: 2}
   m_IsPrefabParent: 0
@@ -1391,7 +1396,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 9476bae188075f744985269687f1c8d1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 06ba6bae47c3f69439781dc3475b7a55, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2666,6 +2671,16 @@ Prefab:
       propertyPath: engineLoopClip
       value: 
       objectReference: {fileID: 8300000, guid: f09d84630e106cb45832f15cc6ea167d, type: 3}
+    - target: {fileID: 82279963608924300, guid: eebc5c456ad37ab4d995d4b15d8edf00,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 67204b498846395439d6395b352bf5a3, type: 3}
+    - target: {fileID: 82323966130688436, guid: eebc5c456ad37ab4d995d4b15d8edf00,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 4da6681cc85374f4099dccaed632d3c9, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: eebc5c456ad37ab4d995d4b15d8edf00, type: 2}
   m_IsPrefabParent: 0
@@ -2713,6 +2728,11 @@ Prefab:
       propertyPath: pointSystem
       value: 
       objectReference: {fileID: 260299326}
+    - target: {fileID: 82580956539268456, guid: 256ea1ef7fd46c1478ae4f192902817d,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9666c8ffeae2e1f409dff82ac246334e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 256ea1ef7fd46c1478ae4f192902817d, type: 2}
   m_IsPrefabParent: 0

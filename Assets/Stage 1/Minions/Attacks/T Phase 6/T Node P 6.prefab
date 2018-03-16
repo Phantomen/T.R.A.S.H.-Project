@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1261776477355446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.83, y: -2.49, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -136,16 +136,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfWaves: 100
   spreadShotList:
-  - bulletPrefab: {fileID: 1095849363163726, guid: 3b61c0c84546ea7429cfdf05c7f37c04,
+  - bulletPrefab: {fileID: 1020377348480950, guid: 43abb9fa1efbab042b2ea92b7ef24b7b,
       type: 2}
     bulletSpawnPosition: []
     spawnDistanceFromCenter: 0.2
-    degreesFromCenter: 0
+    degreesFromCenter: 15
     bulletsPerShot: 5
     shotNumber: 10
-    delayBetweenShots: 0.25
+    delayBetweenShots: 1.5
     delayForFirstShot: 0.25
-    bulletLifeTime: 5
+    bulletLifeTime: 15
     shotIndex: 0
   startDelay: 0
 --- !u!212 &212479684512387866
@@ -184,7 +184,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ed675253c129ccf4a850087e165bc1a5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 1
+  m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.2, y: 0.2}

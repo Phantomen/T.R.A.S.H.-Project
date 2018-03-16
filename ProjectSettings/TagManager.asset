@@ -12,6 +12,7 @@ TagManager:
   - Bar
   - DestructionRing
   - Boss
+  - laser
   layers:
   - Default
   - TransparentFX

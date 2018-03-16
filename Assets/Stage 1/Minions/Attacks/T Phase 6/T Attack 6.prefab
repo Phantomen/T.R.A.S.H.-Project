@@ -54,8 +54,8 @@ MonoBehaviour:
   bulletSpawnList: []
   bulletPrefab: {fileID: 1718528284402092, guid: 4cf0984beb55e8347a1b4c14b9057bea,
     type: 2}
-  bulletsPerWave: 2
+  bulletsPerWave: 4
   fireRate: 10
   destroyTime: 15
-  rotateSpeed: 90
+  rotateSpeed: -87
   distanceFromCenter: 0.1

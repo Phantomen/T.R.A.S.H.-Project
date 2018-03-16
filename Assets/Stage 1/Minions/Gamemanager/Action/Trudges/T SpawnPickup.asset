@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 1001701036780182, guid: d41d91b783d3b8b4eaf83c057f469f0f, type: 2}
   - {fileID: 1091294214424932, guid: 501acbc186bccd64793f02121cc515bf, type: 2}
   - {fileID: 1980547236841882, guid: c635bbfda7b297748bc9b654225913eb, type: 2}
+  startDelay: 5
