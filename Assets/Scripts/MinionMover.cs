@@ -21,7 +21,7 @@ public class MinionMover : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        //makes sure that the object always moves up
+        //makes sure that the object always moves "up" (relative to object)
         myRigidbody.velocity = transform.up * speed;
     }
 }
