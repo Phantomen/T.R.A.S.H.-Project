@@ -146,7 +146,7 @@ public class PathFollower : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-        //If the object it's supposed to move is destroyed, destroy yourself
+        //If the object it's supposed to move is null, destroy yourself
         if (objectToMove == null)
         {
             Destroy(gameObject);
