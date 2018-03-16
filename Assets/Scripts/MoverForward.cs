@@ -7,19 +7,22 @@ public class MoverForward : MonoBehaviour {
     [Tooltip("The amount of speed that the object will have (negative number is the other direction)")]
     public float speed = 1;
 
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D myRigidbody;
 
 
 	// Use this for initialization
 	void Start ()
     {
-        rigidbody = transform.gameObject.GetComponent<Rigidbody2D>();
-        rigidbody.velocity = transform.up * speed;
-	}
+        //gets rigidbody component
+        myRigidbody = transform.gameObject.GetComponent<Rigidbody2D>();
+        //Sets objects velocity
+        myRigidbody.velocity = transform.up * speed;
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate ()
     {
-        rigidbody.velocity = transform.up * speed;
+        //makes sure that the object always moves "up" (relative to object)
+        myRigidbody.velocity = transform.up * speed;
     }
 }
