@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f70769fbd0a2b3149b01082710cb94c2
-timeCreated: 1519826061
+guid: 09c83a17fdd52114a890590b0d5650a4
+timeCreated: 1521203425
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI - liv NYTT_0
+    21300000: UI- play neutral_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -79,13 +79,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI - liv NYTT_0
+      name: UI- play neutral_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 8
         y: 0
-        width: 16
-        height: 14
+        width: 49
+        height: 63
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

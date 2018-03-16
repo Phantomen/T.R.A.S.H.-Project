@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f70769fbd0a2b3149b01082710cb94c2
-timeCreated: 1519826061
+guid: 8501349894c8274419371a5ebe1dac16
+timeCreated: 1521119035
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: UI - liv NYTT_0
+    21300000: pause meny_0
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -47,7 +47,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 30
+  spritePixelsToUnits: 100
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -79,13 +79,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI - liv NYTT_0
+      name: pause meny_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 14
+        x: 50
+        y: 131
+        width: 411
+        height: 250
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
