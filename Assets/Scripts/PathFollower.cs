@@ -11,6 +11,7 @@ public class PathFollower : MonoBehaviour {
     private float currentSpeed;
     private float speedBeforeStopped;
 
+    //What to do when it goes over the first or last point in the curve
     public enum OverflowType
     {
         Stop = 0,
@@ -18,6 +19,7 @@ public class PathFollower : MonoBehaviour {
         PingPong = 2
     }
 
+    //Destroy gameObject with self when the path is done
     public enum DestructionType
     {
         destroyPathAndObject = 0,
@@ -26,11 +28,12 @@ public class PathFollower : MonoBehaviour {
 
     public OverflowType overflowType;
 
+
     public bool destroyOnEndPoints = false;
     public DestructionType destructionType;
 
 
-
+    //when the cycle starts again, do every action in the same order again
     public bool resetActionAfterCycle = true;
 
     //Do the first action at the last point
@@ -50,6 +53,7 @@ public class PathFollower : MonoBehaviour {
     public int numberOfTurns = 0;
     private int currentTurn = 0;
 
+
     public List<PointAction> pointActionList = new List<PointAction>();
     private int pointIndex = 0;
     private int pointListIndex = 0;
@@ -59,17 +63,21 @@ public class PathFollower : MonoBehaviour {
     public bool repeatingCircle;
     public List<Circling> repeatCircle = new List<Circling>();
 
+    //Shall it bounce between points?
     public bool bouncingBetweenPoints = false;
+    //What points
     public Vector2 bounceBetweenPoints;
+
 
     private Timer stoppedTimer = new Timer();
 
-
-
+    //The prefab it spawns
     public GameObject objectPrefab;
+    //If DestroyPathOnly, it will destroy the object after seconds
     public float destroyObjectTimeAfterPathDestroyed = 20;
 
 
+    //Reference to object it moves
     private GameObject objectToMove;
 
 
