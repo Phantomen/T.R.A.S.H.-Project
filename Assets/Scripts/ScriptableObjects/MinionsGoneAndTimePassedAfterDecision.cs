@@ -27,8 +27,10 @@ public class MinionsGoneAndTimePassedAfterDecision : StateDecision {
             minionsLeft = 0;
         }
 
+        //If the number of minions are equal or less than the requested minions, start timer
         if (controller.minionList.Count <= minionsLeft)
         {
+            //If timer has expired, return true
             timePassed.Time += Time.deltaTime;
             return (timePassed.Expired);
         }
