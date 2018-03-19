@@ -166,88 +166,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalPosition.y
       value: 2.5
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+    - target: {fileID: 4373730382117296, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 1224027911022068, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
-      propertyPath: m_Name
-      value: Lasernode (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 114275528115310084, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114275528115310084, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: timePerPause
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114275528115310084, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: laserStopTimer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: startRotatingRight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: laserAmount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: startingRotation
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 4648285351178662, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
-        type: 2}
-      propertyPath: activeLaserSound
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f46626a925bbbb49a74b1afec53a288, type: 3}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: eb60b15d3f3aa8e4abf57438b6317f11, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1045918846
 GameObject:
@@ -412,6 +364,12 @@ Prefab:
       propertyPath: activeLaserSound
       value: 
       objectReference: {fileID: 8300000, guid: 0f46626a925bbbb49a74b1afec53a288, type: 3}
+    - target: {fileID: 114204025132708176, guid: 18ba0b1781cbb1140b01a661c131891c,
+        type: 2}
+      propertyPath: warningLaser
+      value: 
+      objectReference: {fileID: 1653378150125998, guid: 7231c4232f77e64438d1b62663c35bec,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 18ba0b1781cbb1140b01a661c131891c, type: 2}
   m_IsPrefabParent: 0
@@ -426,7 +384,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1844324038}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f099de194c5618447aabddd6fed471e2, type: 3}
   m_Name: 
@@ -434,6 +392,7 @@ MonoBehaviour:
   laserPrefab: {fileID: 0}
   warningLaser: {fileID: 0}
   activeLaserSound: {fileID: 0}
+  windDownLaserSound: {fileID: 0}
   distanceFromCenter: {x: 3, y: 3, z: 0}
   laserAmount: 4
   angleOffset: 360

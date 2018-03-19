@@ -237,11 +237,11 @@ MonoBehaviour:
     startSpeed: 0
     newSpeed: 0
     shootPatterns: []
-    stoppedTime: 20
+    stoppedTime: 15
     stopActionAfterPoints: 0
     currentPointAfter: 0
     stopActionAfterTime: 1
-    stopActionTime: 20
+    stopActionTime: 15
   - doSomething: 0
     currentlyDoingSomething: 0
     beenTriggered: 0

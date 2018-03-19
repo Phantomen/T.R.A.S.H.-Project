@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 114052107883977264}
   - component: {fileID: 95587281607841704}
   - component: {fileID: 114680951338122338}
-  - component: {fileID: 68059332073624492}
+  - component: {fileID: 60035348610075256}
   m_Layer: 8
   m_Name: B D W 4
   m_TagString: bullet
@@ -65,8 +65,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!68 &68059332073624492
-EdgeCollider2D:
+--- !u!60 &60035348610075256
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -78,10 +78,23 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.09, y: 0.14}
+    newSize: {x: 0.09, y: 0.14}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   m_Points:
-  - {x: -0.045, y: 0}
-  - {x: 0.045, y: 0}
+    m_Paths:
+    - - {x: -0.044999998, y: 0.07}
+      - {x: -0.044999998, y: -0.049999997}
+      - {x: -0.024999999, y: -0.07}
+      - {x: 0.024999999, y: -0.07}
+      - {x: 0.044999998, y: -0.049999997}
+      - {x: 0.044999998, y: 0.07}
 --- !u!95 &95587281607841704
 Animator:
   serializedVersion: 3
@@ -156,7 +169,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a7ac7f109a4b2442b6e5d6d080fdf3f, type: 3}
+  m_Sprite: {fileID: 21300002, guid: 8a7ac7f109a4b2442b6e5d6d080fdf3f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 1

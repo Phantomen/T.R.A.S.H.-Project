@@ -19,7 +19,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4955751532436702}
-  - component: {fileID: 114361276109562714}
   - component: {fileID: 212017646108806876}
   - component: {fileID: 58857826241584288}
   - component: {fileID: 114643029967120530}
@@ -76,24 +75,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114361276109562714
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1659590428255722}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b994f54e002ac4ba7e6244d49e0624, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pickupTimeInSeconds: 0.5
-  pointSystem: {fileID: 0}
-  playerTag: Player
-  fillMeterWith: 1
-  audioSourceObject: {fileID: 0}
-  damageTrudges: 0
-  trudgesHealthBar: {fileID: 0}
 --- !u!114 &114643029967120530
 MonoBehaviour:
   m_ObjectHideFlags: 1

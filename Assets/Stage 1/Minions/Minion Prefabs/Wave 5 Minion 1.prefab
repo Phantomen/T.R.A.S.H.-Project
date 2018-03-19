@@ -112,19 +112,19 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573285592734448}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c85fba9fa6835fc4aa13cf9aecd92124, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 1095849363163726, guid: 489ceed36fe3c66439baaf961de7e703,
+  bulletPrefab: {fileID: 1095849363163726, guid: 99b6c841bc666e34fb59b6e4a64c8cc4,
     type: 2}
   spawnList: []
   bulletsPerWave: 5
-  fireRate: 50
+  fireRate: 49
   destroyTime: 10
-  rotateSpeed: 1000
-  distanceFromCenter: 0.5
+  rotateSpeed: -572
+  distanceFromCenter: 1
 --- !u!212 &212652503869365374
 SpriteRenderer:
   m_ObjectHideFlags: 1

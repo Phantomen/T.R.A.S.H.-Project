@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1147293714526130}
+  m_IsPrefabParent: 1
+--- !u!1 &1147293714526130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4692660163520738}
+  - component: {fileID: 114642269425872286}
+  m_Layer: 10
+  m_Name: T 5 Nodes 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4692660163520738
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147293714526130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114642269425872286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1147293714526130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4567d0f7bedf3499b3cc3e45d16903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyWhenEmpty: 1
+  prefabList:
+  - prefab: {fileID: 1955961097187312, guid: 1a0fa3e40e878a440901acb87fb592d2, type: 2}
+    spawnList:
+    - {fileID: 4400120014357174, guid: 1a0fa3e40e878a440901acb87fb592d2, type: 2}
+  - prefab: {fileID: 1234145772630412, guid: ae62a2dffcec54a418eb95f0093decbc, type: 2}
+    spawnList:
+    - {fileID: 4640586286593766, guid: ae62a2dffcec54a418eb95f0093decbc, type: 2}
+  - prefab: {fileID: 1487275764818520, guid: 0c5654f7e095d004c894a781304d98d0, type: 2}
+    spawnList:
+    - {fileID: 4715945278147720, guid: 0c5654f7e095d004c894a781304d98d0, type: 2}
+  - prefab: {fileID: 1944512859568452, guid: 0ed283002563e284cae8e75e60d134f5, type: 2}
+    spawnList:
+    - {fileID: 4245327991749350, guid: 0ed283002563e284cae8e75e60d134f5, type: 2}

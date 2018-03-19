@@ -19,11 +19,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4460792375085398}
-  - component: {fileID: 114872168237020128}
   - component: {fileID: 212264717667425774}
   - component: {fileID: 58748686403187438}
   - component: {fileID: 95494131370562930}
   - component: {fileID: 114854942136876174}
+  - component: {fileID: 114872168237020128}
   m_Layer: 0
   m_Name: Trashbag (1)
   m_TagString: Trashbag
@@ -95,7 +95,7 @@ MonoBehaviour:
   activateHealthBar: 1
 --- !u!114 &114872168237020128
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1255224754391942}

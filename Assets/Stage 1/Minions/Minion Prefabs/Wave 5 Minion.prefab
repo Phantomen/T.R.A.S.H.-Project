@@ -121,10 +121,10 @@ MonoBehaviour:
     type: 2}
   spawnList: []
   bulletsPerWave: 5
-  fireRate: 50
+  fireRate: 49
   destroyTime: 10
-  rotateSpeed: 999
-  distanceFromCenter: 0.5
+  rotateSpeed: 572
+  distanceFromCenter: 1
 --- !u!212 &212652503869365374
 SpriteRenderer:
   m_ObjectHideFlags: 1
