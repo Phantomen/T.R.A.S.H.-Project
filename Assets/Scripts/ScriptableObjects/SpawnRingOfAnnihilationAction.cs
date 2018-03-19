@@ -8,7 +8,7 @@ public class SpawnRingOfAnnihilationAction : StateAction {
 
     [Tooltip("The blank")]
     [SerializeField]
-    private GameObject blank;
+    private GameObject blankPrefab;
 
     private bool triggered = false;
 
@@ -23,7 +23,7 @@ public class SpawnRingOfAnnihilationAction : StateAction {
 
     private void TriggedBlank(StateController controller)
     {
-        Instantiate(blank, controller.gameObject.transform.position, new Quaternion());
+        Instantiate(blankPrefab, controller.gameObject.transform.position, new Quaternion());
     }
 
 
