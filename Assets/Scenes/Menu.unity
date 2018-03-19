@@ -2692,7 +2692,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &492861108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6731,7 +6731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5812e0aa25b56e54d92979c5922b35a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuToLoad: Trashley
+  menuToLoad: Stage 1 Scene Trashley
 --- !u!1 &1368010579
 GameObject:
   m_ObjectHideFlags: 0
@@ -7103,7 +7103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5812e0aa25b56e54d92979c5922b35a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuToLoad: Hugh
+  menuToLoad: Stage 1 Scene Hugh
 --- !u!1 &1447422144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,7 +7591,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1461596484
 RectTransform:
   m_ObjectHideFlags: 0
