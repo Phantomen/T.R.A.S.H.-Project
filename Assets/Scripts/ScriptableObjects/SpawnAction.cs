@@ -18,6 +18,8 @@ public class SpawnAction : StateAction {
         SpawnPickup(controller);
 	}
 
+
+    //Resets the spawns
     public override void Reset(StateController controller)
     {
         for (int i = 0; i < spawnList.Count; i++)
@@ -45,6 +47,7 @@ public class SpawnAction : StateAction {
 
     private void SpawnMinion(StateController controller)
 	{
+        //For list, try to spawn
 		for (int i = 0; i < spawnList.Count; i++)
 		{
 
@@ -55,28 +58,29 @@ public class SpawnAction : StateAction {
 				spawnList [i].currentDelay = spawnList [i].spawnStartDelay;
 			}
 
+            //If the time has expired for the spawnlist and it has not spawned everything
 			if (spawnList [i].currentTime >= spawnList [i].currentDelay
 				&& spawnList [i].currentSpawnCount < spawnList [i].numberOfSpawns)
 			{
 				spawnList [i].currentTime -= spawnList [i].currentDelay;
 				spawnList [i].currentSpawnCount++;
 
-                for (int m = 0; m < spawnList[i].minionPrefabs.Count; m++)
+                //For each object that it will spawn
+                for (int m = 0; m < spawnList[i].objectPrefabs.Count; m++)
                 {
-                    if (spawnList[i].minionPrefabs[m] != null)
+                    //If the object exists, spawn it
+                    if (spawnList[i].objectPrefabs[m] != null)
                     {
-                        GameObject minion; //= (GameObject)Instantiate(spawnList[i].minionPrefabs[m]);
+                        GameObject minion;
 
                         if (spawnList[i].spawnFromObject == true)
                         {
-                            //minion.transform.position = controller.transform.position;
-                            minion = (GameObject)Instantiate(spawnList[i].minionPrefabs[m], controller.transform);
-                            Debug.Log(minion.transform.position);
+                            minion = (GameObject)Instantiate(spawnList[i].objectPrefabs[m], controller.transform);
                         }
 
                         else
                         {
-                            minion = (GameObject)Instantiate(spawnList[i].minionPrefabs[m]);
+                            minion = (GameObject)Instantiate(spawnList[i].objectPrefabs[m]);
                         }
 
                         if (spawnList[i].destroySpawnedAfterTime == true)
@@ -115,21 +119,20 @@ public class SpawnAction : StateAction {
             if (orbitSpawnList[i].currentTime >= orbitSpawnList[i].currentDelay
                 && orbitSpawnList[i].currentSpawnCount < orbitSpawnList[i].numberOfSpawns)
             {
-                for (int m = 0; m < orbitSpawnList[i].minionPrefabs.Count; m++)
+                for (int m = 0; m < orbitSpawnList[i].objectPrefabs.Count; m++)
                 {
-                    if (orbitSpawnList[i].minionPrefabs[m] != null)
+                    if (orbitSpawnList[i].objectPrefabs[m] != null)
                     {
-                        GameObject minion; //= (GameObject)Instantiate(orbitSpawnList[i].minionPrefabs[m], controller.transform);
+                        GameObject minion;
 
                         if (orbitSpawnList[i].spawnFromObject == true)
                         {
-                            //minion.transform.position = controller.transform.position;
-                            minion = (GameObject)Instantiate(orbitSpawnList[i].minionPrefabs[m], controller.transform);
+                            minion = (GameObject)Instantiate(orbitSpawnList[i].objectPrefabs[m], controller.transform);
                         }
 
                         else
                         {
-                            minion = (GameObject)Instantiate(orbitSpawnList[i].minionPrefabs[m]);
+                            minion = (GameObject)Instantiate(orbitSpawnList[i].objectPrefabs[m]);
                         }
 
                         if (orbitSpawnList[i].destroySpawnedAfterTime == true)
@@ -139,8 +142,11 @@ public class SpawnAction : StateAction {
 
                         controller.minionList.Add(minion);
 
+
+
                         RotateAroundObject rotateAround = minion.GetComponent<RotateAroundObject>();
 
+                        //Sets the controller gameobject with the centerpoint of the orbit object
                         if (rotateAround != null)
                         {
                             rotateAround.centerPoint = controller.gameObject;
@@ -185,22 +191,21 @@ public class SpawnAction : StateAction {
             if (pickUpList[i].currentTime >= pickUpList[i].currentDelay
                 && pickUpList[i].currentSpawnCount < pickUpList[i].numberOfSpawns)
             {
-                for (int m = 0; m < pickUpList[i].minionPrefabs.Count; m++)
+                for (int m = 0; m < pickUpList[i].objectPrefabs.Count; m++)
                 {
-                    if (pickUpList[i].minionPrefabs[m] != null)
+                    if (pickUpList[i].objectPrefabs[m] != null)
                     {
-                        GameObject item; //= (GameObject)Instantiate(spawnList[i].minionPrefabs[m], controller.transform);
+                        GameObject item;
 
                         if (pickUpList[i].spawnFromObject == true)
                         {
-                            //minion.transform.position = controller.transform.position;
-                            item = (GameObject)Instantiate(pickUpList[i].minionPrefabs[m], controller.transform);
+                            item = (GameObject)Instantiate(pickUpList[i].objectPrefabs[m], controller.transform);
                             Debug.Log(item.transform.position);
                         }
 
                         else
                         {
-                            item = (GameObject)Instantiate(pickUpList[i].minionPrefabs[m]);
+                            item = (GameObject)Instantiate(pickUpList[i].objectPrefabs[m]);
                         }
 
                         if (pickUpList[i].destroySpawnedAfterTime == true)
@@ -233,7 +238,7 @@ public class SpawnAction : StateAction {
 [System.Serializable]
 public class SpawnMinionClass
 {
-	public List<GameObject> minionPrefabs = new List<GameObject>();
+	public List<GameObject> objectPrefabs = new List<GameObject>();
     //The object themselvs spawn orbit objects
 	public float spawnStartDelay = 1;
 	public float delayBetweenSpawns = 1;

@@ -38,9 +38,9 @@ public class SpawnInstantlyAction : StateAction
             if (spawnList[i].currentTime >= spawnList[i].currentDelay
                 && spawnList[i].currentSpawnCount < spawnList[i].numberOfSpawns)
             {
-                for (int m = 0; m < spawnList[i].minionPrefabs.Count; i++)
+                for (int m = 0; m < spawnList[i].objectPrefabs.Count; i++)
                 {
-                    var minion = (GameObject)Instantiate(spawnList[i].minionPrefabs[m], controller.transform.position, controller.transform.rotation);
+                    var minion = (GameObject)Instantiate(spawnList[i].objectPrefabs[m], controller.transform.position, controller.transform.rotation);
                     Destroy(minion, spawnList[i].lifeTime);
                     controller.minionList.Add(minion);
 
