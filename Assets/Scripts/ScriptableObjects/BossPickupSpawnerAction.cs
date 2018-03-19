@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Actions/BossPickupSpawn")]
 public class BossPickupSpawnerAction : StateAction {
 
-    [Tooltip("")]
+    [Tooltip("The list of the pickups")]
     [SerializeField]
     private GameObject[] pickupList = new GameObject[5];
     private int currentSpawnIndex = 0;
@@ -20,6 +20,7 @@ public class BossPickupSpawnerAction : StateAction {
 
     public override void Act(StateController controller)
     {
+        //If there is no pickup in scene and it has not spawned enough
         if (currentPickupInScene == null
             && currentSpawnIndex < 5)
         {
@@ -36,14 +37,18 @@ public class BossPickupSpawnerAction : StateAction {
 
         if (currentTime >= startDelay)
         {
-            var pickup = (GameObject)Instantiate(pickupList[currentSpawnIndex]);
-            currentPickupInScene = pickup;
+            if (pickupList[currentSpawnIndex] != null)
+            {
+                var pickup = (GameObject)Instantiate(pickupList[currentSpawnIndex]);
+                currentPickupInScene = pickup;
+            }
 
             currentSpawnIndex++;
         }
     }
 
 
+    //Destroys the current pickup in scene and reset time and index
     public override void Reset(StateController controller)
     {
         currentTime = 0;
@@ -51,7 +56,9 @@ public class BossPickupSpawnerAction : StateAction {
         currentSpawnIndex = 0;
 
         if (currentPickupInScene != null)
+        {
             Destroy(currentPickupInScene);
+        }
 
         currentPickupInScene = null;
     }
