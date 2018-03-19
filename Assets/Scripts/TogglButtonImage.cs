@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TogglButtonImage : MonoBehaviour {
+    //yes, the name has a typo. Too lazy to fix and go back to the scripts that use this one because of one letter
 
+    //the sprites for showing if the button is on or off
     public Sprite buttonOn, buttonOff;
     Image buttonImage;
-    // Use this for initialization
+    
     void Start ()
     {
         buttonImage = GetComponent<Image>();

@@ -7,13 +7,7 @@ public class DeactivateSelf : MonoBehaviour {
     public float duration;
     private float time;
     private bool runTimer = false;
-	// Use this for initialization
-	void Start ()
-    {
 
-	}
-	
-	// Update is called once per frame
 	void FixedUpdate ()
     {
         if (runTimer)

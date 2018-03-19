@@ -7,11 +7,10 @@ public class EscapeMenu : MonoBehaviour {
     public GameObject toBeToggled;
     private bool active = false;
 
-	// Use this for initialization
-	
-	// Update is called once per frame
+
 	void Update ()
     {
+        //When pressing esc, set chosen gameobject as active, in this case a menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleActive();
@@ -20,6 +19,7 @@ public class EscapeMenu : MonoBehaviour {
 
     public void ToggleActive()
     {
+        //if the menu is active, deactivate it and set timescale to 1 to make everything move again
         if (active == true)
         {
 
@@ -27,6 +27,8 @@ public class EscapeMenu : MonoBehaviour {
             active = false;
             Time.timeScale = 1;
         }
+
+        //if the menu isn't active, activate it and set timescale to 0 to stop everything from moving
         else if (active == false)
         {
             toBeToggled.SetActive(true);
