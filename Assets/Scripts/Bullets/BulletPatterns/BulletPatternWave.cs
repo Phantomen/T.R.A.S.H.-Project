@@ -19,7 +19,7 @@ public class BulletPatternWave : MonoBehaviour {
 
     private float tempCurrentTime = 0f;
 
-    private Vector3 oldWavePos = new Vector3(0, 0, 0);
+    private Vector3 oldWaveOffset = new Vector3(0, 0, 0);
 
 
     Timer zigZagTimer = new Timer();
@@ -64,35 +64,44 @@ public class BulletPatternWave : MonoBehaviour {
 
     private void WaveMotion()
     {
-        Vector3 wavePos = (transform.right * horizontal * Mathf.Sin(tempCurrentTime * (2f / timePerWave) * Mathf.PI) * distanceFromCenter);
+        //The new offset of the wave
+        Vector3 waveOffset = (transform.right * horizontal * Mathf.Sin(tempCurrentTime * (2f / timePerWave) * Mathf.PI) * distanceFromCenter);
 
-        Vector3 newPos = wavePos - oldWavePos + transform.position;
-        //Debug.Log(newPos);
+        //To keep the object to from moving more to the side than it should
+        //Remove the old waveOffset from the current position
+        Vector3 newPos = waveOffset + (transform.position - oldWaveOffset);
 
-
+        //Sets new position
         transform.position = newPos;
 
-        oldWavePos = wavePos;
+        //saves the waveOffset for the next update
+        oldWaveOffset = waveOffset;
     }
 
     private void zigZagMotion()
     {
         zigZagTimer.Time += Time.deltaTime;
 
+        //If the timer has expired
         if (zigZagTimer.Expired == true)
         {
+            //the object moves to the other side
             horizontal = -horizontal;
+            //Halves the time
             zigZagTimer.Time -= timePerWave / 2;
         }
 
-        Vector3 zigZagPos = transform.right * horizontal * Mathf.PingPong(tempCurrentTime * distanceFromCenter * (4f / timePerWave), distanceFromCenter);
+        //The new offset
+        Vector3 zigZagOffset = transform.right * horizontal * Mathf.PingPong(tempCurrentTime * distanceFromCenter * (4f / timePerWave), distanceFromCenter);
 
-        Vector3 newPos = zigZagPos - oldWavePos + transform.position;
-        //Debug.Log(newPos);
+        //To keep the object to from moving more to the side than it should
+        //Remove the old waveOffset from the current position
+        Vector3 newPos = zigZagOffset + (transform.position - oldWaveOffset);
 
-
+        //Sets new position
         transform.position = newPos;
 
-        oldWavePos = zigZagPos;
+        //saves the Offset for the next update
+        oldWaveOffset = zigZagOffset;
     }
 }
