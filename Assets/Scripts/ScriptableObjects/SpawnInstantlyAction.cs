@@ -26,6 +26,7 @@ public class SpawnInstantlyAction : StateAction
 
     private void Spawn(StateController controller)
     {
+        //For list, try to spawn
         for (int i = 0; i < spawnList.Count; i++)
         {
             spawnList[i].currentTime += Time.deltaTime;
@@ -35,9 +36,11 @@ public class SpawnInstantlyAction : StateAction
                 spawnList[i].currentDelay = spawnList[i].spawnStartDelay;
             }
 
+            //If the time has expired for the spawnlist and it has not spawned everything
             if (spawnList[i].currentTime >= spawnList[i].currentDelay
                 && spawnList[i].currentSpawnCount < spawnList[i].numberOfSpawns)
             {
+                //For each object that it will spawn
                 for (int m = 0; m < spawnList[i].objectPrefabs.Count; i++)
                 {
                     var minion = (GameObject)Instantiate(spawnList[i].objectPrefabs[m], controller.transform.position, controller.transform.rotation);

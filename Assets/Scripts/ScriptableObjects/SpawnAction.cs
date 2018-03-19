@@ -239,7 +239,6 @@ public class SpawnAction : StateAction {
 public class SpawnMinionClass
 {
 	public List<GameObject> objectPrefabs = new List<GameObject>();
-    //The object themselvs spawn orbit objects
 	public float spawnStartDelay = 1;
 	public float delayBetweenSpawns = 1;
 	public int numberOfSpawns = 1;
