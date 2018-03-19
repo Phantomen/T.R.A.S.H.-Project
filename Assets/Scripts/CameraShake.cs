@@ -70,7 +70,7 @@ public class CameraShake : MonoBehaviour {
         shakeTimer.Time = 0;
         shaking = false;
 
-        camLocalPos = new Vector3();
-        transform.localPosition = new Vector3();
+        camLocalPos = Vector3.zero;
+        transform.localPosition = Vector3.zero;
     }
 }
