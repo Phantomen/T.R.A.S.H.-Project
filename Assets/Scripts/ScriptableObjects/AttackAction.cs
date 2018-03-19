@@ -5,10 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Actions/AttackAction")]
 public class AttackAction : StateAction {
 
+    //The shooterpattern
     public ShooterPattern shotPattern;
-
-    //public List<AttackActionBulletSpawnList> bulletSpawnList = new List<AttackActionBulletSpawnList>();
-    //private List<Transform> spawnList = new List<Transform>();
 
     public override void Act(StateController controller)
     {
@@ -17,6 +15,7 @@ public class AttackAction : StateAction {
 
     private void Attack(StateController controller)
     {
+        //Shot the pattern
         shotPattern.Shoot(controller.gameObject);
     }
 
@@ -27,41 +26,8 @@ public class AttackAction : StateAction {
 
     private void ResetShooting(StateController controller)
     {
-        //spawnList.Clear();
-
-        //GameObjectsTransformList tl = controller.gameObject.GetComponent<GameObjectsTransformList>();
-
-        //if (bulletSpawnList.Count > 0
-        //    && tl.transformList.Count > 0
-        //    && tl != null)
-        //{
-        //    for (int pi = 0; pi < bulletSpawnList.Count; pi++)
-        //    {
-        //        for (int si = 0; si < bulletSpawnList[pi].spawnPointIndex.Length; si++)
-        //        {
-        //            if (tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]] != null)
-        //            {
-        //                bool alreadyInList = false;
-        //                for (int t = 0; t < spawnList.Count; t++)
-        //                {
-        //                    if (spawnList[t] == tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]])
-        //                    {
-        //                        alreadyInList = true;
-        //                        break;
-        //                    }
-        //                }
-
-        //                if (alreadyInList == false)
-        //                {
-        //                    spawnList.Add(tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]]);
-        //                }
-        //            }
-        //        }
-        //    }
-        //}
-
+        //Resets the pattern
         shotPattern.Reset(controller.gameObject);
-        //shotPattern.Reset(controller.gameObject, spawnList);
     }
 }
 
