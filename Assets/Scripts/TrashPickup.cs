@@ -78,7 +78,10 @@ public class TrashPickup : MonoBehaviour {
                     trudgesHealthBar.UpdateBar();
                 }
 
+                //Fills the powerup meter
                 pointSystem.FillMeter(fillMeterWith);
+
+                //Destroy pickup
                 Destroy(gameObject);
             }
 
