@@ -24,17 +24,19 @@ public class PlayVideoAction : StateAction {
         {
             triggered = true;
 
+            //Instanciates thecanvas with the video
             Instantiate(videoCanvasPrefab);
-
 
             AudioSource[] audioSourceObject = GameObject.FindGameObjectWithTag("AudioSource").GetComponentsInChildren<AudioSource>();
 
+            //Stops all the audio from the AudioSource object
             foreach (AudioSource au in audioSourceObject)
             {
                 au.Stop();
             }
 
-            Destroy(GameObject.FindGameObjectWithTag("Player"));
+            //Inactivates the player to stop it from making sound
+            GameObject.FindGameObjectWithTag("Player").SetActive(false);
         }
     }
 
