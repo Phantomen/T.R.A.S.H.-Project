@@ -8,8 +8,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a17c2ae20198e8d45bd971593b3d6c74, type: 3}
-  m_Name: Annialation
+  m_Script: {fileID: 11500000, guid: 5463124bd67a4be458244a55f40dbf4b, type: 3}
+  m_Name: Victory video Hugh
   m_EditorClassIdentifier: 
-  blankPrefab: {fileID: 1048653860342526, guid: 334579675f46cd147b356447c2974819,
+  videoCanvasPrefab: {fileID: 1281872602601284, guid: 3c494cc8c9907e34eb2fbf4001c38197,
     type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Wave 3 SpawnAction
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
+  - objectPrefabs:
     - {fileID: 1326785638982650, guid: 9e49c6468e625604abc18f7512cc55d4, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0.1
@@ -20,10 +20,10 @@ MonoBehaviour:
     currentSpawnCount: 1
     destroySpawnedAfterTime: 0
     spawnFromObject: 0
-    lifeTime: 0
+    lifeTime: 13
     currentDelay: 0.1
-    currentTime: 23.960358
-  - minionPrefabs:
+    currentTime: 23.980358
+  - objectPrefabs:
     - {fileID: 1544024329197108, guid: 0e8ede8573db45d42a88b94d69630f89, type: 2}
     spawnStartDelay: 4
     delayBetweenSpawns: 0.1
@@ -33,18 +33,6 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 10
     currentDelay: 0.1
-    currentTime: 19.960264
-  - minionPrefabs:
-    - {fileID: 1659590428255722, guid: e3390fc3bd69b0846aa9c9c258a5b53f, type: 2}
-    - {fileID: 1659590428255722, guid: d5ab2248978200c49ad6955196de6bdb, type: 2}
-    spawnStartDelay: 4
-    delayBetweenSpawns: 0.1
-    numberOfSpawns: 1
-    currentSpawnCount: 1
-    destroySpawnedAfterTime: 1
-    spawnFromObject: 0
-    lifeTime: 13
-    currentDelay: 0.1
-    currentTime: 19.960264
+    currentTime: 19.980265
   orbitSpawnList: []
   pickUpList: []

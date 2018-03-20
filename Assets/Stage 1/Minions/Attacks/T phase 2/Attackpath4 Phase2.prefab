@@ -115,7 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingSpeed: 4
   overflowType: 0
-  destroyOnEndPoints: 0
+  destroyOnEndPoints: 1
   destructionType: 0
   resetActionAfterCycle: 1
   sameActionsBack: 1

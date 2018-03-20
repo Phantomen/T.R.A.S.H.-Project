@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Wave 6 Spawn
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
+  - objectPrefabs:
     - {fileID: 1573285592734448, guid: 9973fe9fedb94454683e9d9a05094939, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0
