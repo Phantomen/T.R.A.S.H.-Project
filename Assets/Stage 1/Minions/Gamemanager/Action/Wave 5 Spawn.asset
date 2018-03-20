@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Wave 5 Spawn
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
+  - objectPrefabs:
     - {fileID: 1573285592734448, guid: 0dabea0dc90c76f419039822f8920c83, type: 2}
     spawnStartDelay: 2
     delayBetweenSpawns: 4
@@ -22,8 +22,8 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 2
     currentDelay: 4
-    currentTime: 3.4599845
-  - minionPrefabs:
+    currentTime: 2.039986
+  - objectPrefabs:
     - {fileID: 1573285592734448, guid: c92391a8b07ef4248a6b4b4953991d4d, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 4
@@ -33,6 +33,6 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 2
     currentDelay: 4
-    currentTime: 5.4599843
+    currentTime: 4.0399857
   orbitSpawnList: []
   pickUpList: []

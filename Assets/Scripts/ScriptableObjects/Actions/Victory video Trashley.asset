@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5463124bd67a4be458244a55f40dbf4b, type: 3}
   m_Name: Victory video Trashley
   m_EditorClassIdentifier: 
-  videoCanvasPrefab: {fileID: 0}
+  videoCanvasPrefab: {fileID: 1928810873128048, guid: 10bacc4bb73460c488fdd53fe88de1d5,
+    type: 2}

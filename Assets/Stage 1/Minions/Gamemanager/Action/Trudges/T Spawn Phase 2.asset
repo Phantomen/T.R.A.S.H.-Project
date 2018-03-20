@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: T Spawn Phase 2
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
+  - objectPrefabs:
     - {fileID: 1217393096149340, guid: 6908512f32bdb0a4099a0df694c1c781, type: 2}
     - {fileID: 1749410428025458, guid: fb76c3768e265654ca9766487f52177f, type: 2}
     - {fileID: 1954057833107496, guid: 21e29f0b02bd3bf48956473075966d56, type: 2}
@@ -25,6 +25,6 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 40
     currentDelay: 0
-    currentTime: 109.273674
+    currentTime: 14.020131
   orbitSpawnList: []
   pickUpList: []

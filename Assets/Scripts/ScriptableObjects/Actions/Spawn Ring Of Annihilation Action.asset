@@ -11,4 +11,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a17c2ae20198e8d45bd971593b3d6c74, type: 3}
   m_Name: Spawn Ring Of Annihilation Action
   m_EditorClassIdentifier: 
-  blank: {fileID: 1048653860342526, guid: 334579675f46cd147b356447c2974819, type: 2}
+  blankPrefab: {fileID: 1048653860342526, guid: 334579675f46cd147b356447c2974819,
+    type: 2}
