@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Name: SpawnTrudges
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
-    - {fileID: 1662556300929422, guid: d39631da2c6a9f945a1c108e0769ef6f, type: 2}
+  - objectPrefabs:
+    - {fileID: 1052713426006280, guid: efeba4cf263fd5d438c296f67425f589, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0
     numberOfSpawns: 1
