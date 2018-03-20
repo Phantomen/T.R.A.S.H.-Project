@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: T Phase 5 Spawn
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
+  - objectPrefabs:
     - {fileID: 1247000154510522, guid: 9a361e8c48a190749b8f6f6d6d3c47e8, type: 2}
     - {fileID: 1147293714526130, guid: 101c9275d410f1741a5f0dc3a44cb2de, type: 2}
     spawnStartDelay: 0
@@ -23,16 +23,6 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 60
     currentDelay: 0
-    currentTime: 32.86056
-  - minionPrefabs: []
-    spawnStartDelay: 0
-    delayBetweenSpawns: 0
-    numberOfSpawns: 0
-    currentSpawnCount: 0
-    destroySpawnedAfterTime: 0
-    spawnFromObject: 0
-    lifeTime: 0
-    currentDelay: 0
-    currentTime: 32.86056
+    currentTime: 12.720101
   orbitSpawnList: []
   pickUpList: []
