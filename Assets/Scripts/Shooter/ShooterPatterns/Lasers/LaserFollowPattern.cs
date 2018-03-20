@@ -62,6 +62,9 @@ public class LaserFollowPattern : MonoBehaviour {
                 {
                     Vector3 laserPosition = new Vector3(this.transform.position.x + distanceFromCenter.x, this.transform.position.y + distanceFromCenter.y, this.transform.position.z + distanceFromCenter.z);
                     var laser = (GameObject)Instantiate(activeLaser, laserPosition, laserList[0].transform.rotation);
+
+                    laser.transform.parent = gameObject.transform;
+
                     laserList.Add(laser);
                     laserList[1].GetComponent<AudioSource>().clip = activeLaserSound;
                     laserList[1].GetComponent<AudioSource>().Play();
@@ -112,6 +115,9 @@ public class LaserFollowPattern : MonoBehaviour {
     { 
         Vector3 laserPosition = new Vector3(this.gameObject.transform.position.x + distanceFromCenter.x, this.gameObject.transform.position.y + distanceFromCenter.y, this.gameObject.transform.position.z + distanceFromCenter.z);
         var laser = (GameObject)Instantiate(laserObject, laserPosition, Quaternion.identity);
+
+        laser.transform.parent = gameObject.transform;
+
         laserList.Add(laser);
         warningLaserSpawned = true;
     }

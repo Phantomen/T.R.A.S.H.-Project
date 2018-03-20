@@ -5,8 +5,13 @@ using UnityEngine;
 public class EscapeMenu : MonoBehaviour {
 
     public GameObject toBeToggled;
+    public TogglButtonImage pauseButton;
     private bool active = false;
 
+    void Start()
+    {
+        pauseButton = pauseButton.GetComponent<TogglButtonImage>();
+    }
 
 	void Update ()
     {
@@ -14,6 +19,7 @@ public class EscapeMenu : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             ToggleActive();
+            pauseButton.ToggleSprite();
         }
 	}
 

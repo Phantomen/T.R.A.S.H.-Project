@@ -22,6 +22,6 @@ MonoBehaviour:
     spawnFromObject: 0
     lifeTime: 60
     currentDelay: 0
-    currentTime: 26.22041
+    currentTime: 4.5399966
   orbitSpawnList: []
   pickUpList: []

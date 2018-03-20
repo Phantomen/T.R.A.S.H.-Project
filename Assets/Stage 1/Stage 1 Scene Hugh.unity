@@ -407,6 +407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toBeToggled: {fileID: 591903990}
+  pauseButton: {fileID: 1269754645}
 --- !u!1 &69299060
 GameObject:
   m_ObjectHideFlags: 0
@@ -580,7 +581,7 @@ Transform:
   m_LocalScale: {x: 1.95, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &193267381
 GameObject:
@@ -681,7 +682,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -690,8 +691,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1ecf3fcfecc52344a80bb38e22b9ec19,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 36f610b1427dc0d4dae6365e4eb39f66, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -757,7 +759,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 15b22aef4a69fc348b4a49139925f141, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c807d03eeaa7b3e49a1774664232a325, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -854,6 +856,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 50393222}
         m_MethodName: ToggleActive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1269754645}
+        m_MethodName: ToggleSprite
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1325,7 +1338,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4397575901916500, guid: 924e6731b6877f04fa2ee4f475c3fcac, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 114767732115237614, guid: 924e6731b6877f04fa2ee4f475c3fcac,
         type: 2}
@@ -2348,7 +2361,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2357,8 +2370,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 1ecf3fcfecc52344a80bb38e22b9ec19,
+      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 36f610b1427dc0d4dae6365e4eb39f66, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -2424,7 +2438,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 15b22aef4a69fc348b4a49139925f141, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c807d03eeaa7b3e49a1774664232a325, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2735,7 +2749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1436948520}
   timeText: {fileID: 753029495}
-  startingScore: 0
+  startingScore: 50000
 --- !u!1 &1143502175
 GameObject:
   m_ObjectHideFlags: 0
@@ -3075,6 +3089,7 @@ GameObject:
   - component: {fileID: 1269754644}
   - component: {fileID: 1269754643}
   - component: {fileID: 1269754642}
+  - component: {fileID: 1269754645}
   m_Layer: 5
   m_Name: OpenMenuButton
   m_TagString: Untagged
@@ -3150,6 +3165,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1269754645}
+        m_MethodName: ToggleSprite
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1269754643
@@ -3171,7 +3197,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8edba6c0d38d40040bc3f73520e37f2c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09c83a17fdd52114a890590b0d5650a4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3185,6 +3211,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1269754640}
+--- !u!114 &1269754645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1269754640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0298b76d385b98b45bc01b126a10c7e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonOn: {fileID: 21300000, guid: 09c83a17fdd52114a890590b0d5650a4, type: 3}
+  buttonOff: {fileID: 21300000, guid: 8edba6c0d38d40040bc3f73520e37f2c, type: 3}
 --- !u!1 &1340200130
 GameObject:
   m_ObjectHideFlags: 0
@@ -3676,7 +3715,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1436948517}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.0800018, y: 202.9, z: 0}
+  m_LocalPosition: {x: 17.01, y: 202.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1030529213}
@@ -3684,8 +3723,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1.08, y: 202.9}
-  m_SizeDelta: {x: 80.04, y: 30}
+  m_AnchoredPosition: {x: 17.01, y: 202.9}
+  m_SizeDelta: {x: 69.3, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436948519
 MonoBehaviour:
@@ -3727,7 +3766,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

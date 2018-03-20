@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710d71a853f1cde4399564961402c15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  laserNode: {fileID: 1485977145114434, guid: 5724391fd2ff141419d3bc3a4a3aac83, type: 2}
+  laserNode: {fileID: 1410566565341184, guid: 51012bb2cabd7ea4d9220a2e783fefcc, type: 2}
   nodeAmount: 4
   nodeLaserDelay: 2
   distanceFromCenter: {x: 0, y: 0}
