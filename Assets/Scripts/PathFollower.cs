@@ -347,7 +347,7 @@ public class PathFollower : MonoBehaviour {
 
             //If it moved past a point that had a stoptime
             //Move the object to it and stop
-            if (pointActionList[pointListIndex - 1].stoppedTime > 0)
+            if (pointActionList[pointListIndex + 1].stoppedTime > 0)
             {
                 Debug.Log("Stop!");
                 stoppedTimer.Duration = pointActionList[pointListIndex - 1].stoppedTime;
