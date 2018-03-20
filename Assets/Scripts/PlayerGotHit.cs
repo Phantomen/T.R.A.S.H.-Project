@@ -21,6 +21,8 @@ public class PlayerGotHit : MonoBehaviour {
     private PlayerAnimationController playerAnim;
 
 
+    private CameraShake camShake;
+
     // Use this for initialization
     void Start()
     {
@@ -28,6 +30,8 @@ public class PlayerGotHit : MonoBehaviour {
         timer = new Timer(invincibleTime, 0);
         deathTimer = new Timer(0.25f, 0);
         playerAnim = gameObject.GetComponent<PlayerAnimationController>();
+
+        camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>();
     }
 
     void FixedUpdate()
@@ -56,7 +60,8 @@ public class PlayerGotHit : MonoBehaviour {
         playerAnim.GotHit();
         inviciBarrier.SetActive(true);
 
-        GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>().StartCameraShake();
+        //GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>().StartCameraShake;
+        camShake.StartCameraShake();
     }
 
     void OnTriggerEnter2D(Collider2D other)
