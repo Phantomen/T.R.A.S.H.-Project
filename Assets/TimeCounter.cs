@@ -10,7 +10,7 @@ public class TimeCounter : MonoBehaviour {
     public float startingScore;
 
     private float timer;
-    private int seconds;
+    private float minutes, seconds;
     private bool countDown = true;
 	// Use this for initialization
 	void Start ()
@@ -24,10 +24,16 @@ public class TimeCounter : MonoBehaviour {
         if (countDown)
         {
             timer += Time.deltaTime;
-            //seconds = Convert.ToInt32(timer % 60);
+            seconds = Mathf.FloorToInt(timer % 60);
+            minutes = Mathf.FloorToInt(timer / 60);
             startingScore -= Time.deltaTime;
             scoreText.text = startingScore.ToString();
-            timeText.text = seconds.ToString();
+            timeText.text = minutes.ToString() + ":" + seconds.ToString();
         }
+    }
+
+    public void TurnOffTimers()
+    {
+        countDown = false;
     }
 }
