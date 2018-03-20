@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PressToStart : MonoBehaviour {
 
-
+    public GameObject loadingBar;
+    public bool useLoadingBar = false;
     public string menuToLoad;
     private AudioSource audio;
     // Update is called once per frame
@@ -23,7 +24,12 @@ public class PressToStart : MonoBehaviour {
 
             audio.Play();
             }
+            if (useLoadingBar == true)
+            {
+                loadingBar.SetActive(true);
+            }
             Application.LoadLevel(menuToLoad);
+
         }
 
     }
