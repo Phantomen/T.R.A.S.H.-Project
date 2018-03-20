@@ -24,7 +24,6 @@ public class TrudgesAttackActionOne : StateAction {
 
     private void ResetShooting(StateController controller)
     {
-        //shotPattern.Reset();
         shotPattern.Reset(controller.gameObject);
     }
 }

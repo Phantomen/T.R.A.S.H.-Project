@@ -17,6 +17,10 @@ public class BulletPatternRotating : MonoBehaviour {
         {
             horizontal = -1;
         }
+        else
+        {
+            horizontal = 1;
+        }
 	}
 	
 	// Update is called once per frame
@@ -27,6 +31,7 @@ public class BulletPatternRotating : MonoBehaviour {
 
     private void Turn()
     {
+        //The bullet rotates either to the right or left a certain degrees
         transform.rotation *= Quaternion.Euler(0, 0, degreesPerSecond * Time.deltaTime * horizontal);
     }
 }

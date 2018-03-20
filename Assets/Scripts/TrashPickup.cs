@@ -31,32 +31,37 @@ public class TrashPickup : MonoBehaviour {
         //sets the amount of time it takes to pick up an item
         timer = new Timer(pickupTimeInSeconds, 0);
 
+        //Finds the player
         player = GameObject.FindGameObjectWithTag(playerTag);
         playerAnim = player.GetComponent<PlayerAnimationController>();
+
         ownAnim = GetComponent<Animator>();
 
+        //Finds pointsystem
         pointSystem = GameObject.FindGameObjectWithTag("PointSystem").GetComponent<PointSystem>();
 
+        //finds audioSource
         audioSource = GameObject.FindGameObjectWithTag("AudioSource").transform.Find(audioSourceChildNamePickup).GetComponent<AudioSource>();
 
+        //Gets the bosses healthbar
         trudgesHealthBar = GameObject.FindGameObjectWithTag("Boss").GetComponentInChildren<TrudgesHealthBar>();
     }
 
     void FixedUpdate()
     {
+        //If player is picking the trash up
         if (timerOn)
         {
             timer.Time += Time.deltaTime;
 
-            //If enough time has passed while interacting with player, set as true
+            //If enough time has passed while interacting with player, pick it up
             if (timer.Expired == true)
             {
-                //Fill the meter in the pointsystem with the amount specified in fillMeterWith, then destroy object this script is on.
-                //audioSource.Play();
-
+                //plays the sound
                 audioSource.clip = audioClip;
                 audioSource.Play();
 
+                //plays the animation
                 if (gameObject.tag == "Spraybottle")
                 {
                     playerAnim.PickedUpSpray();
@@ -67,11 +72,16 @@ public class TrashPickup : MonoBehaviour {
                     playerAnim.PickedUpBag();
                 }
 
+                //If it should damage a boss, and there actually is a boss, damage it
                 if (activateHealthBar && trudgesHealthBar != null)
                 {
                     trudgesHealthBar.UpdateBar();
                 }
+
+                //Fills the powerup meter
                 pointSystem.FillMeter(fillMeterWith);
+
+                //Destroy pickup
                 Destroy(gameObject);
             }
 
@@ -81,6 +91,7 @@ public class TrashPickup : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        //Player is picking it up
         if (other.gameObject.tag == playerTag)
         {
             timerOn = true;

@@ -10,13 +10,14 @@ public class BossHealthEmptyDecision : StateDecision {
         return HealthIsEmpty(controller);
     }
 
+    //If the boss has no health left, return true
     private bool HealthIsEmpty(StateController controller)
     {
         bool isEmpty = false;
 
         TrudgesHealthBar hpBar = controller.GetComponentInChildren<TrudgesHealthBar>();
 
-        if (hpBar.CheckFullDamage() == true)
+        if (hpBar != null && hpBar.CheckFullDamage() == true)
         {
             isEmpty = true;
         }

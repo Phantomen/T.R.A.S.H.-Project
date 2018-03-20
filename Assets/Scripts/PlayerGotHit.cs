@@ -21,7 +21,7 @@ public class PlayerGotHit : MonoBehaviour {
     private PlayerAnimationController playerAnim;
 
 
-
+    private CameraShake camShake;
 
     // Use this for initialization
     void Start()
@@ -31,6 +31,7 @@ public class PlayerGotHit : MonoBehaviour {
         deathTimer = new Timer(0.25f, 0);
         playerAnim = gameObject.GetComponent<PlayerAnimationController>();
 
+        camShake = GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>();
     }
 
     void FixedUpdate()
@@ -49,34 +50,31 @@ public class PlayerGotHit : MonoBehaviour {
         }
     }
 
+    private void PlayerHit()
+    {
+        sound.Play();
+        boopCount++;
+        pointSystem.ChangeLife(damageTakenByHits);
+        timerOn = true;
+        invincible = true;
+        playerAnim.GotHit();
+        inviciBarrier.SetActive(true);
+
+        //GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>().StartCameraShake;
+        camShake.StartCameraShake();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "bullet" && invincible == false)
         {
+            PlayerHit();
 
-            sound.Play();
-            boopCount++;
-            pointSystem.ChangeLife(damageTakenByHits);
-            timerOn = true;
-            invincible = true;
-            playerAnim.GotHit();
             Destroy(other.gameObject, 0.1f);
-            inviciBarrier.SetActive(true);
-
         }
         else if (other.gameObject.tag == "laser" && invincible == false)
         {
-
-            sound.Play();
-            boopCount++;
-            pointSystem.ChangeLife(damageTakenByHits);
-            timerOn = true;
-            invincible = true;
-            //gotHit = true;
-            //animator.SetBool("GetHit", true);
-            playerAnim.GotHit();
-            inviciBarrier.SetActive(true);
-
+            PlayerHit();
         }
     }
 }

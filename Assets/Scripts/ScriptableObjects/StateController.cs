@@ -6,8 +6,6 @@ using UnityEngine.AI;
 public class StateController : MonoBehaviour {
 	public State currentState;
     public float gizmoSize = 0.25f;
-    //public EnemyStats enemyStats;
-    //public State remainState;
 
     [HideInInspector] public List<GameObject> minionList = new List<GameObject>();
     [HideInInspector] public List<GameObject> itemList = new List<GameObject>();
@@ -15,20 +13,9 @@ public class StateController : MonoBehaviour {
 	[HideInInspector] public GameObject playerGameObject;
 	[HideInInspector] public float stateTimeElapsed;
 
-    //Set in inspector the 
- //   public Transform bulletSpawn;
-
-	//private float nextFire;
-
 	// Use this for initialization
 	void Awake ()
 	{
-        //If no spaww point has been set for the bullet
-        //if (bulletSpawn == null)
-        //{
-        //    bulletSpawn = transform;
-        //}
-
 		playerGameObject = GameObject.FindGameObjectWithTag ("Player");
 
         currentState.ResetAction(this);
@@ -57,21 +44,18 @@ public class StateController : MonoBehaviour {
     //Changes state
 	public void TransitionToState(State nextState)
 	{
-        //if (nextState != remainState)
+        //If the next state exists and the next state isn't the current state
         if (nextState != null
             && nextState != currentState)
         {
 			currentState = nextState;
-			//remainState = nextState;
 			OnExitState ();
 		}
 	}
 
     //Check if time has expired
-    //Use timer script instead???
 	public bool CheckIfCountDownElapsed(float duration)
 	{
-		//stateTimeElapsed += Time.deltaTime;
 		return (stateTimeElapsed >= duration);
 	}
 
@@ -84,6 +68,7 @@ public class StateController : MonoBehaviour {
 	}
 
 
+    //Clears the list of gameobjects that doesn't exist
     public void ClearMinionListOfNull()
     {
         for (int i = 0; i < minionList.Count;)
@@ -100,17 +85,19 @@ public class StateController : MonoBehaviour {
         }
     }
 
+    //Destroys every object in list and then clears the list
     public void MinionListDestroyClear(float t)
     {
         for (int i = 0; i < minionList.Count; i++)
         {
             Destroy(minionList[i], t);
         }
-        ClearMinionListOfNull();
+
+        minionList.Clear();
     }
 
 
-
+    //Clears the list of gameobjects that doesn't exist
     public void ClearItemListOfNull()
     {
         for (int i = 0; i < itemList.Count;)
@@ -127,12 +114,13 @@ public class StateController : MonoBehaviour {
         }
     }
 
+    //Destroys every object in list and then clears the list
     public void ItemListDestroyClear(float t)
     {
         for (int i = 0; i < itemList.Count; i++)
         {
             Destroy(itemList[i], t);
         }
-        ClearItemListOfNull();
+        itemList.Clear();
     }
 }

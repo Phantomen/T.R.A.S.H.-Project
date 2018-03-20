@@ -10,7 +10,7 @@ public class ChangeMusicAction : StateAction {
     [SerializeField]
     private AudioClip startClip;
 
-    [Tooltip("The clip that will loop after teh startclip is done")]
+    [Tooltip("The clip that will loop after the startclip is done")]
     [SerializeField]
     private AudioClip loopClip;
 
@@ -21,6 +21,7 @@ public class ChangeMusicAction : StateAction {
         ChangeMusic();
     }
 
+    //If it hasn't changed music, change the current music playing in the game
     private void ChangeMusic()
     {
         if (triggered == false)
@@ -31,6 +32,7 @@ public class ChangeMusicAction : StateAction {
 
             BackgroundMusic bm = audioS.GetComponentInChildren<BackgroundMusic>();
 
+            //Change the music
             bm.ChangeMusic(startClip, loopClip);
         }
     }

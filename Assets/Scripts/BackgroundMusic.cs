@@ -14,13 +14,17 @@ public class BackgroundMusic : MonoBehaviour {
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();
-        StartCoroutine(PlayEngineSound(engineStartClip, engineLoopClip));
+        ChangeMusic(engineStartClip, engineLoopClip);
 	}
+	
 
     public IEnumerator PlayEngineSound(AudioClip startClip, AudioClip loopClip)
     {
+        //Plays the startClip
         audioSource.clip = startClip;
         audioSource.Play();
+
+        //Waits until the startClip has finished playing before starting to play the loopClip
         yield return new WaitForSecondsRealtime(audioSource.clip.length);
         if (keepPlaying)
         {
@@ -29,11 +33,13 @@ public class BackgroundMusic : MonoBehaviour {
         }
     }
 
+    //Change the current music
     public void ChangeMusic(AudioClip startClip, AudioClip loopClip)
     {
         StartCoroutine(PlayEngineSound(startClip, loopClip));
     }
 
+    //Stops the music
     public void StopMusic()
     {
         keepPlaying = false;

@@ -9,25 +9,29 @@ public class NotTurnChild : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         parentGameObject = transform.parent.gameObject;
-        Quaternion rotation = Quaternion.Euler(-parentGameObject.transform.rotation.x, -parentGameObject.transform.rotation.y, -parentGameObject.transform.rotation.z);
+        if (parentGameObject != null)
+        {
+            Quaternion rotation = Quaternion.Euler(-parentGameObject.transform.rotation.x, -parentGameObject.transform.rotation.y, -parentGameObject.transform.rotation.z);
+        }
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        float newRotX = parentGameObject.transform.localRotation.x;
-        float newRotY = parentGameObject.transform.localRotation.y;
-        float newRotZ = parentGameObject.transform.localRotation.z;
+        //if it has a parent gameObject
+        if (parentGameObject != null)
+        {
+            float newRotX = parentGameObject.transform.localRotation.x;
+            float newRotY = parentGameObject.transform.localRotation.y;
+            float newRotZ = parentGameObject.transform.localRotation.z;
 
-        newRotZ = newRotZ / 2;
+            newRotZ = newRotZ / 2;
 
-        Quaternion newRotation = new Quaternion();
-        newRotation.Set(-newRotX, -newRotY, -newRotZ, parentGameObject.transform.rotation.w);
+            Quaternion newRotation = new Quaternion();
+            //Sets new rotation to negative rotation of parent
+            newRotation.Set(-newRotX, -newRotY, -newRotZ, parentGameObject.transform.rotation.w);
 
-        //Quaternion newRotation = Quaternion.Euler(-parentGameObject.transform.rotation.x, -parentGameObject.transform.rotation.y, -parentGameObject.transform.rotation.z);
-        //Quaternion newRotation = Quaternion.Euler(0, 0, 0);
-        transform.localRotation = newRotation;
-        //Debug.Log("Parent: " + parentGameObject.transform.rotation.eulerAngles + "\n newRotation: " + -parentGameObject.transform.rotation.eulerAngles);
-        Debug.Log("Parent: " + parentGameObject.transform.localRotation.eulerAngles + "\n newRotation: " + newRotation.eulerAngles);
-        //Debug.Log("Parent: " + -parentGameObject.transform.rotation.eulerAngles.z + "\n newRotation: " + newRotation.eulerAngles.z);
+            //Sets new rotation
+            transform.localRotation = newRotation;
+        }
     }
 }

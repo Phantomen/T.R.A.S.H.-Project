@@ -37,13 +37,15 @@ public class TrudgesHealthBar : MonoBehaviour {
     }
 
 
+    //When the boss takes damage
     public void UpdateBar()
     {
         damageTaken ++;
             
+        //Take damage
         healthBarSpriterenderer.sprite = healthBar[damageTaken];
 
-        //Play damage sound
+        //Play damage sound if curren't health is not 0
         if (damageTaken < healthBar.Count - 1)
         {
             audioSource.clip = damageSound;
@@ -51,6 +53,7 @@ public class TrudgesHealthBar : MonoBehaviour {
         }
     }
 
+    //Resets the healthbar
     public void ResetBar()
     {
         damageTaken = 0;
@@ -65,6 +68,8 @@ public class TrudgesHealthBar : MonoBehaviour {
         bossAnimator.SetTrigger("Slam");
     }
 
+
+    //Checks if the boss has 0 health
     public bool CheckFullDamage()
     {
         bool fullDamage = false;

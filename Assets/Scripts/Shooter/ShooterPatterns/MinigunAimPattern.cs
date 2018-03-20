@@ -17,7 +17,6 @@ public class MinigunAimPattern : MonoBehaviour {
     }
 
     public LerpType lerpType;
-    //public float lerpSpeed = 0.2f;
 
     public bool InstantTurnOnStartOfNewWave = false;
     private bool instantTurn = false;
@@ -53,11 +52,12 @@ public class MinigunAimPattern : MonoBehaviour {
         currentTimeInWave = new Timer(timerPerWave, 0);
         currentDelay = new Timer(startDelay, 0);
 
-
+        //If spawnposition is emty, add self
         if (bulletSpawnPosition.Count == 0)
         {
             bulletSpawnPosition.Add(transform);
         }
+
         //If it does not have spawnpoint, set it as the own
         for (int i = 0; i < bulletSpawnPosition.Count; i++)
         {
@@ -67,6 +67,7 @@ public class MinigunAimPattern : MonoBehaviour {
             }
         }
 
+        //Aim directly at player at start
         if (atStartAimedAtPlayer == true)
         {
             for (int i = 0; i < bulletSpawnPosition.Count; i++)
@@ -76,6 +77,7 @@ public class MinigunAimPattern : MonoBehaviour {
             }
         }
 
+        //Sets delayBetweenBullets
         delayBetweenBullets = timerPerWave / (float)bulletsPerWave;
     }
 	
@@ -83,6 +85,7 @@ public class MinigunAimPattern : MonoBehaviour {
 	void FixedUpdate () {
         currentDelay.Time += Time.deltaTime;
 
+        //If time has expired
         if (currentDelay.Expired == true)
         {
             //If instantTurn is true, that means that this wave is a new one and instantTurnStartOfWaves == true
@@ -117,134 +120,9 @@ public class MinigunAimPattern : MonoBehaviour {
     }
 
 
-    //private void Shoot()
-    //{
-    //    if (currentDelay.Duration != timerPerWave / bulletsPerWave)
-    //    {
-    //        currentDelay.Duration = timerPerWave / bulletsPerWave;
-    //    }
-
-    //    for (int i = 0; i < bulletSpawnPosition.Count; i++)
-    //    {
-    //        Vector2 targetDir = bulletSpawnPosition[i].position - player.transform.position;
-
-    //        Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.forward);
-    //        targetRotation.x = 0;
-    //        targetRotation.y = 0;
-
-    //        Quaternion newRotation = targetRotation;
-
-    //        Quaternion fromRotation = bulletSpawnPosition[i].rotation;
-    //        fromRotation.x = 0;
-    //        fromRotation.y = 0;
-
-
-
-    //        if (lerpType == LerpType.Constant)
-    //        {
-    //            //Debug.Log("Error, No constant speed code set");
-
-    //            float targetRotZ = targetRotation.eulerAngles.z;
-    //            float currentRotZ = fromRotation.eulerAngles.z;
-
-
-    //            //If same side
-    //            //+
-    //            if (targetRotZ >= currentRotZ
-    //                && ((targetRotZ >= 180 && currentRotZ >= 180)
-    //                || (targetRotZ <= 180 && currentRotZ <= 180)))
-    //            {
-    //                newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngle(currentRotZ, targetRotation.eulerAngles.z, 1));
-    //            }
-
-    //            //-
-    //            else if (targetRotZ <= currentRotZ
-    //                && ((targetRotZ >= 180 && currentRotZ >= 180)
-    //                || (targetRotZ <= 180 && currentRotZ <= 180)))
-    //            {
-    //                newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngle(currentRotZ, targetRotation.eulerAngles.z, -1));
-    //            }
-
-
-    //            //If from left side to right side
-    //            //+
-    //            else if (targetRotZ <= currentRotZ + 180
-    //                && targetRotZ >= 180 && currentRotZ <= 180)
-    //            {
-    //                newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngle(currentRotZ, targetRotation.eulerAngles.z, 1));
-    //            }
-
-    //            //-
-    //            else if (targetRotZ >= currentRotZ + 180
-    //                && targetRotZ >= 180 && currentRotZ <= 180)
-    //            {
-    //                newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngleSwitch(currentRotZ, targetRotation.eulerAngles.z, -1));
-    //            }
-
-
-
-    //            //If from right side to left side
-    //            //+
-    //            else if (targetRotZ <= currentRotZ - 180
-    //                && targetRotZ <= 180 && currentRotZ >= 180)
-    //            {
-    //                newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngleSwitch(currentRotZ, targetRotation.eulerAngles.z, 1));
-    //            }
-
-    //            //-
-    //            else if (targetRotZ >= currentRotZ - 180
-    //                && targetRotZ <= 180 && currentRotZ >= 180)
-    //            {
-    //                newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngle(currentRotZ, targetRotation.eulerAngles.z, -1));
-    //            }
-    //        }
-
-
-
-    //        else if (lerpType == LerpType.Lerp)
-    //        {
-    //            newRotation = Quaternion.Lerp(fromRotation, targetRotation, Time.deltaTime * turningSpeed * Mathf.PI / 180);
-    //        }
-
-    //        else if (lerpType == LerpType.Slerp)
-    //        {
-    //            newRotation = Quaternion.Slerp(fromRotation, targetRotation, Time.deltaTime * turningSpeed * Mathf.PI / 180);
-    //        }
-
-    //        var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition[i].position, newRotation);
-
-    //        bulletSpawnPosition[i].transform.rotation = newRotation;
-
-    //        //oldRotation = newRotation;
-
-    //        Destroy(bullet, destroyBulletTime);
-    //    }
-
-    //    currentDelay.Time -= timerPerWave / bulletsPerWave;
-
-    //    currentBullet++;
-
-    //    if (currentBullet >= bulletsPerWave)
-    //    {
-    //        currentBullet = 0;
-
-    //        currentDelay.Duration = delayBetweenWaves;
-
-    //        if (delayBetweenWaves <= 0)
-    //        {
-    //            currentDelay.Duration = timerPerWave / bulletsPerWave;
-    //        }
-
-    //        if (InstantTurnOnStartOfNewWave == true)
-    //        {
-    //            instantTurn = true;
-    //        }
-    //    }
-    //}
-
-
     private void Shoot()
     {
+        //If the delay isn't the delay, set it as the delay
         if (currentDelay.Duration != delayBetweenBullets)
         {
             currentDelay.Time -= currentDelay.Duration - delayBetweenBullets;
@@ -252,6 +130,7 @@ public class MinigunAimPattern : MonoBehaviour {
             currentDelay.Duration = delayBetweenBullets;
         }
 
+        //For each spawnpoint, rotate them and spawn a bullet from them
         for (int i = 0; i < bulletSpawnPosition.Count; i++)
         {
             RotateSpawnPoints();
@@ -262,10 +141,14 @@ public class MinigunAimPattern : MonoBehaviour {
             Destroy(bullet, destroyBulletTime);
         }
 
+        //Lowers the time
         currentDelay.Time -= timerPerWave / bulletsPerWave;
 
+        //Adds a bullet
         currentBullet++;
 
+        //If all bullets has been fired in the wave
+        //Reset for next wave
         if (currentBullet >= bulletsPerWave)
         {
             currentBullet = 0;
@@ -285,8 +168,10 @@ public class MinigunAimPattern : MonoBehaviour {
     }
 
 
+    //Rotate all the spawnPoints
     private void RotateSpawnPoints()
     {
+        //For each spawnpoint
         for (int i = 0; i < bulletSpawnPosition.Count; i++)
         {
             //Relative aim point
@@ -294,6 +179,7 @@ public class MinigunAimPattern : MonoBehaviour {
 
             //Target rotation is rotation it needs to have to aim directly at it
             Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.forward);
+            //Sets it so it rotates around the z axis
             targetRotation.x = 0;
             targetRotation.y = 0;
 
@@ -305,7 +191,7 @@ public class MinigunAimPattern : MonoBehaviour {
             fromRotation.y = 0;
 
 
-
+            //Constant turning
             if (lerpType == LerpType.Constant)
             {
                 float targetRotZ = targetRotation.eulerAngles.z;
@@ -364,12 +250,13 @@ public class MinigunAimPattern : MonoBehaviour {
             }
 
 
-
+            //Lerp rotation
             else if (lerpType == LerpType.Lerp)
             {
                 newRotation = Quaternion.Lerp(fromRotation, targetRotation, Time.deltaTime * turningSpeed * Mathf.PI / 180);
             }
 
+            //Slerp rotation
             else if (lerpType == LerpType.Slerp)
             {
                 newRotation = Quaternion.Slerp(fromRotation, targetRotation, Time.deltaTime * turningSpeed * Mathf.PI / 180);
@@ -390,24 +277,14 @@ public class MinigunAimPattern : MonoBehaviour {
         //if over turned, aim directly at the player
         if ((targetRotZ > targetRotation
             && horizontal > 0)
-            || (targetRotZ < targetRotation
+            ||
+            (targetRotZ < targetRotation
             && horizontal < 0))
         {
             targetRotZ = targetRotation;
         }
 
         return targetRotZ;
-
-
-        //targetRotZ = currentRotZ + turningSpeed * Time.deltaTime;
-
-        //if (targetRotZ < targetRotation.eulerAngles.z
-        //    || targetRotZ > currentRotZ)
-        //{
-        //    targetRotZ = targetRotation.eulerAngles.z;
-        //}
-
-        //newRotation.eulerAngles = new Vector3(0, 0, targetRotZ);
     }
 
     private float GetConstantAngleSwitch(float currentRotZ, float targetRotation, int horizontal)
@@ -415,13 +292,13 @@ public class MinigunAimPattern : MonoBehaviour {
         //the target rotation for constant angle rotation
         float targetRotZ = currentRotZ + horizontal * turningSpeed * Time.deltaTime;
 
-        //If rotation is over or 360, subtract 360 and turning right
+        //If rotation is or over 360 and turning right, subtract 360 
         if (targetRotZ >= 360 && horizontal > 0)
         {
             targetRotZ -= 360;
         }
 
-        //else if rotation is less than 0, add 360 and turning left
+        //else if rotation is or under 0 and turning left, add 360
         else if (targetRotZ <= 0 && horizontal < 0)
         {
             targetRotZ += 360;
@@ -431,7 +308,8 @@ public class MinigunAimPattern : MonoBehaviour {
         if ((targetRotZ > targetRotation
             && horizontal > 0
             && targetRotZ < targetRotation)
-            || (targetRotZ < targetRotation
+            ||
+            (targetRotZ < targetRotation
             && horizontal < 0
             && targetRotZ > targetRotation))
         {

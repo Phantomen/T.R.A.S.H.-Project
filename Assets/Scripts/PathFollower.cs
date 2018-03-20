@@ -11,6 +11,7 @@ public class PathFollower : MonoBehaviour {
     private float currentSpeed;
     private float speedBeforeStopped;
 
+    //What to do when it goes over the first or last point in the curve
     public enum OverflowType
     {
         Stop = 0,
@@ -18,6 +19,7 @@ public class PathFollower : MonoBehaviour {
         PingPong = 2
     }
 
+    //Destroy gameObject with self when the path is done
     public enum DestructionType
     {
         destroyPathAndObject = 0,
@@ -26,11 +28,12 @@ public class PathFollower : MonoBehaviour {
 
     public OverflowType overflowType;
 
+
     public bool destroyOnEndPoints = false;
     public DestructionType destructionType;
 
 
-
+    //when the cycle starts again, do every action in the same order again
     public bool resetActionAfterCycle = true;
 
     //Do the first action at the last point
@@ -50,6 +53,7 @@ public class PathFollower : MonoBehaviour {
     public int numberOfTurns = 0;
     private int currentTurn = 0;
 
+
     public List<PointAction> pointActionList = new List<PointAction>();
     private int pointIndex = 0;
     private int pointListIndex = 0;
@@ -59,17 +63,21 @@ public class PathFollower : MonoBehaviour {
     public bool repeatingCircle;
     public List<Circling> repeatCircle = new List<Circling>();
 
+    //Shall it bounce between points?
     public bool bouncingBetweenPoints = false;
+    //What points
     public Vector2 bounceBetweenPoints;
+
 
     private Timer stoppedTimer = new Timer();
 
-
-
+    //The prefab it spawns
     public GameObject objectPrefab;
+    //If DestroyPathOnly, it will destroy the object after seconds
     public float destroyObjectTimeAfterPathDestroyed = 20;
 
 
+    //Reference to object it moves
     private GameObject objectToMove;
 
 
@@ -111,13 +119,14 @@ public class PathFollower : MonoBehaviour {
         //distance = math.Math[pointListIndex].DistanceFromStartToOrigin;
         distance = math.Math.GetDistance(pointIndex);
 
-
+        //Instantiate the object
         objectToMove = Instantiate(objectPrefab ,curve[0].PositionWorld, Quaternion.Euler(0, 0, 0));
 
-
+        //Sets the object so that the path moves the object
         GetComponent<BGCcCursorObjectTranslate>().ObjectToManipulate = objectToMove.transform;
 
 
+        //Sets the overflow to the right one in BGCCursorChangeLinear
         switch (overflowType)
         {
             case OverflowType.Stop:
@@ -137,6 +146,7 @@ public class PathFollower : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
+        //If the object it's supposed to move is null, destroy yourself
         if (objectToMove == null)
         {
             Destroy(gameObject);
@@ -145,130 +155,14 @@ public class PathFollower : MonoBehaviour {
         stoppedTimer.Time += Time.deltaTime;
         StopForTime();
 
-        //=========================================== Moving a current point (and adjacent controls) slowly to their future positions
-        // changing curve's attributes, like point's positions or controls fires curve.Changed event (in curve's LateUpdate)
-        // math object uses this event to recalculate it's cached data (and it's relatively expensive operation).
-        // we also use this event to call UpdateLineRenderer to update UI.
-
-
-        CheckPoint3();
+        CheckPoint();
 
         ActOnActions();
     }
 
-    //private void CheckPoint1()
-    //{
-    //    if (pointListIndex < pointActionList.Count)
-    //    {
-    //        if (startNextActionNextTurn == true)
-    //        {
-    //            startNextActionNextTurn = false;
 
-    //            Debug.Log("Hit this turn");
-
-    //            pointActionList[pointListIndex].StartAction(objectToMove);
-
-    //            NextPointAction();
-    //            distance = math.Math.GetDistance(pointListIndex);
-    //        }
-
-
-    //        if (cursor.Distance >= distance && movingBackwards == false)
-    //        {
-    //            Debug.Log("Hit");
-
-    //            pointActionList[pointListIndex].StartAction(objectToMove);
-
-    //            //pointListIndex++;
-    //            NextPointAction();
-    //            distance = math.Math.GetDistance(pointListIndex);
-    //            //Set delay right at the beginning of update so it does not move to the point before this one
-    //            //Or set speed to 0
-
-    //            //cursorLinear.Delay = 1;
-    //            //cursor.Distance = distance;
-    //            //cursorLinear.Speed = 0;
-    //            //PointMoveTime = 0;
-    //        }
-
-    //        else if (cursor.Distance <= distance && movingBackwards == true)
-    //        {
-    //            Debug.Log("Hit Backwards");
-    //        }
-
-
-    //        if (cursor.Distance + cursorLinear.Speed * Time.deltaTime >= distance
-    //            && movingBackwards == false)
-    //        {
-    //            startNextActionNextTurn = true;
-    //        }
-
-    //        if (cursor.Distance + cursorLinear.Speed * Time.deltaTime <= distance
-    //            && movingBackwards == true)
-    //        {
-    //            startNextActionNextTurn = true;
-    //        }
-    //    }
-    //}
-
-    //private void CheckPoint2()
-    //{
-    //    if (pointListIndex < pointActionList.Count)
-    //    {
-    //        if (startNextActionNextTurn == true)
-    //        {
-    //            startNextActionNextTurn = false;
-
-    //            Debug.Log("Hit this turn");
-
-    //            pointActionList[pointListIndex - 1].StartAction(objectToMove);
-
-    //            //NextPointAction();
-    //            distance = math.Math.GetDistance(pointListIndex);
-    //        }
-
-
-    //        if (cursor.Distance >= distance && movingBackwards == false)
-    //        {
-    //            Debug.Log("Hit");
-
-    //            pointActionList[pointListIndex].StartAction(objectToMove);
-
-    //            //pointListIndex++;
-    //            NextPointAction();
-    //            distance = math.Math.GetDistance(pointListIndex);
-    //            //Set delay right at the beginning of update so it does not move to the point before this one
-    //            //Or set speed to 0
-
-    //            //cursorLinear.Delay = 1;
-    //            //cursor.Distance = distance;
-    //            //cursorLinear.Speed = 0;
-    //            //PointMoveTime = 0;
-    //        }
-
-    //        else if (cursor.Distance <= distance && movingBackwards == true)
-    //        {
-    //            Debug.Log("Hit Backwards");
-    //        }
-
-
-    //        if (cursor.Distance + cursorLinear.Speed * Time.deltaTime >= distance
-    //            && movingBackwards == false)
-    //        {
-    //            NextPointAction();
-    //            startNextActionNextTurn = true;
-    //        }
-
-    //        if (cursor.Distance + cursorLinear.Speed * Time.deltaTime <= distance
-    //            && movingBackwards == true)
-    //        {
-    //            startNextActionNextTurn = true;
-    //        }
-    //    }
-    //}
-
-
-    private void CheckPoint3()
+    //The script that checks if the object passed a point
+    private void CheckPoint()
     {
         //Activates the next action
         if (startNextActionNextTurn == true)
@@ -308,22 +202,6 @@ public class PathFollower : MonoBehaviour {
             }
 
             NextPointAction();
-
-            //If the pointIndex is higher than the total number of points
-            //Overflow
-            //if (pointIndex >= curve.PointsCount && movingBackwards == false)
-            //{
-            //    Debug.Log("Overflow");
-            //    OverFlow();
-            //}
-
-            //else if (pointIndex < 0 && movingBackwards == true)
-            //{
-            //    Debug.Log("Overflow");
-            //    OverFlow();
-            //}
-            //Sets new distance
-            //distance = math.Math.GetDistance(pointIndex);
         }
 
 
@@ -363,7 +241,6 @@ public class PathFollower : MonoBehaviour {
                 }
 
                 NextPointAction();
-                //distance = math.Math.GetDistance(pointIndex);
             }
 
             //Else if next time it will move, it will cross a point
@@ -409,7 +286,6 @@ public class PathFollower : MonoBehaviour {
                 }
 
                 NextPointAction();
-                //distance = math.Math.GetDistance(pointIndex);
             }
 
             //Else if next time it will move, it will cross a point
@@ -437,10 +313,9 @@ public class PathFollower : MonoBehaviour {
             pointIndex++;
 
             //If it moved past a point that had a stoptime
-            //STOP!!!
+            //Move the object to it and stop
             if (pointActionList[pointListIndex - 1].stoppedTime > 0)
             {
-                Debug.Log("Stop!");
                 stoppedTimer.Duration = pointActionList[pointListIndex - 1].stoppedTime;
                 stoppedTimer.Time = 0;
 
@@ -457,7 +332,7 @@ public class PathFollower : MonoBehaviour {
                 pointActionList[i].currentPointAfter++;
             }
 
-            //Plus the indexes
+            //"Plus" the indexes
             if (sameActionsBack == true)
             {
                 pointListIndex--;
@@ -471,7 +346,7 @@ public class PathFollower : MonoBehaviour {
             pointIndex--;
 
             //If it moved past a point that had a stoptime
-            //STOP!!!
+            //Move the object to it and stop
             if (pointActionList[pointListIndex - 1].stoppedTime > 0)
             {
                 Debug.Log("Stop!");
@@ -484,7 +359,7 @@ public class PathFollower : MonoBehaviour {
         }
 
 
-        //Bouncing
+        //Bouncing back
         if (movingBackwards == false && bouncingBetweenPoints == true && pointIndex > bounceBetweenPoints.x)
         {
             movingBackwards = !movingBackwards;
@@ -508,7 +383,7 @@ public class PathFollower : MonoBehaviour {
                 }
             }
 
-            else if (resetActionsBack == true)
+            else if (resetActionsBack == false)
             {
                 for (int i = 0; i < repeatCircle.Count; i++)
                 {
@@ -530,6 +405,7 @@ public class PathFollower : MonoBehaviour {
             distance = math.Math.GetDistance(pointIndex);
         }
 
+        //Bouncing forward
         else if (movingBackwards == true && bouncingBetweenPoints == true && pointIndex < bounceBetweenPoints.y)
         {
             movingBackwards = !movingBackwards;
@@ -552,7 +428,7 @@ public class PathFollower : MonoBehaviour {
                 }
             }
 
-            else if (resetActionsBack == true)
+            else if (resetActionsBack == false)
             {
                 for (int i = 0; i < repeatCircle.Count; i++)
                 {
@@ -588,31 +464,6 @@ public class PathFollower : MonoBehaviour {
             }
 
 
-            //if (movingBackwards == false && repeatingCircle == true
-            //    && (pointListIndex - circle > repeatCircle[c].actionB && pointListIndex - circle > repeatCircle[c].actionA)
-            //    && repeatCircle[c].currentCircles < repeatCircle[c].numberOfCircles
-            //    && repeatCircle[c].numberOfCircles > 0)
-            //{
-            //    if (repeatCircle[c].resetActionsInCircle == true)
-            //    {
-            //        pointListIndex = pointListIndex - (repeatCircle[c].actionB + 1 - repeatCircle[c].actionA);
-            //        for (int i = repeatCircle[c].actionA; i <= repeatCircle[c].actionB; i++)
-            //        {
-            //            pointActionList[i].ResetActionTrigger();
-            //        }
-            //    }
-
-            //    repeatCircle[c].currentCircles++;
-
-            //    float distanceOver = cursor.Distance - math.Math.GetDistance(pointIndex - 1);
-
-            //    pointIndex = repeatCircle[c].actionA;
-
-            //    cursor.Distance = math.Math.GetDistance(pointIndex) + distanceOver;
-            //}
-
-
-
             if (movingBackwards == false && repeatingCircle == true
                 && (pointListIndex > repeatCircle[c].actionB && pointListIndex > repeatCircle[c].actionA)
                 && (pointIndex > repeatCircle[c].pointB && pointIndex > repeatCircle[c].pointB)
@@ -636,54 +487,17 @@ public class PathFollower : MonoBehaviour {
 
                 cursor.Distance = math.Math.GetDistance(pointIndex) + distanceOver;
             }
-
-
-
-
-            //else if (movingBackwards == true && repeatingCircle == true
-            //    && (pointListIndex + circle > repeatCircle[c].actionB && pointListIndex + circle > repeatCircle[c].actionA)
-            //    && repeatCircle[c].currentCircles < repeatCircle[c].numberOfCircles
-            //    && repeatCircle[c].numberOfCircles > 0)
-
-            //else if (movingBackwards == true && repeatingCircle == true
-            //    && (pointListIndex > repeatCircle[c].actionB && pointListIndex > repeatCircle[c].actionA)
-            //    && (pointIndex < repeatCircle[c].pointB && pointIndex < repeatCircle[c].pointB)
-            //    && repeatCircle[c].currentCircles < repeatCircle[c].numberOfCircles
-            //    && repeatCircle[c].numberOfCircles > 0)
-            //{
-            //    Debug.Log("Back circle");
-
-            //    if (repeatCircle[c].resetActionsInCircle == true)
-            //    {
-            //        pointListIndex = pointListIndex - (repeatCircle[c].actionB - repeatCircle[c].actionA);
-            //        for (int i = repeatCircle[c].actionA; i <= repeatCircle[c].actionB; i++)
-            //        {
-            //            pointActionList[i].ResetActionTrigger();
-            //        }
-            //    }
-
-            //    repeatCircle[c].currentCircles++;
-
-
-            //    float distanceOver = cursor.Distance - math.Math.GetDistance(pointIndex);
-
-            //    pointIndex = repeatCircle[c].pointB;
-
-            //    cursor.Distance = math.Math.GetDistance(pointIndex) + distanceOver;
-            //}
         }
 
 
         //Overflow
         if (pointIndex >= curve.PointsCount && movingBackwards == false)
         {
-            Debug.Log("Overflow");
             OverFlow();
         }
 
         else if (pointIndex < 0 && movingBackwards == true)
         {
-            Debug.Log("Overflow");
             OverFlow();
         }
 
@@ -699,15 +513,12 @@ public class PathFollower : MonoBehaviour {
 
         if (overflowType == OverflowType.Cycle)
         {
-            // Count turn and reset point index
+            //Count turn and reset point index
             currentTurn++;
             pointIndex = 0;
             //If current turn is higher than number of turns, destroy
             if (currentTurn > numberOfTurns)
             {
-                //Set so it moves to the next state
-                //objectToMove.getComponent<finishedPath>.nextAction();
-                //Destroy(gameObject); //Destroys the path and not the gameobject that moved
                 DestroyGameObject();
             }
 
@@ -730,6 +541,7 @@ public class PathFollower : MonoBehaviour {
             }
         }
 
+        //Pingpongs the object back
         else if (overflowType == OverflowType.PingPong)
         {
             if (pointIndex > 0)
@@ -749,6 +561,8 @@ public class PathFollower : MonoBehaviour {
                 }
             }
 
+            //If the next point is the one before the first one
+            //Make it move forward and the point index is 0
             else if (pointIndex < 0)
             {
                 currentTurn++;
@@ -774,6 +588,7 @@ public class PathFollower : MonoBehaviour {
             }
         }
 
+        //If overflow is stop, destroy
         else if (overflowType == OverflowType.Stop)
         {
             pointIndex = 0;
@@ -793,7 +608,7 @@ public class PathFollower : MonoBehaviour {
         }
     }
 
-    //Destroys both the path and object it moves
+    //Destroys both the path and maybe the object it will move
     private void DestroyGameObject()
     {
         if (destructionType == DestructionType.destroyPathAndObject)
@@ -868,8 +683,6 @@ public class PointAction
     public bool stopActionAfterTime = false;
     public float stopActionTime = 0;
     [HideInInspector] public Timer stopActionTimer;
-    
-    //Timer
 
     public void StartAction(GameObject objectToStart)
     {

@@ -11,10 +11,12 @@ public class StopMinionsPathAction : StateAction {
 
     private void StopPath(StateController controller)
     {
+        //for each minion in list
         for (int minionIndex = 0; minionIndex < controller.minionList.Count; minionIndex++)
         {
             PathFollower pathFollower = controller.minionList[minionIndex].GetComponent<PathFollower>();
 
+            //if it hsa the script PahtFollower, stop it from bouncing betweenPoints and destroy it at endpoints
             if (pathFollower != null)
             {
                 pathFollower.bouncingBetweenPoints = false;

@@ -10,10 +10,6 @@ public class TagTriggerRandomShooter : MonoBehaviour {
     [SerializeField]
     private List<GameObject> spawnObjectPrefab = new List<GameObject>();
 
-    //[Tooltip("The objects to spawn")]
-    //[SerializeField]
-    //private List<Transform> spawnPositionsTransforms = new List<Transform>();
-
 
     [Tooltip("Bullets fired per second")]
     [SerializeField]
@@ -81,7 +77,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         minDegreesFromCenter = Mathf.Clamp(minDegreesFromCenter, -360, 360);
         firerate = Mathf.Clamp(firerate, float.MinValue, float.MaxValue);
 
-
+        //If it has been triggered, shoot
         if (triggered == true)
         {
             currentDelay.Time += Time.deltaTime;
@@ -106,21 +102,24 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         {
             if (spawnObjectPrefab[i] != null)
             {
-                //Offset
+                //position offset
                 float xPositionOffset = Random.Range(-xLocalPositionLimitOffset, xLocalPositionLimitOffset);
                 float yPositionOffset = Random.Range(-yLocalPositionLimitOffset, yLocalPositionLimitOffset);
 
-                //Rotation of bullet
+                //Base rotation of bullet
                 float newRot = Random.Range(-maxDegreesFromCenter, maxDegreesFromCenter);
 
                 if (degreeChangeCloserToEndPoints == true && xLocalPositionLimitOffset > 0)
                 {
                     if (xPositionOffset > 0)
                     {
+                        //The multiplication
                         float multX = xPositionOffset / xLocalPositionLimitOffset;
 
+                        //The the degree that has changed (it gets closer to minDegreesFromSenter the closer multX is to 1)
                         float degreeChange = (minDegreesFromCenter * multX) - (maxDegreesFromCenter * (1 - multX));
 
+                        //The new rotation
                         newRot = Random.Range(degreeChange, maxDegreesFromCenter);
                     }
 
@@ -134,6 +133,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
                     }
                 }
 
+                //Shoot the bullet
                 ShootBullet(new Vector2(xPositionOffset, yPositionOffset),
                     Quaternion.Euler(0, 0, newRot),
                     spawnObjectPrefab[i]);
@@ -141,6 +141,7 @@ public class TagTriggerRandomShooter : MonoBehaviour {
         }
     }
 
+    //Shoots the bullet
     private void ShootBullet(Vector2 offset, Quaternion newRotation, GameObject bulletPrefab)
     {
         Vector3 newPos = transform.position + new Vector3(offset.x, offset.y, 0);
@@ -152,8 +153,10 @@ public class TagTriggerRandomShooter : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //If it has't been triggered
         if (triggered == false)
         {
+            //If it collided with a gameobject that has the right tag, trigger it
             for (int i = 0; i < triggerTags.Length; i++)
             {
                 if (collision.tag == triggerTags[i])

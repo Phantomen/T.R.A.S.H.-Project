@@ -62,11 +62,12 @@ public class AimAtPlayer : MonoBehaviour {
     {
         foreach (Transform rotPoint in turnClass.pointList)
         {
-            //Relative aim point
+            //Relative aim point at player
             Vector2 targetDir = rotPoint.position - player.transform.position;
 
             //Target rotation is rotation it needs to have to aim directly at it
             Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.forward);
+            //Makes sure that it rotates around the z axis
             targetRotation.x = 0;
             targetRotation.y = 0;
 
@@ -132,10 +133,12 @@ public class AimAtPlayer : MonoBehaviour {
                 newRotation.eulerAngles = new Vector3(0, 0, GetConstantAngle(currentRotZ, targetRotation.eulerAngles.z, -1, turnClass.turnSpeed));
             }
 
+            //Set new rotation
             rotPoint.transform.rotation = newRotation;
         }
     }
 
+    //Instantly rotates toward target
     private void RotateInstant(TurnPoints turnClass)
     {
         foreach (Transform rotPoint in turnClass.pointList)
@@ -168,7 +171,7 @@ public class AimAtPlayer : MonoBehaviour {
             fromRotation.x = 0;
             fromRotation.y = 0;
 
-
+            //Lerp rotation
             newRotation = Quaternion.Lerp(fromRotation, targetRotation, Time.deltaTime * turnClass.turnSpeed * Mathf.PI / 180);
 
             rotPoint.transform.rotation = newRotation;
@@ -194,7 +197,7 @@ public class AimAtPlayer : MonoBehaviour {
             fromRotation.x = 0;
             fromRotation.y = 0;
 
-
+            //Slerp rotation
             newRotation = Quaternion.Slerp(fromRotation, targetRotation, Time.deltaTime * turnClass.turnSpeed * Mathf.PI / 180);
 
             rotPoint.transform.rotation = newRotation;
@@ -207,27 +210,18 @@ public class AimAtPlayer : MonoBehaviour {
         //the target rotation for constant angle rotation
         float targetRotZ = currentRotZ + horizontal * turningSpeed * Time.deltaTime;
 
-        //if over turned, aim directly at the player
+        //if the turn took it past target, aim directly at target
         if ((targetRotZ > targetRotation
             && horizontal > 0)
-            || (targetRotZ < targetRotation
+            ||
+            (targetRotZ < targetRotation
             && horizontal < 0))
         {
             targetRotZ = targetRotation;
         }
 
+        //Return rotation
         return targetRotZ;
-
-
-        //targetRotZ = currentRotZ + turningSpeed * Time.deltaTime;
-
-        //if (targetRotZ < targetRotation.eulerAngles.z
-        //    || targetRotZ > currentRotZ)
-        //{
-        //    targetRotZ = targetRotation.eulerAngles.z;
-        //}
-
-        //newRotation.eulerAngles = new Vector3(0, 0, targetRotZ);
     }
 
     private float GetConstantAngleSwitch(float currentRotZ, float targetRotation, int horizontal, float turningSpeed)
@@ -235,34 +229,37 @@ public class AimAtPlayer : MonoBehaviour {
         //the target rotation for constant angle rotation
         float targetRotZ = currentRotZ + horizontal * turningSpeed * Time.deltaTime;
 
-        //If rotation is over or 360, subtract 360 and turning right
+        //If rotation is or over 360 and turning right, subtract 360
         if (targetRotZ >= 360 && horizontal > 0)
         {
             targetRotZ -= 360;
         }
 
-        //else if rotation is less than 0, add 360 and turning left
+        //else if rotation is or under 0 and turning left, add 360
         else if (targetRotZ <= 0 && horizontal < 0)
         {
             targetRotZ += 360;
         }
 
-        //if over turned, aim directly at the player
+        //if the turn took it past target, aim directly at target
         if ((targetRotZ > targetRotation
             && horizontal > 0
             && targetRotZ < targetRotation)
-            || (targetRotZ < targetRotation
+            ||
+            (targetRotZ < targetRotation
             && horizontal < 0
             && targetRotZ > targetRotation))
         {
             targetRotZ = targetRotation;
         }
 
+        //return rotation
         return targetRotZ;
     }
 }
 
 
+//Class contaning the list of the transforms, the way it turns and how quick
 [System.Serializable]
 public class TurnPoints
 {

@@ -12,6 +12,7 @@ public class BossHealthResetAction : StateAction {
         ResetHealth(controller);
     }
 
+    //Resets the hp of the boss
     private void ResetHealth(StateController controller)
     {
         if (triggered == false)
@@ -19,10 +20,14 @@ public class BossHealthResetAction : StateAction {
             triggered = true;
             TrudgesHealthBar hpBar = controller.GetComponentInChildren<TrudgesHealthBar>();
 
-            hpBar.ResetBar();
+            if (hpBar != null)
+            {
+                hpBar.ResetBar();
+            }
         }
     }
 
+    //Resets the trigger
     public override void Reset(StateController controller)
     {
         triggered = false;

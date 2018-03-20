@@ -9,6 +9,7 @@ public class State : ScriptableObject {
 	public Color sceneGizmoColor = Color.grey;
 
 
+    //Reset all actions for this state
     public void ResetAction(StateController controller)
     {
         for (int i = 0; i < actions.Length; i++)
@@ -18,6 +19,7 @@ public class State : ScriptableObject {
     }
 
 
+    //Do all actions, then check if it should change to a new state
 	public void UpdateState(StateController controller)
 	{
 		DoActions (controller);
@@ -32,6 +34,8 @@ public class State : ScriptableObject {
 		}
 	}
 
+
+    //Change state
 	private void CheckTransitions(StateController controller)
 	{
 		for (int i = 0; i < transitions.Length; i++)

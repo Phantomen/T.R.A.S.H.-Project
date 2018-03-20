@@ -66,6 +66,7 @@ public class ShootBullet : MonoBehaviour {
         }
 	}
 
+    //Shots the bullet
     private void Shoot()
     {
         for (int i = 0; i < spawnList.Count; i++)
