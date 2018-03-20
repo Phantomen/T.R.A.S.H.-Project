@@ -10,7 +10,7 @@ public class BackgroundMusic : MonoBehaviour {
 
     private bool keepPlaying = true;
     private AudioSource audioSource;
-	// Use this for initialization
+ 
 	void Start ()
     {
         audioSource = GetComponent<AudioSource>();

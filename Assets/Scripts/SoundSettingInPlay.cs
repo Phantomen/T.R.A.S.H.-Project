@@ -4,23 +4,21 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class SoundSettingInPlay : MonoBehaviour {
-
    
+   //refers to the button to press to turn off sound
     public TogglButtonImage toggleButton;
     public bool isButton = false;
     AudioSource audiosource;
-    
-	// Use this for initialization
+   
+
 	void Start ()
     {
-        audiosource = GetComponent<AudioSource>();
-       
-        
-            toggleButton = toggleButton.GetComponent<TogglButtonImage>();
+        audiosource = GetComponent<AudioSource>();       
+        toggleButton = toggleButton.GetComponent<TogglButtonImage>();
         
 	}
 
-
+    //mutes audiosource and toggles the image for the button used
     public void ToggleSound()
     {
         audiosource.mute = !audiosource.mute;

@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Example : MonoBehaviour {
+public class ScreenResize : MonoBehaviour {
 
-	// Use this for initialization
+	
 	void Start ()
     {
+        //resizes the game window upon start to ensure the right resolution
         Screen.fullScreen = !Screen.fullScreen;
         Screen.SetResolution(614, 512, false);
     }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

@@ -16,13 +16,11 @@ public class MinionInstantiator : MonoBehaviour {
     private int counter;
     private Timer timer;
 
-	// Use this for initialization
 	void Start ()
     {
         timer = new Timer(startDelay, 0);
     }
 	
-	// Update is called once per frame
 	void FixedUpdate ()
     {
         timer.Time += Time.deltaTime;

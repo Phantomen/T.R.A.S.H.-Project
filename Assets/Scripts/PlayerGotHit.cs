@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerGotHit : MonoBehaviour {
 
-    public GameObject activeLaser;
+    public GameObject activeLaser, inviciBarrier;
     public PointSystem pointSystem;
     public int damageTakenByHits = 1;
     public float invincibleTime = 1f;
@@ -43,6 +43,7 @@ public class PlayerGotHit : MonoBehaviour {
                 timer.Time = 0;
                 timerOn = false;
                 invincible = false;
+                inviciBarrier.SetActive(false);
             }
 
         }
@@ -60,6 +61,7 @@ public class PlayerGotHit : MonoBehaviour {
             invincible = true;
             playerAnim.GotHit();
             Destroy(other.gameObject, 0.1f);
+            inviciBarrier.SetActive(true);
 
         }
         else if (other.gameObject.tag == "laser" && invincible == false)
@@ -73,6 +75,7 @@ public class PlayerGotHit : MonoBehaviour {
             //gotHit = true;
             //animator.SetBool("GetHit", true);
             playerAnim.GotHit();
+            inviciBarrier.SetActive(true);
 
         }
     }
