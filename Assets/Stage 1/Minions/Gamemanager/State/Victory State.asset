@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Victory State
   m_EditorClassIdentifier: 
   actions:
-  - {fileID: 11400000, guid: 41861a590101a7b48bfe1f1765742b37, type: 2}
+  - {fileID: 11400000, guid: 7ec8d9a1b3a81274c80fbf4ce22f71b3, type: 2}
   - {fileID: 11400000, guid: 044c22eaef0aecf41954dffeea859ed4, type: 2}
   transitions: []
   sceneGizmoColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

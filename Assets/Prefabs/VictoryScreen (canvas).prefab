@@ -23,12 +23,12 @@ GameObject:
   - component: {fileID: 114465679434950694}
   - component: {fileID: 114208042118881690}
   m_Layer: 5
-  m_Name: VictoryScreen (canvas)
-  m_TagString: Untagged
+  m_Name: VictoryScreenHugh (canvas)
+  m_TagString: WinCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1679437061349780
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +57,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 2c458c2cb8e429245adca20afd500190, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0164ace396b2fe345b02890c3351bfac, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

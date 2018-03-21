@@ -15,10 +15,10 @@ public class PlayVideoAction : StateAction {
 
     public override void Act(StateController controller)
     {
-        PlayVideo();
+        PlayVideo(controller);
     }
 
-    private void PlayVideo()
+    private void PlayVideo(StateController controller)
     {
         if (triggered == false)
         {
@@ -36,7 +36,7 @@ public class PlayVideoAction : StateAction {
             }
 
             //Inactivates the player to stop it from making sound
-            GameObject.FindGameObjectWithTag("Player").SetActive(false);
+            controller.playerGameObject.SetActive(false);
         }
     }
 

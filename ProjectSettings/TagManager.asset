@@ -13,6 +13,7 @@ TagManager:
   - DestructionRing
   - Boss
   - laser
+  - WinCanvas
   layers:
   - Default
   - TransparentFX
