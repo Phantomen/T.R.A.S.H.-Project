@@ -130,11 +130,12 @@ public class MinigunAimPattern : MonoBehaviour {
             currentDelay.Duration = delayBetweenBullets;
         }
 
-        //For each spawnpoint, rotate them and spawn a bullet from them
+        //Rotate the spawnpoints
+        RotateSpawnPoints();
+
+        //For each spawnpoint, spawn a bullet from them
         for (int i = 0; i < bulletSpawnPosition.Count; i++)
         {
-            RotateSpawnPoints();
-
             var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition[i].position, bulletSpawnPosition[i].rotation);
             bullet.transform.position += distanceFromCenter * Vector3.forward;
 

@@ -12,8 +12,6 @@ public class ShooterPatternMinigunAim : ShooterPattern {
     private GameObject player;
 
 
-    //[Tooltip("List of shooterPoints")]
-    //[SerializeField]
     private List<Transform> bulletSpawnPosition = new List<Transform>();
 
 
@@ -129,10 +127,12 @@ public class ShooterPatternMinigunAim : ShooterPattern {
             currentDelay.Duration = delayBetweenBullets;
         }
 
+        //Rotates spawnPoints
+        RotateSpawnPoints();
+
+        //Shoots the bullet from all spawnpoints
         for (int i = 0; i < bulletSpawnPosition.Count; i++)
         {
-            RotateSpawnPoints();
-
             var bullet = (GameObject)Instantiate(bulletPrefab, bulletSpawnPosition[i].position, bulletSpawnPosition[i].rotation);
             bullet.transform.position += distanceFromCenter * Vector3.forward;
 
@@ -143,6 +143,9 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
         currentBullet++;
 
+
+        //If all bullets in wave has been fired
+        //Reset bullets and set new duration and instant turn
         if (currentBullet >= bulletsPerWave)
         {
             currentBullet = 0;
@@ -171,6 +174,7 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
             //Target rotation is rotation it needs to have to aim directly at it
             Quaternion targetRotation = Quaternion.LookRotation(targetDir, Vector3.forward);
+            //So it rotates around the z-axis
             targetRotation.x = 0;
             targetRotation.y = 0;
 
@@ -178,6 +182,7 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
             //Current rotation
             Quaternion fromRotation = bulletSpawnPosition[i].rotation;
+            //So it rotates around the z-axis
             fromRotation.x = 0;
             fromRotation.y = 0;
 
@@ -241,12 +246,13 @@ public class ShooterPatternMinigunAim : ShooterPattern {
             }
 
 
-
+            //Lerp rotation
             else if (lerpType == LerpType.Lerp)
             {
                 newRotation = Quaternion.Lerp(fromRotation, targetRotation, Time.deltaTime * turnrate * Mathf.PI / 180);
             }
 
+            //Slerp rotation
             else if (lerpType == LerpType.Slerp)
             {
                 newRotation = Quaternion.Slerp(fromRotation, targetRotation, Time.deltaTime * turnrate * Mathf.PI / 180);
@@ -273,17 +279,6 @@ public class ShooterPatternMinigunAim : ShooterPattern {
         }
 
         return targetRotZ;
-
-
-        //targetRotZ = currentRotZ + turningSpeed * Time.deltaTime;
-
-        //if (targetRotZ < targetRotation.eulerAngles.z
-        //    || targetRotZ > currentRotZ)
-        //{
-        //    targetRotZ = targetRotation.eulerAngles.z;
-        //}
-
-        //newRotation.eulerAngles = new Vector3(0, 0, targetRotZ);
     }
 
     private float GetConstantAngleSwitch(float currentRotZ, float targetRotation, int horizontal)
@@ -321,7 +316,6 @@ public class ShooterPatternMinigunAim : ShooterPattern {
     public override void Reset(GameObject shooterGameObject)
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        //currentTimeInWave = new Timer(timerPerWave, 0);
         currentDelay = new Timer(startDelay, 0);
 
 
@@ -359,6 +353,15 @@ public class ShooterPatternMinigunAim : ShooterPattern {
         }
 
 
+        //Removes empty spawns
+        for (int i = 0; i < bulletSpawnPosition.Count; i++)
+        {
+            if (bulletSpawnPosition[i] == null)
+            {
+                bulletSpawnList.RemoveAt(i);
+                i--;
+            }
+        }
 
         //If it does not have spawnpoint, set it as the own
         if (bulletSpawnPosition.Count == 0)
@@ -366,14 +369,7 @@ public class ShooterPatternMinigunAim : ShooterPattern {
             bulletSpawnPosition.Add(shooterGameObject.transform);
         }
 
-        for (int i = 0; i < bulletSpawnPosition.Count; i++)
-        {
-            if (bulletSpawnPosition[i] == null)
-            {
-                bulletSpawnPosition[i] = shooterGameObject.transform;
-            }
-        }
-
+        //Aim directly at player if it has
         if (aimAtPlayerAtStart == true)
         {
             for (int i = 0; i < bulletSpawnPosition.Count; i++)
@@ -389,39 +385,6 @@ public class ShooterPatternMinigunAim : ShooterPattern {
     }
 
 
-    //public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
-    //{
-    //    player = GameObject.FindGameObjectWithTag("Player");
-    //    //currentTimeInWave = new Timer(timerPerWave, 0);
-    //    currentDelay = new Timer(startDelay, 0);
-
-    //    bulletSpawnPosition = bulletSpawnList;
-
-    //    //If it does not have spawnpoint, set it as the own
-    //    if (bulletSpawnPosition.Count == 0)
-    //    {
-    //        bulletSpawnPosition.Add(shooterGameObject.transform);
-    //    }
-
-    //    for (int i = 0; i < bulletSpawnPosition.Count; i++)
-    //    {
-    //        if (bulletSpawnPosition[i] == null)
-    //        {
-    //            bulletSpawnPosition[i] = shooterGameObject.transform;
-    //        }
-    //    }
-
-    //    if (aimAtPlayerAtStart == true)
-    //    {
-    //        for (int i = 0; i < bulletSpawnPosition.Count; i++)
-    //        {
-    //            Vector2 targetDir = bulletSpawnPosition[i].position - player.transform.position;
-    //            bulletSpawnPosition[i].rotation = Quaternion.LookRotation(targetDir, Vector3.forward);
-    //        }
-    //    }
-
-    //    delayBetweenBullets = timePerWave / (float)bulletsPerWave;
-    //}
 
     public override void ClampValues()
     {
