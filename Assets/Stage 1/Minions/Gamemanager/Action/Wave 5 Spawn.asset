@@ -35,4 +35,15 @@ MonoBehaviour:
     currentDelay: 4
     currentTime: 4.0399857
   orbitSpawnList: []
-  pickUpList: []
+  pickUpList:
+  - objectPrefabs:
+    - {fileID: 1659590428255722, guid: 55c2e38c23a520f43bf654874b453e85, type: 2}
+    spawnStartDelay: 0
+    delayBetweenSpawns: 0
+    numberOfSpawns: 0
+    currentSpawnCount: 0
+    destroySpawnedAfterTime: 0
+    spawnFromObject: 0
+    lifeTime: 0
+    currentDelay: 0
+    currentTime: 0

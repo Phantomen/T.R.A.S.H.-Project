@@ -17,21 +17,23 @@ MonoBehaviour:
     spawnStartDelay: 0
     delayBetweenSpawns: 0.5
     numberOfSpawns: 10
-    currentSpawnCount: 1
+    currentSpawnCount: 10
     destroySpawnedAfterTime: 0
     spawnFromObject: 0
     lifeTime: 0
     currentDelay: 0.5
-    currentTime: 0.40000004
+    currentTime: 6.2199955
   orbitSpawnList: []
   pickUpList:
-  - objectPrefabs: []
+  - objectPrefabs:
+    - {fileID: 1659590428255722, guid: 9b63941fbbeab974ca764b93cb2c09c7, type: 2}
+    - {fileID: 1659590428255722, guid: 6cdb59fb5d866b0479063bed7a5cc820, type: 2}
     spawnStartDelay: 2
     delayBetweenSpawns: 0
     numberOfSpawns: 1
-    currentSpawnCount: 0
+    currentSpawnCount: 1
     destroySpawnedAfterTime: 0
     spawnFromObject: 0
     lifeTime: 0
-    currentDelay: 2
-    currentTime: 0.40000004
+    currentDelay: 0
+    currentTime: 10.720056
