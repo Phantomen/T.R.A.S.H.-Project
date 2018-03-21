@@ -3205,7 +3205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1aa9e36a1777c44485e5bea36a818e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shakeTime: 0.2
+  shakeTime: 0.1
   shakeAmount: 0.2
 --- !u!1 &1269754640
 GameObject:

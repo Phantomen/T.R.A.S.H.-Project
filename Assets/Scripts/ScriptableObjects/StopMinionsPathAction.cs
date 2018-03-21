@@ -16,7 +16,7 @@ public class StopMinionsPathAction : StateAction {
         {
             PathFollower pathFollower = controller.minionList[minionIndex].GetComponent<PathFollower>();
 
-            //if it hsa the script PahtFollower, stop it from bouncing betweenPoints and destroy it at endpoints
+            //if it has the script PahtFollower, stop it from bouncing betweenPoints and destroy it at endpoints
             if (pathFollower != null)
             {
                 pathFollower.bouncingBetweenPoints = false;

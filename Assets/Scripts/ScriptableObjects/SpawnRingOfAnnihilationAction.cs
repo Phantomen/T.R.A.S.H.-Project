@@ -21,6 +21,7 @@ public class SpawnRingOfAnnihilationAction : StateAction {
         }
     }
 
+    //Spawns the blank from the controllers position
     private void TriggedBlank(StateController controller)
     {
         Instantiate(blankPrefab, controller.gameObject.transform.position, new Quaternion());

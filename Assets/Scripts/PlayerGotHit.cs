@@ -60,7 +60,6 @@ public class PlayerGotHit : MonoBehaviour {
         playerAnim.GotHit();
         inviciBarrier.SetActive(true);
 
-        //GameObject.FindGameObjectWithTag("MainCamera").GetComponentInChildren<CameraShake>().StartCameraShake;
         camShake.StartCameraShake();
     }
 
