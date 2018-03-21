@@ -31,6 +31,14 @@ public class ActivateWinCanvas : StateAction {
 
             if (winCanvas.activeSelf == false && winCanvas != null)
             {
+                AudioSource[] audioSourceObject = GameObject.FindGameObjectWithTag("AudioSource").GetComponentsInChildren<AudioSource>();
+
+                //Stops all the audio from the AudioSource object
+                foreach (AudioSource au in audioSourceObject)
+                {
+                    au.Stop();
+                }
+
                 //Inactivates the player to stop it from making sound
                 controller.playerGameObject.SetActive(false);
 
