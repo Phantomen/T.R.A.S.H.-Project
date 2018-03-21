@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Name: T Phase 8 Spawn
   m_EditorClassIdentifier: 
   spawnList:
-  - minionPrefabs:
+  - objectPrefabs:
     - {fileID: 1718232209419454, guid: 77ce18b0845bafe41ac0e5a54d52cfc2, type: 2}
     spawnStartDelay: 0
     delayBetweenSpawns: 0
     numberOfSpawns: 1
     currentSpawnCount: 1
     destroySpawnedAfterTime: 1
-    spawnFromObject: 0
+    spawnFromObject: 1
     lifeTime: 60
     currentDelay: 0
-    currentTime: 4.5399966
+    currentTime: 15.820172
   orbitSpawnList: []
   pickUpList: []
