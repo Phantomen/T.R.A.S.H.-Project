@@ -11,39 +11,32 @@ public class ShooterWavePattern : MonoBehaviour {
 
     public float spawnDistanceFromCenter = 0;
 
-    //t.ex. 45 degrees on each side of the center   /\
+    //For example 30 degrees on each side of the center  =  /\
     public float degreesFromCenter = 45;
 
     public bool startHeadingRight = true;
     private int horizontal = 0;
     public bool changeWaveDirectionEveryWave = false;
 
-    //Own script if start from center!?!
     public bool startFromCenter = false;
 
     //Slows down at the ends and speeds up towards center
-    //Cos if not startFromCenter sin if from center?
     public bool smoothWaveTurning = true;
 
-    //Per minute
     private float timeUntilNextShot = 0f;
 
     //back to starting point from same side
     public int numberOfWaves = 2;
     private int currentWave = 1;
-    //Seconds
     public float timePerWave = 2;
 
-    public int bulletsPerWave = 20;     //+ bullet at the end of the wave
+    public int bulletsPerWave = 20;
     private int currentBulletsShotInWave = 0;
 
     public float delayBetweenWaves = 0f;
     private float currentDelay = 0; 
 
-
     private float tempCurrentTime = 0f;
-
-
 
 
     Timer zigZagTimer = new Timer();
@@ -98,7 +91,7 @@ public class ShooterWavePattern : MonoBehaviour {
             tempCurrentTime += Time.deltaTime;
             timeUntilNextShot -= Time.deltaTime;
 
-            //Shoots if timer expierd
+            //Shoots if timer expired
             if (timeUntilNextShot <= 0 && currentWave <= numberOfWaves)
             {
                 Shoot();
@@ -167,10 +160,6 @@ public class ShooterWavePattern : MonoBehaviour {
             Destroy(bullet.gameObject, bulletLifeTime);
             currentBulletsShotInWave++;
         }
-
-        //currentWave++;
-        //tempCurrentTime = 0;
-        //currentDelay = delayBetweenWaves;
     }
 
     //Smooth wave

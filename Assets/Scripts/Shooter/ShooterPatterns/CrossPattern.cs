@@ -58,6 +58,8 @@ public class CrossPattern : MonoBehaviour {
         actualRotation = -(360f / (float)bulletsPerWave);
 
         fireRate = Mathf.Clamp(fireRate, float.Epsilon, float.MaxValue);
+
+        //So that the rotateTimer is 0 under the first FixedUpdate
         rotateTimer = -rotateSpeed / fireRate;
 
         shootTimer = 1;
@@ -69,7 +71,6 @@ public class CrossPattern : MonoBehaviour {
         fireRate = Mathf.Clamp(fireRate, float.Epsilon, float.MaxValue);
         bulletsPerWave = Mathf.Clamp(bulletsPerWave, 1, int.MaxValue);
         shootTimer += Time.deltaTime * fireRate;
-        //rotateTimer += rotateSpeed / fireRate;
 
         if (shootTimer >= 1)
         {
@@ -84,16 +85,20 @@ public class CrossPattern : MonoBehaviour {
         {
             for (int i = 0; i < bulletsPerWave; i++)
             {
+                //The rotation of the bullet
                 actualRotation += (360f / (float)bulletsPerWave);
+                //The rotation of the bullet after you added the amount it rotates per second
                 Quaternion rotation = Quaternion.Euler(0, 0, actualRotation + rotateTimer);
                 Vector3 bulletPosition = spawnList[si].position;
 
+
+                //To keep the rotation 0-360
                 while (actualRotation > 360)
                 {
                     actualRotation -= 360;
                 }
 
-                while (actualRotation < 360)
+                while (actualRotation < 0)
                 {
                     actualRotation += 360;
                 }

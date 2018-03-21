@@ -76,6 +76,7 @@ public class SpreadPattern : MonoBehaviour {
         {
             Quaternion rotation = Quaternion.Euler(0, 0, spreadShotList[listIndex].GetAngle(i));
 
+            //Shoots everybullet as a spread shot
             for (int spawnIndex = 0; spawnIndex < spreadShotList[listIndex].bulletSpawnPosition.Count; spawnIndex++)
             {
                 var bullet = (GameObject)Instantiate(spreadShotList[listIndex].bulletPrefab,
