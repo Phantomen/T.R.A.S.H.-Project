@@ -323,6 +323,7 @@ public class ShooterPatternMinigunAim : ShooterPattern {
 
         GameObjectsTransformList tl = shooterGameObject.GetComponent<GameObjectsTransformList>();
 
+        //If there is bulletspawns and the transformlist is not empty
         if (bulletSpawnList.Count > 0
             && tl.transformList.Count > 0
             && tl != null)
@@ -331,11 +332,14 @@ public class ShooterPatternMinigunAim : ShooterPattern {
             {
                 for (int si = 0; si < bulletSpawnList[pi].spawnPointIndex.Length; si++)
                 {
+                    //If that transform isn't null
                     if (tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]] != null)
                     {
                         bool alreadyInList = false;
+                        //Checks if if that transform already is being used
                         for (int t = 0; t < bulletSpawnPosition.Count; t++)
                         {
+                            //If that transform is being used, break and set bool to true
                             if (bulletSpawnPosition[t] == tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]])
                             {
                                 alreadyInList = true;
@@ -343,6 +347,7 @@ public class ShooterPatternMinigunAim : ShooterPattern {
                             }
                         }
 
+                        //Add it if it isn't in the list
                         if (alreadyInList == false)
                         {
                             bulletSpawnPosition.Add(tl.transformList[bulletSpawnList[pi].phaseIndex].bulletSpawnList[bulletSpawnList[pi].spawnPointIndex[si]]);

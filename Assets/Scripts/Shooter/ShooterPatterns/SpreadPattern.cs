@@ -24,7 +24,7 @@ public class SpreadPattern : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //Sets so it shoots in the next update
+        //The delay
         currentDelay = new Timer(startDelay, 0);
 
         //If it does not have spawnpoint, set it as the own
@@ -76,7 +76,7 @@ public class SpreadPattern : MonoBehaviour {
         {
             Quaternion rotation = Quaternion.Euler(0, 0, spreadShotList[listIndex].GetAngle(i));
 
-            //Shoots everybullet as a spread shot
+            //Shoots every bullet as a spread shot
             for (int spawnIndex = 0; spawnIndex < spreadShotList[listIndex].bulletSpawnPosition.Count; spawnIndex++)
             {
                 var bullet = (GameObject)Instantiate(spreadShotList[listIndex].bulletPrefab,

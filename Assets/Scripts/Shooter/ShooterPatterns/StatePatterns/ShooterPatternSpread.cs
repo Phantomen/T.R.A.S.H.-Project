@@ -56,6 +56,7 @@ public class ShooterPatternSpread : ShooterPattern
         {
             Quaternion rotation = Quaternion.Euler(0, 0, spreadShotList[listIndex].GetAngle(i));
 
+            //Shoots everybullet as a spread shot
             for (int spawnIndex = 0; spawnIndex < spreadShotList[listIndex].bulletSpawnPosition.Count; spawnIndex++)
             {
                 var bullet = (GameObject)Instantiate(spreadShotList[listIndex].bulletPrefab,
@@ -95,42 +96,10 @@ public class ShooterPatternSpread : ShooterPattern
         currentDelay.Time = 0;
     }
 
-    //public override void Reset()
-    //{
-    //    //Sets so it shoots in the next update
-    //    currentDelay = new Timer(startDelay, 0);
-
-    //    //If it does not have spawnpoint, set it as the own
-    //    for (int i = 0; i < spreadShotList.Count; i++)
-    //    {
-    //        if (spreadShotList[i].bulletSpawnPosition.Count == 0)
-    //        {
-    //            spreadShotList[i].bulletSpawnPosition.Add(transform);
-    //        }
-
-    //        else
-    //        {
-    //            for (int spawnIndex = 0; spawnIndex < spreadShotList[i].bulletSpawnPosition.Count; spawnIndex++)
-    //            {
-    //                if (spreadShotList[i].bulletSpawnPosition[spawnIndex] == null)
-    //                {
-    //                    spreadShotList[i].bulletSpawnPosition[spawnIndex] = transform;
-    //                }
-    //            }
-    //        }
-    //    }
-
-    //    for (int i = 0; i < spreadShotList.Count; i++)
-    //    {
-    //        spreadShotList[i].shotIndex = 0;
-    //        listIndex = 0;
-    //        currentWave = 1;
-    //    }
-    //}
 
     public override void Reset(GameObject shooterGameObject)
     {
-        //Sets so it shoots in the next update
+        //Sets start delay
         currentDelay = new Timer(startDelay, 0);
 
 
@@ -140,6 +109,7 @@ public class ShooterPatternSpread : ShooterPattern
         {
             spreadShotList[i].bulletSpawnPosition.Clear();
 
+            //If there is bulletspawns and the transformlist is not empty
             if (spreadShotList[i].bulletSpawnList.Count > 0
                 && tl.transformList.Count > 0
                 && tl != null)
@@ -148,11 +118,14 @@ public class ShooterPatternSpread : ShooterPattern
                 {
                     for (int si = 0; si < spreadShotList[i].bulletSpawnList[pi].spawnPointIndex.Length; si++)
                     {
+                        //If that transform isn't null
                         if (tl.transformList[spreadShotList[i].bulletSpawnList[pi].phaseIndex].bulletSpawnList[spreadShotList[i].bulletSpawnList[pi].spawnPointIndex[si]] != null)
                         {
                             bool alreadyInList = false;
+                            //Checks if if that transform already is being used
                             for (int t = 0; t < spreadShotList[i].bulletSpawnPosition.Count; t++)
                             {
+                                //If that transform is being used, break and set bool to true
                                 if (spreadShotList[i].bulletSpawnPosition[t] == tl.transformList[spreadShotList[i].bulletSpawnList[pi].phaseIndex].bulletSpawnList[spreadShotList[i].bulletSpawnList[pi].spawnPointIndex[si]])
                                 {
                                     alreadyInList = true;
@@ -160,6 +133,7 @@ public class ShooterPatternSpread : ShooterPattern
                                 }
                             }
 
+                            //Add it if it isn't in the list
                             if (alreadyInList == false)
                             {
                                 spreadShotList[i].bulletSpawnPosition.Add(tl.transformList[spreadShotList[i].bulletSpawnList[pi].phaseIndex].bulletSpawnList[spreadShotList[i].bulletSpawnList[pi].spawnPointIndex[si]]);
@@ -190,39 +164,6 @@ public class ShooterPatternSpread : ShooterPattern
     {
         numberOfWaves = Mathf.Clamp(numberOfWaves, 1, int.MaxValue);
     }
-
-    //public override void Reset(GameObject shooterGameObject, List<Transform> bulletSpawnList)
-    //{
-    //    //Sets so it shoots in the next update
-    //    currentDelay = new Timer(startDelay, 0);
-
-    //    //If it does not have spawnpoint, set it as the own
-    //    for (int i = 0; i < spreadShotList.Count; i++)
-    //    {
-    //        if (spreadShotList[i].bulletSpawnPosition.Count == 0)
-    //        {
-    //            spreadShotList[i].bulletSpawnPosition.Add(transform);
-    //        }
-
-    //        else
-    //        {
-    //            for (int spawnIndex = 0; spawnIndex < spreadShotList[i].bulletSpawnPosition.Count; spawnIndex++)
-    //            {
-    //                if (spreadShotList[i].bulletSpawnPosition[spawnIndex] == null)
-    //                {
-    //                    spreadShotList[i].bulletSpawnPosition[spawnIndex] = transform;
-    //                }
-    //            }
-    //        }
-    //    }
-
-    //    for (int i = 0; i < spreadShotList.Count; i++)
-    //    {
-    //        spreadShotList[i].shotIndex = 0;
-    //        listIndex = 0;
-    //        currentWave = 1;
-    //    }
-    //}
 }
 
 
