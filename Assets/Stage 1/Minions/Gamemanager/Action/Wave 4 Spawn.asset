@@ -82,10 +82,10 @@ MonoBehaviour:
   pickUpList:
   - objectPrefabs:
     - {fileID: 1659590428255722, guid: d5ab2248978200c49ad6955196de6bdb, type: 2}
-    spawnStartDelay: 0
+    spawnStartDelay: 2
     delayBetweenSpawns: 0
-    numberOfSpawns: 0
-    currentSpawnCount: 0
+    numberOfSpawns: 1
+    currentSpawnCount: 1
     destroySpawnedAfterTime: 0
     spawnFromObject: 0
     lifeTime: 0
