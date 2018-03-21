@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114465679434950694}
   - component: {fileID: 114208042118881690}
   m_Layer: 5
-  m_Name: VictoryScreenHugh (canvas)
+  m_Name: VictoryScreen (canvas)
   m_TagString: WinCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
